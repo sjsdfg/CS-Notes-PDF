@@ -17,7 +17,7 @@ https://github.com/CyC2018/Interview-Notebook PDF版本离线阅读
 
 ## 2. 字符串替换
 
-###2.1 
+### 2.1 
 
 对于所有的图片地址进行替换
 
@@ -29,7 +29,7 @@ https://github.com/CyC2018/Interview-Notebook PDF版本离线阅读
 
 `src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f5757d09-88e7-4bbd-8cfb-cecf55604854.png"`
 
-###2.2 
+### 2.2 
 
 所有的`width=""`都需要删除
 使用正则表达式 `width="[0-9]*"`进行替换
