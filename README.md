@@ -3,7 +3,7 @@ https://github.com/CyC2018/Interview-Notebook PDF版本离线阅读
 
 用于提供 https://github.com/CyC2018/Interview-Notebook 项目的离线阅读
 
-本pdf使用 cmd-markdown 的付费工具进行pdf的转换。
+**pdf使用 cmd-markdown 的付费工具手工进行pdf的转换。**
 目前已经有两个已经转化好的pdf
 
 对于pdf转换需要对原有md文件进行删除
