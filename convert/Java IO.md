@@ -1,5 +1,13 @@
 # Java IO
 
+原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+PDF离线制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+希望各位不吝star
+
+
+
 # 一、概览
 
 Java 的 I/O 大概可以分成以下几类：
@@ -519,5 +527,5 @@ NIO 与普通 I/O 的区别主要有以下两点：
 - [NIO 与传统 IO 的区别](http://blog.csdn.net/shimiso/article/details/24990499)
 - [Decorator Design Pattern](http://stg-tud.github.io/sedc/Lecture/ws13-14/5.3-Decorator.html#mode=document)
 - [Socket Multicast](http://labojava.blogspot.com/2012/12/socket-multicast.html)
----
+
 github: https://github.com/sjsdfg/Interview-Notebook-PDF

@@ -1,5 +1,13 @@
 # Leetcode-Database 题解
 
+原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+PDF离线制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+希望各位不吝star
+
+
+
 # 595. Big Countries
 
 https://leetcode.com/problems/big-countries/description/
@@ -842,5 +850,5 @@ WHERE L1.id = l2.id - 1
     AND L1.num = L2.num
     AND l2.num = l3.num; 
 ```
----
+
 github: https://github.com/sjsdfg/Interview-Notebook-PDF

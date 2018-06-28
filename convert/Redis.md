@@ -1,5 +1,13 @@
 # Redis
 
+原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+PDF离线制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+希望各位不吝star
+
+
+
 # 一、概述
 
 Redis 是速度非常快的非关系型（NoSQL）内存键值数据库，可以存储键和五种不同类型的值之间的映射。
@@ -567,5 +575,5 @@ Redis 没有关系型数据库中的表这一概念来将同种类型的数据�
 - [Redis 3.0 中文版- 分片](http://wiki.jikexueyuan.com/project/redis-guide)
 - [Redis 应用场景](http://www.scienjus.com/redis-use-case/)
 - [Observer vs Pub-Sub](http://developers-club.com/posts/270339/)
----
+
 github: https://github.com/sjsdfg/Interview-Notebook-PDF

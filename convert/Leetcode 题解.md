@@ -1,5 +1,13 @@
 # Leetcode 题解
 
+原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+PDF离线制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+希望各位不吝star
+
+
+
 # 算法思想
 
 ## 贪心思想
@@ -6999,5 +7007,5 @@ public int[] countBits(int num) {
 - 何海涛, 软件工程师. 剑指 Offer: 名企面试官精讲典型编程题[M]. 电子工业出版社, 2014.
 - 《编程之美》小组. 编程之美[M]. 电子工业出版社, 2008.
 - 左程云. 程序员代码面试指南[M]. 电子工业出版社, 2015.
----
+
 github: https://github.com/sjsdfg/Interview-Notebook-PDF

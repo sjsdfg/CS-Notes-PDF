@@ -1,5 +1,13 @@
 # HTTP
 
+原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+PDF离线制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+希望各位不吝star
+
+
+
 # 一 、基础概念
 
 ## URL
@@ -1023,5 +1031,5 @@ HTTP/1.1 的首部带有大量信息，而且每次都要重复发送。HTTP/2.0
 - [Symmetric vs. Asymmetric Encryption – What are differences?](https://www.ssl2buy.com/wiki/symmetric-vs-asymmetric-encryption-what-are-differences)
 - [Web 性能优化与 HTTP/2](https://www.kancloud.cn/digest/web-performance-http2)
 - [HTTP/2 简介](https://developers.google.com/web/fundamentals/performance/http2/?hl=zh-cn)
----
+
 github: https://github.com/sjsdfg/Interview-Notebook-PDF

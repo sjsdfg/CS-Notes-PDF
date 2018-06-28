@@ -1,5 +1,13 @@
 # Java 容器
 
+原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+PDF离线制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+希望各位不吝star
+
+
+
 # 一、概览
 
 容器主要包括 Collection 和 Map 两种，Collection 又包含了 List、Set 以及 Queue。
@@ -805,5 +813,5 @@ JDK 1.8 使用了 CAS 操作来支持更高的并发度，在 CAS 操作失败�
 - [Java 集合细节（二）：asList 的缺陷](http://wiki.jikexueyuan.com/project/java-enhancement/java-thirtysix.html)
 - [Java Collection Framework – The LinkedList Class](http://javaconceptoftheday.com/java-collection-framework-linkedlist-class/)
 
----
+
 github: https://github.com/sjsdfg/Interview-Notebook-PDF

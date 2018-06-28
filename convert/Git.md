@@ -1,5 +1,13 @@
 # Git
 
+原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+PDF离线制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+希望各位不吝star
+
+
+
 # 学习资料
 
 - [Git - 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
@@ -142,5 +150,5 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 比较详细的地址：http://www.cheat-sheets.org/saved-copy/git-cheat-sheet.pdf
 
 
----
+
 github: https://github.com/sjsdfg/Interview-Notebook-PDF

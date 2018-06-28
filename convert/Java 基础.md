@@ -1,5 +1,13 @@
 # Java 基础
 
+原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+PDF离线制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+希望各位不吝star
+
+
+
 # 一、基本类型
 
 ## 包装类型
@@ -1164,5 +1172,5 @@ Java 是纯粹的面向对象语言，所有的对象都继承自 java.lang.Obje
 
 - Eckel B. Java 编程思想[M]. 机械工业出版社, 2002.
 - Bloch J. Effective java[M]. Addison-Wesley Professional, 2017.
----
+
 github: https://github.com/sjsdfg/Interview-Notebook-PDF

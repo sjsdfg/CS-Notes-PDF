@@ -1,5 +1,13 @@
 # Java 虚拟机
 
+原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+PDF离线制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+希望各位不吝star
+
+
+
 # 一、运行时数据区域
 
 <div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/540631a4-6018-40a5-aed7-081e2eeeaeea.png" /> </div><br>
@@ -803,5 +811,5 @@ java -Xmx12m -Xms3m -Xmn1m -XX:PermSize=20m -XX:MaxPermSize=20m -XX:+UseSerialGC
 - [深入探讨 Java 类加载器](https://www.ibm.com/developerworks/cn/java/j-lo-classloader/index.html#code6)
 - [Guide to WeakHashMap in Java](http://www.baeldung.com/java-weakhashmap)
 - [Tomcat example source code file (ConcurrentCache.java)](https://alvinalexander.com/java/jwarehouse/apache-tomcat-6.0.16/java/org/apache/el/util/ConcurrentCache.java.shtml)
----
+
 github: https://github.com/sjsdfg/Interview-Notebook-PDF

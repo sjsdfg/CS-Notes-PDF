@@ -1,5 +1,13 @@
 # Linux
 
+原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+PDF离线制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+希望各位不吝star
+
+
+
 # 一、常用操作以及概念
 
 ## 快捷键
@@ -61,6 +69,8 @@ info 与 man 类似，但是 info 将文档分成一个个页面，每个页面�
 ```html
 /usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/dmtsai/.local/bin:/home/dmtsai/bin
 ```
+### env
+env 命令可以获取当前终端的环境变量
 
 ## sudo
 
@@ -1190,5 +1200,5 @@ options 参数主要有 WNOHANG 和 WUNTRACED 两个选项，WNOHANG 可以使 w
 - [File system design case studies](https://www.cs.rutgers.edu/\~pxk/416/notes/13-fs-studies.html)
 - [Programming Project #4](https://classes.soe.ucsc.edu/cmps111/Fall08/proj4.shtml)
 - [FILE SYSTEM DESIGN](http://web.cs.ucla.edu/classes/fall14/cs111/scribe/11a/index.html)
----
+
 github: https://github.com/sjsdfg/Interview-Notebook-PDF

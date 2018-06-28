@@ -1,5 +1,13 @@
 # Socket
 
+原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+PDF离线制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
+
+希望各位不吝star
+
+
+
 # 一、I/O 复用
 
 ## I/O 模型
@@ -332,5 +340,5 @@ poll 没有最大描述符数量的限制，如果平台支持应该采用 poll 
 - [Synchronous and Asynchronous I/O](https://msdn.microsoft.com/en-us/library/windows/desktop/aa365683(v=vs.85).aspx)
 - [Linux IO 模式及 select、poll、epoll 详解](https://segmentfault.com/a/1190000003063859)
 - [poll vs select vs event-based](https://daniel.haxx.se/docs/poll-vs-select.html)
----
+
 github: https://github.com/sjsdfg/Interview-Notebook-PDF
