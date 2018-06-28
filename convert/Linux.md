@@ -87,7 +87,7 @@ Linux 发行版是 Linux 内核及各种应用软件的集成版本。
 - 编辑模式（Insert mode）：按下 "i" 等按键之后进入，可以对文本进行编辑；
 - 指令列模式（Bottom-line mode）：按下 ":" 按键之后进入，用于保存退出等操作。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/5942debd-fc00-477a-b390-7c5692cc8070.jpg" width="400"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/5942debd-fc00-477a-b390-7c5692cc8070.jpg" /> </div><br>
 
 在指令列模式下，有以下命令用于离开或者保存文件。
 
@@ -128,7 +128,7 @@ Hard Disk Drives(HDD) 俗称硬盘，具有以下结构：
 - 制动手臂（Actuator arm）：用于在磁道之间移动磁头；
 - 主轴（Spindle）：使整个盘面转动。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/014fbc4d-d873-4a12-b160-867ddaed9807.jpg" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/014fbc4d-d873-4a12-b160-867ddaed9807.jpg" /> </div><br>
 
 ## 磁盘接口
 
@@ -136,25 +136,25 @@ Hard Disk Drives(HDD) 俗称硬盘，具有以下结构：
 
 IDE（ATA）全称 Advanced Technology Attachment，接口速度最大为 133MB/s，因为并口线的抗干扰性太差，且排线占用空间较大，不利电脑内部散热，已逐渐被 SATA 所取代。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/924914c0-660c-4e4a-bbc0-1df1146e7516.jpg" width="400"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/924914c0-660c-4e4a-bbc0-1df1146e7516.jpg" /> </div><br>
 
 ### 2. SATA
 
 SATA 全称 Serial ATA，也就是使用串口的 ATA 接口，因抗干扰性强，且对数据线的长度要求比 ATA 低很多，支持热插拔等功能，SATA-II 的接口速度为 300MiB/s，而新的 SATA-III 标准可达到 600MiB/s 的传输速度。SATA 的数据线也比 ATA 的细得多，有利于机箱内的空气流通，整理线材也比较方便。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f9f2a16b-4843-44d1-9759-c745772e9bcf.jpg" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f9f2a16b-4843-44d1-9759-c745772e9bcf.jpg" /> </div><br>
 
 ### 3. SCSI
 
 SCSI 全称是 Small Computer System Interface（小型机系统接口），经历多代的发展，从早期的 SCSI-II，到目前的 Ultra320 SCSI 以及 Fiber-Channel（光纤通道），接口型式也多种多样。SCSI 硬盘广为工作站级个人电脑以及服务器所使用，因此会使用较为先进的技术，如碟片转速 15000rpm 的高转速，且资料传输时 CPU 占用率较低，但是单价也比相同容量的 ATA 及 SATA 硬盘更加昂贵。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f0574025-c514-49f5-a591-6d6a71f271f7.jpg" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f0574025-c514-49f5-a591-6d6a71f271f7.jpg" /> </div><br>
 
 ### 4. SAS
 
 SAS（Serial Attached SCSI）是新一代的 SCSI 技术，和 SATA 硬盘相同，都是采取序列式技术以获得更高的传输速度，可达到 6Gb/s。此外也透过缩小连接线改善系统内部空间等。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/6729baa0-57d7-4817-b3aa-518cbccf824c.jpg" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/6729baa0-57d7-4817-b3aa-518cbccf824c.jpg" /> </div><br>
 
 ## 磁盘的文件名
 
@@ -189,7 +189,7 @@ GPT 没有扩展分区概念，都是主分区，每个 LAB 可以分 4 个分�
 
 MBR 不支持 2.2 TB 以上的硬盘，GPT 则最多支持到 2<sup>33</sup> TB = 8 ZB。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/GUID_Partition_Table_Scheme.svg.png" width="400"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/GUID_Partition_Table_Scheme.svg.png" /> </div><br>
 
 ## 开机检测程序
 
@@ -205,7 +205,7 @@ BIOS 是开机的时候计算机执行的第一个程序，这个程序知道可
 
 下图中，第一扇区的主要开机记录（MBR）中的开机管理程序提供了两个选单：M1、M2，M1 指向了 Windows 操作系统，而 M2 指向其它分区的启动扇区，里面包含了另外一个开机管理程序，提供了一个指向 Linux 的选单。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f900f266-a323-42b2-bc43-218fdb8811a8.jpg" width="600"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f900f266-a323-42b2-bc43-218fdb8811a8.jpg" /> </div><br>
 
 安装多重引导，最好先安装 Windows 再安装 Linux。因为安装 Windows 时会覆盖掉主要开机记录（MBR），而 Linux 可以选择将开机管理程序安装在主要开机记录（MBR）或者其它分区的启动扇区，并且可以设置开机管理程序的选单。
 
@@ -221,7 +221,7 @@ BIOS 不可以读取 GPT 分区表，而 UEFI 可以。
 
 ## 组成
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/BSD_disk.png" width="800"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/BSD_disk.png" /> </div><br>
 
 最主要的几个组成部分如下：
 
@@ -278,7 +278,7 @@ inode 具有以下特点：
 
 inode 中记录了文件内容所在的 block 编号，但是每个 block 非常小，一个大文件随便都需要几十万的 block。而一个 inode 大小有限，无法直接引用这么多 block 编号。因此引入了间接、双间接、三间接引用。间接引用是指，让 inode 记录的引用 block 块记录引用信息。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/inode_with_signatures.jpg" width="600"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/inode_with_signatures.jpg" /> </div><br>
 
 ## 目录
 
@@ -302,7 +302,7 @@ ext3/ext4 文件系统引入了日志功能，可以利用日志来修复文件�
 - /usr (unix software resource)：所有系统默认软件都会安装到这个目录；
 - /var (variable)：存放系统或程序运行过程中的数据文件。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/linux-filesystem.png" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/linux-filesystem.png" /> </div><br>
 
 # 五、文件
 
@@ -598,7 +598,7 @@ example: find . -name "shadow*"
 
 +4、4 和 -4 的指示的时间范围如下：
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/658fc5e7-79c0-4247-9445-d69bf194c539.png" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/658fc5e7-79c0-4247-9445-d69bf194c539.png" /> </div><br>
 
 （二）与文件拥有者和所属群组有关的选项
 
@@ -1101,7 +1101,7 @@ dmtsai lines: 5 columns: 9
 
 ## 进程状态
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/76a49594323247f21c9b3a69945445ee.png" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/76a49594323247f21c9b3a69945445ee.png" /> </div><br>
 
 | 状态 | 说明 |
 | :---: | --- |
@@ -1118,7 +1118,7 @@ dmtsai lines: 5 columns: 9
 - 得到 SIGCHLD 信号；
 - waitpid() 或者 wait() 调用会返回。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/flow.png" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/flow.png" /> </div><br>
 
 其中子进程发送的 SIGCHLD 信号包含了子进程的信息，包含了进程 ID、进程状态、进程使用 CPU 的时间等。
 

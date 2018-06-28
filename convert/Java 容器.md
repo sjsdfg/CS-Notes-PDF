@@ -283,7 +283,7 @@ transient Entry[] table;
 
 其中，Entry 就是存储数据的键值对，它包含了四个字段。从 next 字段我们可以看出 Entry 是一个链表，即数组中的每个位置被当成一个桶，一个桶存放一个链表，链表中存放哈希值相同的 Entry。也就是说，HashMap 使用拉链法来解决冲突。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/8fe838e3-ef77-4f63-bf45-417b6bc5c6bb.png" width="600"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/8fe838e3-ef77-4f63-bf45-417b6bc5c6bb.png" /> </div><br>
 
 ```java
 static class Entry<K,V> implements Map.Entry<K,V> {
@@ -374,7 +374,7 @@ map.put("K3", "V3");
 - 计算键值对所在的桶；
 - 在链表上顺序查找，时间复杂度显然和链表的长度成正比。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/49d6de7b-0d0d-425c-9e49-a1559dc23b10.png" width="600"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/49d6de7b-0d0d-425c-9e49-a1559dc23b10.png" /> </div><br>
 
 ### 3. put 操作
 

@@ -10,17 +10,17 @@
 
 URI 包含 URL 和 URN，目前 WEB 只有 URL 比较流行，所以见到的基本都是 URL。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f716427a-94f2-4875-9c86-98793cf5dcc3.jpg" width="400"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f716427a-94f2-4875-9c86-98793cf5dcc3.jpg" /> </div><br>
 
 ## 请求和响应报文
 
 ### 1. 请求报文
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/HTTP_RequestMessageExample.png" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/HTTP_RequestMessageExample.png" /> </div><br>
 
 ### 2. 响应报文
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/HTTP_ResponseMessageExample.png" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/HTTP_ResponseMessageExample.png" /> </div><br>
 
 # 二、HTTP 方法
 
@@ -107,7 +107,7 @@ DELETE /file.html HTTP/1.1
 CONNECT www.example.com:443 HTTP/1.1
 ```
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/dc00f70e-c5c8-4d20-baf1-2d70014a97e3.jpg" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/dc00f70e-c5c8-4d20-baf1-2d70014a97e3.jpg" /> </div><br>
 
 ## TRACE
 
@@ -435,7 +435,7 @@ If-Modified-Since: Wed, 21 Oct 2015 07:28:00 GMT
 
 ## 连接管理
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/HTTP1_x_Connections.png" width="800"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/HTTP1_x_Connections.png" /> </div><br>
 
 ### 1. 短连接与长连接
 
@@ -567,9 +567,9 @@ HTTP/1.1 使用虚拟主机技术，使得一台服务器拥有多个域名，�
 
 代理服务器分为正向代理和反向代理两种，用户察觉得到正向代理的存在，而反向代理一般位于内部网络中，用户察觉不到。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/a314bb79-5b18-4e63-a976-3448bffa6f1b.png" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/a314bb79-5b18-4e63-a976-3448bffa6f1b.png" /> </div><br>
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/2d09a847-b854-439c-9198-b29c65810944.png" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/2d09a847-b854-439c-9198-b29c65810944.png" /> </div><br>
 
 ### 2. 网关
 
@@ -591,7 +591,7 @@ HTTPs 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）�
 
 通过使用 SSL，HTTPs 具有了加密（防窃听）、认证（防伪装）和完整性保护（防篡改）。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/ssl-offloading.jpg" width="700"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/ssl-offloading.jpg" /> </div><br>
 
 ## 加密
 
@@ -602,7 +602,7 @@ HTTPs 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）�
 - 优点：运算速度快；
 - 缺点：无法安全地将密钥传输给通信方。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/7fffa4b8-b36d-471f-ad0c-a88ee763bb76.png" width="600"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/7fffa4b8-b36d-471f-ad0c-a88ee763bb76.png" /> </div><br>
 
 ### 2.非对称密钥加密
 
@@ -615,13 +615,13 @@ HTTPs 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）�
 - 优点：可以更安全地将公开密钥传输给通信发送方；
 - 缺点：运算速度慢。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/39ccb299-ee99-4dd1-b8b4-2f9ec9495cb4.png" width="600"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/39ccb299-ee99-4dd1-b8b4-2f9ec9495cb4.png" /> </div><br>
 
 ### 3. HTTPs 采用的加密方式
 
 HTTPs 采用混合的加密机制，使用非对称密钥加密用于传输对称密钥来保证安全性，之后使用对称密钥加密进行通信来保证效率。（下图中的 Session Key 就是对称密钥）
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/How-HTTPS-Works.png" width="600"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/How-HTTPS-Works.png" /> </div><br>
 
 ## 认证
 
@@ -635,7 +635,7 @@ HTTPs 采用混合的加密机制，使用非对称密钥加密用于传输对�
 
 通信开始时，客户端需要使用服务器的公开密钥将自己的私有密钥传输给服务器，之后再进行对称密钥加密。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/2017-06-11-ca.png" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/2017-06-11-ca.png" /> </div><br>
 
 ## 完整性保护
 
@@ -973,23 +973,23 @@ DELETE /idX/delete HTTP/1.1   -> Returns 404
 
 HTTP/2.0 将报文分成 HEADERS 帧和 DATA 帧，它们都是二进制格式的。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/86e6a91d-a285-447a-9345-c5484b8d0c47.png" width="400"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/86e6a91d-a285-447a-9345-c5484b8d0c47.png" /> </div><br>
 
 在通信过程中，只会有一个 TCP 连接存在，它承载了任意数量的双向数据流（Stream）。一个数据流都有一个唯一标识符和可选的优先级信息，用于承载双向信息。消息（Message）是与逻辑请求或响应消息对应的完整的一系列帧。帧（Fram）是最小的通信单位，来自不同数据流的帧可以交错发送，然后再根据每个帧头的数据流标识符重新组装。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/af198da1-2480-4043-b07f-a3b91a88b815.png" width="600"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/af198da1-2480-4043-b07f-a3b91a88b815.png" /> </div><br>
 
 ## 服务端推送
 
 HTTP/2.0 在客户端请求一个资源时，会把相关的资源一起发送给客户端，客户端就不需要再次发起请求了。例如客户端请求 page.html 页面，服务端就把 script.js 和 style.css 等与之相关的资源一起发给客户端。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/e3f1657c-80fc-4dfa-9643-bf51abd201c6.png" width="800"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/e3f1657c-80fc-4dfa-9643-bf51abd201c6.png" /> </div><br>
 
 ## 首部压缩
 
 HTTP/1.1 的首部带有大量信息，而且每次都要重复发送。HTTP/2.0 要求客户端和服务器同时维护和更新一个包含之前见过的首部字段表，从而避免了重复传输。不仅如此，HTTP/2.0 也使用 Huffman 编码对首部字段进行压缩。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/_u4E0B_u8F7D.png" width="600"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/_u4E0B_u8F7D.png" /> </div><br>
 
 # 参考资料
 

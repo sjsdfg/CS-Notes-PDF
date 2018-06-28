@@ -2,7 +2,7 @@
 
 # 一、运行时数据区域
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/540631a4-6018-40a5-aed7-081e2eeeaeea.png" width="500"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/540631a4-6018-40a5-aed7-081e2eeeaeea.png" /> </div><br>
 
 ## 程序计数器
 
@@ -12,7 +12,7 @@
 
 每个 Java 方法在执行的同时会创建一个栈帧用于存储局部变量表、操作数栈、常量池引用等信息。每一个方法从调用直至执行完成的过程，就对应着一个栈帧在 Java 虚拟机栈中入栈和出栈的过程。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f5757d09-88e7-4bbd-8cfb-cecf55604854.png" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f5757d09-88e7-4bbd-8cfb-cecf55604854.png" /> </div><br>
 
 可以通过 -Xss 这个虚拟机参数来指定一个程序的 Java 虚拟机栈内存大小：
 
@@ -31,7 +31,7 @@ java -Xss=512M HackTheJava
 
 与 Java 虚拟机栈类似，它们之间的区别只不过是本地方法栈为本地方法服务。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/JNIFigure1.gif" width="350"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/JNIFigure1.gif" /> </div><br>
 
 ## 堆
 
@@ -51,7 +51,7 @@ java -Xss=512M HackTheJava
 - From Survivor（幸存者）
 - To Survivor
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/ppt_img.gif" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/ppt_img.gif" /> </div><br>
 
 Java 堆不需要连续内存，并且可以动态增加其内存，增加失败会抛出 OutOfMemoryError 异常。
 
@@ -114,7 +114,7 @@ public class ReferenceCountingGC {
 
 通过 GC Roots 作为起始点进行搜索，能够到达到的对象都是存活的，不可达的对象可被回收。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/0635cbe8.png" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/0635cbe8.png" /> </div><br>
 
 Java 虚拟机使用该算法来判断对象是否可被回收，在 Java 中 GC Roots 一般包含以下内容：
 
@@ -246,7 +246,7 @@ finalize() 类似 C++ 的析构函数，用来做关闭外部资源等工作。�
 
 ### 1. 标记 - 清除
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/a4248c4b-6c1d-4fb8-a557-86da92d3a294.jpg" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/a4248c4b-6c1d-4fb8-a557-86da92d3a294.jpg" /> </div><br>
 
 将存活的对象进行标记，然后清理掉未被标记的对象。
 
@@ -257,13 +257,13 @@ finalize() 类似 C++ 的析构函数，用来做关闭外部资源等工作。�
 
 ### 2. 标记 - 整理
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/902b83ab-8054-4bd2-898f-9a4a0fe52830.jpg" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/902b83ab-8054-4bd2-898f-9a4a0fe52830.jpg" /> </div><br>
 
 让所有存活的对象都向一端移动，然后直接清理掉端边界以外的内存。
 
 ### 3. 复制
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/e6b733ad-606d-4028-b3e8-83c3a73a3797.jpg" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/e6b733ad-606d-4028-b3e8-83c3a73a3797.jpg" /> </div><br>
 
 将内存划分为大小相等的两块，每次只使用其中一块，当这一块内存用完了就将还存活的对象复制到另一块上面，然后再把使用过的内存空间进行一次清理。
 
@@ -282,7 +282,7 @@ finalize() 类似 C++ 的析构函数，用来做关闭外部资源等工作。�
 
 ## 垃圾收集器
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/c625baa0-dde6-449e-93df-c3a67f2f430f.jpg" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/c625baa0-dde6-449e-93df-c3a67f2f430f.jpg" /> </div><br>
 
 以上是 HotSpot 虚拟机中的 7 个垃圾收集器，连线表示垃圾收集器可以配合使用。
 
@@ -291,7 +291,7 @@ finalize() 类似 C++ 的析构函数，用来做关闭外部资源等工作。�
 
 ### 1. Serial 收集器
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/22fda4ae-4dd5-489d-ab10-9ebfdad22ae0.jpg" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/22fda4ae-4dd5-489d-ab10-9ebfdad22ae0.jpg" /> </div><br>
 
 Serial 翻译为串行，也就是说它以串行的方式执行。
 
@@ -303,7 +303,7 @@ Serial 翻译为串行，也就是说它以串行的方式执行。
 
 ### 2. ParNew 收集器
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/81538cd5-1bcf-4e31-86e5-e198df1e013b.jpg" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/81538cd5-1bcf-4e31-86e5-e198df1e013b.jpg" /> </div><br>
 
 它是 Serial 收集器的多线程版本。
 
@@ -325,7 +325,7 @@ Serial 翻译为串行，也就是说它以串行的方式执行。
 
 ### 4. Serial Old 收集器
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/08f32fd3-f736-4a67-81ca-295b2a7972f2.jpg" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/08f32fd3-f736-4a67-81ca-295b2a7972f2.jpg" /> </div><br>
 
 是 Serial 收集器的老年代版本，也是给 Client 模式下的虚拟机使用。如果用在 Server 模式下，它有两大用途：
 
@@ -334,7 +334,7 @@ Serial 翻译为串行，也就是说它以串行的方式执行。
 
 ### 5. Parallel Old 收集器
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/278fe431-af88-4a95-a895-9c3b80117de3.jpg" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/278fe431-af88-4a95-a895-9c3b80117de3.jpg" /> </div><br>
 
 是 Parallel Scavenge 收集器的老年代版本。
 
@@ -342,7 +342,7 @@ Serial 翻译为串行，也就是说它以串行的方式执行。
 
 ### 6. CMS 收集器
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/62e77997-6957-4b68-8d12-bfd609bb2c68.jpg" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/62e77997-6957-4b68-8d12-bfd609bb2c68.jpg" /> </div><br>
 
 CMS（Concurrent Mark Sweep），Mark Sweep 指的是标记 - 清除算法。
 
@@ -369,17 +369,17 @@ G1（Garbage-First），它是一款面向服务端应用的垃圾收集器，�
 
 Java 堆被分为新生代、老年代和永久代，其它收集器进行收集的范围都是整个新生代或者老生代，而 G1 可以直接对新生代和永久代一起回收。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/4cf711a8-7ab2-4152-b85c-d5c226733807.png" width="600"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/4cf711a8-7ab2-4152-b85c-d5c226733807.png" /> </div><br>
 
 G1 把新生代和老年代划分成多个大小相等的独立区域（Region），新生代和永久代不再物理隔离。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/9bbddeeb-e939-41f0-8e8e-2b1a0aa7e0a7.png" width="600"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/9bbddeeb-e939-41f0-8e8e-2b1a0aa7e0a7.png" /> </div><br>
 
 通过引入 Region 的概念，从而将原来的一整块内存空间划分成多个的小空间，使得每个小空间可以单独进行垃圾回收。这种划分方法带来了很大的灵活性，使得可预测的停顿时间模型成为可能。通过记录每个 Region 垃圾回收时间以及回收所获得的空间（这两个值是通过过去回收的经验获得），并维护一个优先列表，每次根据允许的收集时间，优先回收价值最大的 Region。
 
 每个 Region 都有一个 Remembered Set，用来记录该 Region 对象的引用对象所在的 Region。通过使用 Remembered Set，在做可达性分析的时候就可以避免全堆扫描。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f99ee771-c56f-47fb-9148-c0036695b5fe.jpg" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f99ee771-c56f-47fb-9148-c0036695b5fe.jpg" /> </div><br>
 
 如果不计算维护 Remembered Set 的操作，G1 收集器的运作大致可划分为以下几个步骤：
 
@@ -474,7 +474,7 @@ G1 把新生代和老年代划分成多个大小相等的独立区域（Region�
 
 ## 类的生命周期
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/32b8374a-e822-4720-af0b-c0f485095ea2.jpg" width=""/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/32b8374a-e822-4720-af0b-c0f485095ea2.jpg" /> </div><br>
 
 包括以下 7 个阶段：
 
@@ -655,7 +655,7 @@ public static void main(String[] args) {
 
 下图展示的类加载器之间的层次关系，称为类加载器的双亲委派模型（Parents Delegation Model）。该模型要求除了顶层的启动类加载器外，其余的类加载器都应有自己的父类加载器。这里类加载器之间的父子关系一般通过组合（Composition）关系来实现，而不是通过继承（Inheritance）的关系实现。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/class_loader_hierarchy.png" width="600"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/class_loader_hierarchy.png" /> </div><br>
 
 **（一）工作过程** 
 

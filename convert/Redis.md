@@ -22,7 +22,7 @@ Redis 支持很多特性，例如将内存中的数据持久化到硬盘中，�
 
 ## STRING
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/6019b2db-bc3e-4408-b6d8-96025f4481d6.png" width="400"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/6019b2db-bc3e-4408-b6d8-96025f4481d6.png" /> </div><br>
 
 ```html
 > set hello world
@@ -37,7 +37,7 @@ OK
 
 ## LIST
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/fb327611-7e2b-4f2f-9f5b-38592d408f07.png" width="400"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/fb327611-7e2b-4f2f-9f5b-38592d408f07.png" /> </div><br>
 
 ```html
 > rpush list-key item
@@ -65,7 +65,7 @@ OK
 
 ## SET
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/cd5fbcff-3f35-43a6-8ffa-082a93ce0f0e.png" width="400"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/cd5fbcff-3f35-43a6-8ffa-082a93ce0f0e.png" /> </div><br>
 
 ```html
 > sadd set-key item
@@ -99,7 +99,7 @@ OK
 
 ## HASH
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/7bd202a7-93d4-4f3a-a878-af68ae25539a.png" width="400"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/7bd202a7-93d4-4f3a-a878-af68ae25539a.png" /> </div><br>
 
 ```html
 > hset hash-key sub-key1 value1
@@ -130,7 +130,7 @@ OK
 
 ## ZSET
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/1202b2d6-9469-4251-bd47-ca6034fb6116.png" width="400"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/1202b2d6-9469-4251-bd47-ca6034fb6116.png" /> </div><br>
 
 ```html
 > zadd zset-key 728 member1
@@ -416,7 +416,7 @@ Redis 是内存型数据库，为了保证数据在断电后不会丢失，需�
 - 观察者模式中，观察者和主题都知道对方的存在；而在发布与订阅模式中，发布者与订阅者不知道对方的存在，它们之间通过频道进行通信。
 - 观察者模式是同步的，当事件触发时，主题会去调用观察者的方法，然后等待方法返回；而发布与订阅模式是异步的，发布者向频道发送一个消息之后，就不需要关心订阅者何时去订阅这个消息。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/bee1ff1d-c80f-4b3c-b58c-7073a8896ab2.jpg" width="400"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/bee1ff1d-c80f-4b3c-b58c-7073a8896ab2.jpg" /> </div><br>
 
 # 十、事务
 
@@ -489,7 +489,7 @@ def main():
 
 从事件处理的角度来看，服务器运行流程如下：
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/c0a9fa91-da2e-4892-8c9f-80206a6f7047.png" width="400"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/c0a9fa91-da2e-4892-8c9f-80206a6f7047.png" /> </div><br>
 
 # 十二、复制
 
@@ -509,7 +509,7 @@ def main():
 
 随着负载不断上升，主服务器可能无法很快地更新所有从服务器，或者重新连接和重新同步从服务器将导致系统超载。为了解决这个问题，可以创建一个中间层来分担主服务器的复制工作。中间层的服务器是最上层服务器的从服务器，又是最下层服务器的主服务器。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/395a9e83-b1a1-4a1d-b170-d081e7bb5bab.png" width="600"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/395a9e83-b1a1-4a1d-b170-d081e7bb5bab.png" /> </div><br>
 
 # 十三、Sentinel
 
@@ -541,7 +541,7 @@ Sentinel（哨兵）可以监听主服务器，并在主服务器进入下线状
 
 Redis 没有关系型数据库中的表这一概念来将同种类型的数据存放在一起，而是使用命名空间的方式来实现这一功能。键名的前面部分存储命名空间，后面部分的内容存储 ID，通常使用 : 来进行分隔。例如下面的 HASH 的键名为 article:92617，其中 article 为命名空间，ID 为 92617。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/7c54de21-e2ff-402e-bc42-4037de1c1592.png" width="400"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/7c54de21-e2ff-402e-bc42-4037de1c1592.png" /> </div><br>
 
 ## 点赞功能
 
@@ -549,13 +549,13 @@ Redis 没有关系型数据库中的表这一概念来将同种类型的数据�
 
 为了节约内存，规定一篇文章发布满一周之后，就不能再对它进行投票，而文章的已投票集合也会被删除，可以为文章的已投票集合设置一个一周的过期时间就能实现这个规定。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/485fdf34-ccf8-4185-97c6-17374ee719a0.png" width="400"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/485fdf34-ccf8-4185-97c6-17374ee719a0.png" /> </div><br>
 
 ## 对文章进行排序
 
 为了按发布时间和点赞数进行排序，可以建立一个文章发布时间的有序集合和一个文章点赞数的有序集合。（下图中的 score 就是这里所说的点赞数；下面所示的有序集合分值并不直接是时间和点赞数，而是根据时间和点赞数间接计算出来的）
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f7d170a3-e446-4a64-ac2d-cb95028f81a8.png" width="800"/> </div><br>
+<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f7d170a3-e446-4a64-ac2d-cb95028f81a8.png" /> </div><br>
 
 # 参考资料
 
