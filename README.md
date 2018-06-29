@@ -178,3 +178,31 @@ Google 开源项目的代码风格规范。
 
 所有的`width=""`都需要删除
 使用正则表达式 `width="[0-9]*"`进行替换
+
+### 2.3 公式替换
+所有公式需要替换为遵守 `MathJax`语法，代码为
+
+```
+public static void main(String[] args) {
+    // 使用最小匹配
+    String templete = "<img src=\"https://latex.codecogs.com/gif.latex?.*?\"/>";
+    Pattern pattern = Pattern.compile(templete);
+    String testStr = "为每个用户分配 m bit 的码片，并且所有的码片正交，对于任意两个码片 <img src=\"https://latex.codecogs.com/gif.latex?\\vec{S}\"/> 和 <img src=\"https://latex.codecogs.com/gif.latex?\\vec{T}\"/> 有";
+
+    Matcher matcher = pattern.matcher(testStr);
+
+    while (matcher.find()) {
+        String str = matcher.group(0);
+        System.out.println(str);
+
+        String newStr = str.substring(str.indexOf("?") + 1, str.length() - 3);
+        System.out.println("$" + newStr + "$");
+
+        testStr = testStr.replace(str, "$" + newStr + "$");
+    }
+
+    System.out.println(testStr);
+
+}
+```
+
