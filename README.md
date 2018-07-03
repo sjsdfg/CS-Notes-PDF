@@ -10,7 +10,7 @@
 我个人认为**cmd-markdown工具所转化的pdf**相比gitbook直接生成的pdf拥有**更好的阅读体验！**
 
 
-
+新增[机器学习小抄](https://pan.baidu.com/s/1XvwRLqgAnUtMqjNsJT-wTQ), 文件较大，已放在百度云盘。不过README一般也没啥人看，就当个小彩蛋？ 
 
 ---
 
