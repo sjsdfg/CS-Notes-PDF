@@ -1,12 +1,8 @@
 # Java 容器
 
-原作者github: https://github.com/CyC2018/Interview-Notebook
+原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
 
-PDF离线制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
-
-希望各位不吝star
-
-
+PDF制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
 
 # 一、概览
 
@@ -246,6 +242,34 @@ List<String> synList = Collections.synchronizedList(list);
 
 ```java
 List<String> list = new CopyOnWriteArrayList<>();
+```
+
+CopyOnWriteArrayList 是一种 CopyOnWrite 容器，从以下源码看出：读取元素是从原数组读取；添加元素是在复制的新数组上。读写分离，因而可以在并发条件下进行不加锁的读取，读取效率高，适用于读操作远大于写操作的场景。
+
+```java
+public boolean add(E e) {
+    final ReentrantLock lock = this.lock;
+    lock.lock();
+    try {
+        Object[] elements = getArray();
+        int len = elements.length;
+        Object[] newElements = Arrays.copyOf(elements, len + 1); 
+        newElements[len] = e;
+        setArray(newElements);
+        return true;
+    } finally {
+        lock.unlock();
+    }
+}
+
+final void setArray(Object[] a) {
+    array = a;
+}
+
+@SuppressWarnings("unchecked")
+private E get(Object[] a, int index) {
+    return (E) a[index];
+}
 ```
 
 ## LinkedList
@@ -814,4 +838,6 @@ JDK 1.8 使用了 CAS 操作来支持更高的并发度，在 CAS 操作失败�
 - [Java Collection Framework – The LinkedList Class](http://javaconceptoftheday.com/java-collection-framework-linkedlist-class/)
 
 
+
+---
 github: https://github.com/sjsdfg/Interview-Notebook-PDF

@@ -1,12 +1,8 @@
 # Leetcode 题解
 
-原作者github: https://github.com/CyC2018/Interview-Notebook
+原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
 
-PDF离线制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
-
-希望各位不吝star
-
-
+PDF制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
 
 # 算法思想
 
@@ -2328,7 +2324,7 @@ public List<Integer> diffWaysToCompute(String input) {
 
 定义一个数组 dp 存储上楼梯的方法数（为了方便讨论，数组下标从 1 开始），dp[i] 表示走到第 i 个楼梯的方法数目。第 i 个楼梯可以从第 i-1 和 i-2 个楼梯再走一步到达，走到第 i 个楼梯的方法数为走到第 i-1 和第 i-2 个楼梯的方法数之和。
 
-<div align="center"><img src="https://latex.codecogs.com/gif.latex?dp[i]=dp[i-1]+dp[i-2]"/></div> <br>
+<div align="center">$dp[i]=dp[i-1]+dp[i-2]$</div> <br>
 
 dp[N] 即为所求。
 
@@ -2357,7 +2353,7 @@ public int climbStairs(int n) {
 
 定义 dp 数组用来存储最大的抢劫量，其中 dp[i] 表示抢到第 i 个住户时的最大抢劫量。由于不能抢劫邻近住户，因此如果抢劫了第 i 个住户那么只能抢劫 i - 2 或者 i - 3 的住户，所以
 
-<div align="center"><img src="https://latex.codecogs.com/gif.latex?dp[i]=max(dp[i-2],dp[i-3])+nums[i]"/></div> <br>
+<div align="center">$dp[i]=max(dp[i-2],dp[i-3])+nums[i]$</div> <br>
 
 ```java
 public int rob(int[] nums) {
@@ -2415,7 +2411,7 @@ private int rob(int[] nums, int first, int last) {
 
 第 i 年成熟的牛的数量为：
 
-<div align="center"><img src="https://latex.codecogs.com/gif.latex?dp[i]=dp[i-1]+dp[i-3]"/></div> <br>
+<div align="center">$dp[i]=dp[i-1]+dp[i-3]$</div> <br>
 
 **信件错排** 
 
@@ -2428,7 +2424,7 @@ private int rob(int[] nums, int first, int last) {
 
 综上所述，错误装信数量方式数量为：
 
-<div align="center"><img src="https://latex.codecogs.com/gif.latex?dp[i]=(i-1)*dp[i-2]+(i-1)*dp[i-1]"/></div> <br>
+<div align="center">$dp[i]=(i-1)*dp[i-2]+(i-1)*dp[i-1]$</div> <br>
 
 dp[N] 即为所求。
 
@@ -2694,7 +2690,7 @@ public int numDecodings(String s) {
 
 因为在求 dp[n] 时可能无法找到一个满足条件的递增子序列，此时 {S<sub>n</sub>} 就构成了递增子序列，需要对前面的求解方程做修改，令 dp[n] 最小为 1，即：
 
-<div align="center"><img src="https://latex.codecogs.com/gif.latex?dp[n]=max\{1,dp[i]+1|S_i<S_n\&\&i<n\}"/></div> <br>
+<div align="center">$dp[n]=max\{1,dp[i]+1|S_i<S_n\&\&i<n\}$</div> <br>
 
 对于一个长度为 N 的序列，最长递增子序列并不一定会以 S<sub>N</sub> 为结尾，因此 dp[N] 不是序列的最长递增子序列的长度，需要遍历 dp 数组找出最大值才是所要的结果，即 max{ dp[i] | 1 <= i <= N} 即为所求。
 
@@ -2859,7 +2855,7 @@ public int wiggleMaxLength(int[] nums) {
 
 综上，最长公共子序列的状态转移方程为：
 
-<div align="center"><img src="https://latex.codecogs.com/gif.latex?dp[i][j]=\left\{\begin{array}{rcl}dp[i-1][j-1]&&{S1_i==S2_j}\\max(dp[i-1][j],dp[i][j-1])&&{S1_i<>S2_j}\end{array}\right."/></div> <br>
+<div align="center">$dp[i][j]=\left\{\begin{array}{rcl}dp[i-1][j-1]&&{S1_i==S2_j}\\max(dp[i-1][j],dp[i][j-1])&&{S1_i<>S2_j}\end{array}\right.$</div> <br>
 
 对于长度为 N 的序列 S<sub>1</sub> 和 长度为 M 的序列 S<sub>2</sub>，dp[N][M] 就是序列 S<sub>1</sub> 和序列 S<sub>2</sub> 的最长公共子序列长度。
 
@@ -2899,7 +2895,7 @@ public int lengthOfLCS(int[] nums1, int[] nums2) {
 
 综上，0-1 背包的状态转移方程为：
 
-<div align="center"><img src="https://latex.codecogs.com/gif.latex?dp[i][j]=max(dp[i-1][j],dp[i-1][j-w]+v)"/></div> <br>
+<div align="center">$dp[i][j]=max(dp[i-1][j],dp[i-1][j-w]+v)$</div> <br>
 
 ```java
 public int knapsack(int W, int N, int[] weights, int[] values) {
@@ -2922,7 +2918,7 @@ public int knapsack(int W, int N, int[] weights, int[] values) {
 
 在程序实现时可以对 0-1 背包做优化。观察状态转移方程可以知道，前 i 件物品的状态仅由前 i-1 件物品的状态有关，因此可以将 dp 定义为一维数组，其中 dp[j] 既可以表示 dp[i-1][j] 也可以表示 dp[i][j]。此时，
 
-<div align="center"><img src="https://latex.codecogs.com/gif.latex?dp[j]=max(dp[j],dp[j-w]+v)"/></div> <br>
+<div align="center">$dp[j]=max(dp[j],dp[j-w]+v)$</div> <br>
 
 因为 dp[j-w] 表示 dp[i-1][j-w]，因此不能先求 dp[i][j-w]，以防止将 dp[i-1][j-w] 覆盖。也就是说要先计算 dp[i][j] 再计算 dp[i][j-w]，在程序实现时需要按倒序来循环求解。
 
@@ -7008,4 +7004,6 @@ public int[] countBits(int num) {
 - 《编程之美》小组. 编程之美[M]. 电子工业出版社, 2008.
 - 左程云. 程序员代码面试指南[M]. 电子工业出版社, 2015.
 
+
+---
 github: https://github.com/sjsdfg/Interview-Notebook-PDF

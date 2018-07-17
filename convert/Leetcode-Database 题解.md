@@ -1,12 +1,8 @@
 # Leetcode-Database 题解
 
-原作者github: https://github.com/CyC2018/Interview-Notebook
+原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
 
-PDF离线制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
-
-希望各位不吝star
-
-
+PDF制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
 
 # 595. Big Countries
 
@@ -200,9 +196,9 @@ https://leetcode.com/problems/classes-more-than-5-students/description/
 
 ```html
 +---------+
-| Email   |
+| class   |
 +---------+
-| a@b.com |
+| Math    |
 +---------+
 ```
 
@@ -296,6 +292,8 @@ HAVING
 
 # 196. Delete Duplicate Emails
 
+https://leetcode.com/problems/delete-duplicate-emails/description/
+
 ## Description
 
 邮件地址表：
@@ -310,14 +308,15 @@ HAVING
 +----+---------+
 ```
 
-查找重复的邮件地址：
+删除重复的邮件地址：
 
 ```html
-+---------+
-| Email   |
-+---------+
-| a@b.com |
-+---------+
++----+------------------+
+| Id | Email            |
++----+------------------+
+| 1  | john@example.com |
+| 2  | bob@example.com  |
++----+------------------+
 ```
 
 ## SQL Schema
@@ -426,7 +425,8 @@ SELECT
     State
 FROM
     Person P
-    LEFT JOIN Address AS A ON P.PersonId = A.PersonId;
+    LEFT JOIN Address A
+    ON P.PersonId = A.PersonId;
 ```
 
 # 181. Employees Earning More Than Their Managers
@@ -472,7 +472,8 @@ SELECT
     E1.NAME AS Employee
 FROM
     Employee E1
-    INNER JOIN Employee E2 ON E1.ManagerId = E2.Id
+    INNER JOIN Employee E2
+    ON E1.ManagerId = E2.Id
     AND E1.Salary > E2.Salary;
 ```
 
@@ -549,7 +550,8 @@ SELECT
     C.Name AS Customers
 FROM
     Customers C
-    LEFT JOIN Orders O ON C.Id = O.CustomerId
+    LEFT JOIN Orders O
+    ON C.Id = O.CustomerId
 WHERE
     O.CustomerId IS NULL;
 ```
@@ -672,7 +674,7 @@ https://leetcode.com/problems/second-highest-salary/description/
 +---------------------+
 ```
 
-如果没有找到，那么就返回 null 而不是不返回数据。
+没有找到返回 null 而不是不返回数据。
 
 ## SQL Schema
 
@@ -779,7 +781,8 @@ SELECT
     COUNT( DISTINCT S2.score ) Rank
 FROM
     Scores S1
-    INNER JOIN Scores S2 ON S1.score <= S2.score
+    INNER JOIN Scores S2
+    ON S1.score <= S2.score
 GROUP BY
     S1.id
 ORDER BY
@@ -848,7 +851,91 @@ FROM
 WHERE L1.id = l2.id - 1
     AND L2.id = L3.id - 1
     AND L1.num = L2.num
-    AND l2.num = l3.num; 
+    AND l2.num = l3.num;
 ```
 
+# 626. Exchange Seats
+
+https://leetcode.com/problems/exchange-seats/description/
+
+## Description
+
+seat 表存储着座位对应的学生。
+
+```html
++---------+---------+
+|    id   | student |
++---------+---------+
+|    1    | Abbot   |
+|    2    | Doris   |
+|    3    | Emerson |
+|    4    | Green   |
+|    5    | Jeames  |
++---------+---------+
+```
+
+要求交换相邻座位的两个学生，如果最后一个座位是奇数，那么不交换这个座位上的学生。
+
+```html
++---------+---------+
+|    id   | student |
++---------+---------+
+|    1    | Doris   |
+|    2    | Abbot   |
+|    3    | Green   |
+|    4    | Emerson |
+|    5    | Jeames  |
++---------+---------+
+```
+
+## SQL Schema
+
+```sql
+DROP TABLE
+IF
+    EXISTS seat;
+CREATE TABLE seat ( id INT, student VARCHAR ( 255 ) );
+INSERT INTO seat ( id, student )
+VALUES
+    ( '1', 'Abbot' ),
+    ( '2', 'Doris' ),
+    ( '3', 'Emerson' ),
+    ( '4', 'Green' ),
+    ( '5', 'Jeames' );
+```
+
+## Solution
+
+使用多个 union。
+
+```sql
+SELECT
+    s1.id - 1 AS id,
+    s1.student 
+FROM
+    seat s1 
+WHERE
+    s1.id MOD 2 = 0 UNION
+SELECT
+    s2.id + 1 AS id,
+    s2.student 
+FROM
+    seat s2 
+WHERE
+    s2.id MOD 2 = 1 
+    AND s2.id != ( SELECT max( s3.id ) FROM seat s3 ) UNION
+SELECT
+    s4.id AS id,
+    s4.student 
+FROM
+    seat s4 
+WHERE
+    s4.id MOD 2 = 1 
+    AND s4.id = ( SELECT max( s5.id ) FROM seat s5 ) 
+ORDER BY
+    id;
+```
+
+
+---
 github: https://github.com/sjsdfg/Interview-Notebook-PDF

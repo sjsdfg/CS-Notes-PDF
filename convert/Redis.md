@@ -1,12 +1,8 @@
 # Redis
 
-原作者github: https://github.com/CyC2018/Interview-Notebook
+原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
 
-PDF离线制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
-
-希望各位不吝star
-
-
+PDF制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
 
 # 一、概述
 
@@ -576,4 +572,6 @@ Redis 没有关系型数据库中的表这一概念来将同种类型的数据�
 - [Redis 应用场景](http://www.scienjus.com/redis-use-case/)
 - [Observer vs Pub-Sub](http://developers-club.com/posts/270339/)
 
+
+---
 github: https://github.com/sjsdfg/Interview-Notebook-PDF

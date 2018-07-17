@@ -1,12 +1,8 @@
 # Git
 
-原作者github: https://github.com/CyC2018/Interview-Notebook
+原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
 
-PDF离线制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
-
-希望各位不吝star
-
-
+PDF制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
 
 # 学习资料
 
@@ -151,4 +147,6 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 
 
+
+---
 github: https://github.com/sjsdfg/Interview-Notebook-PDF

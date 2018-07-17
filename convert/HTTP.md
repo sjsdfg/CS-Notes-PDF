@@ -1,18 +1,14 @@
 # HTTP
 
-原作者github: https://github.com/CyC2018/Interview-Notebook
+原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
 
-PDF离线制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
-
-希望各位不吝star
-
-
+PDF制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
 
 # 一 、基础概念
 
 ## URL
 
-- URI（Uniform Resource Indentifier，统一资源标识符）
+- URI（Uniform Resource Identifier，统一资源标识符）
 - URL（Uniform Resource Locator，统一资源定位符）
 - URN（Uniform Resource Name，统一资源名称），例如 urn:isbn:0-486-27557-4。
 
@@ -178,7 +174,7 @@ CONNECT www.example.com:443 HTTP/1.1
 
 -  **500 Internal Server Error** ：服务器正在执行请求时发生错误。
 
--  **503 Service Unavilable** ：服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。
+-  **503 Service Unavailable** ：服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。
 
 # 四、HTTP 首部
 
@@ -1032,4 +1028,6 @@ HTTP/1.1 的首部带有大量信息，而且每次都要重复发送。HTTP/2.0
 - [Web 性能优化与 HTTP/2](https://www.kancloud.cn/digest/web-performance-http2)
 - [HTTP/2 简介](https://developers.google.com/web/fundamentals/performance/http2/?hl=zh-cn)
 
+
+---
 github: https://github.com/sjsdfg/Interview-Notebook-PDF
