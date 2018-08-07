@@ -1,6 +1,6 @@
 # Java 基础
 
-原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
+原作者github: https://github.com/CyC2018/Interview-Notebook
 
 PDF制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
 
@@ -189,7 +189,7 @@ System.out.println(s4 == s5);  // true
 
 Java 的参数是以值传递的形式传入方法中，而不是引用传递。
 
-Dog dog 的 dog 是一个指针，存储的是对象的地址。在将一个参数传入一个方法时，本质上是将对象的地址以值的方式传递到形参中。
+以下代码中 Dog dog 的 dog 是一个指针，存储的是对象的地址。在将一个参数传入一个方法时，本质上是将对象的地址以值的方式传递到形参中。但是如果在方法中改变对象的字段值会改变原对象该字段值，因为改变的是同一个地址指向的内容。
 
 ```java
 public class Dog {
@@ -515,7 +515,7 @@ SuperExtendExample.func()
 
 ## 重写与重载
 
-- 重写（Override）存在于继承体系中，指子类实现了一个与父类在方法声明上完全相同的一个方法；
+- 重写（Override）存在于继承体系中，指子类实现了一个与父类在方法声明上完全相同的一个方法，子类的返回值类型要等于或者小于父类的返回值；
 
 - 重载（Overload）存在于同一个类中，指一个方法与已经存在的方法名称上相同，但是参数类型、个数、顺序至少有一个不同。应该注意的是，返回值不同，其它都相同不算是重载。
 
@@ -729,10 +729,10 @@ try {
 ```
 
 ```html
-java.lang.CloneNotSupportedException: CloneTest
+java.lang.CloneNotSupportedException: CloneExample
 ```
 
-以上抛出了 CloneNotSupportedException，这是因为 CloneTest 没有实现 Cloneable 接口。
+以上抛出了 CloneNotSupportedException，这是因为 CloneExample 没有实现 Cloneable 接口。
 
 ```java
 public class CloneExample implements Cloneable {
@@ -1143,7 +1143,6 @@ Java 注解是附加在代码中的一些元信息，用于一些工具在编译
 - Java 支持自动垃圾回收，而 C++ 需要手动回收。
 - Java 不支持多重继承，只能通过实现多个接口来达到相同目的，而 C++ 支持多重继承。
 - Java 不支持操作符重载，虽然可以对两个 String 对象支持加法运算，但是这是语言内置支持的操作，不属于操作符重载，而 C++ 可以。
-- Java 内置了线程的支持，而 C++ 需要依靠第三方库。
 - Java 的 goto 是保留字，但是不可用，C++ 可以使用 goto。
 - Java 不支持条件编译，C++ 通过 #ifdef #ifndef 等预处理命令从而实现条件编译。
 

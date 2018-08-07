@@ -1,6 +1,6 @@
 # Redis
 
-原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
+原作者github: https://github.com/CyC2018/Interview-Notebook
 
 PDF制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
 
@@ -16,11 +16,11 @@ Redis 支持很多特性，例如将内存中的数据持久化到硬盘中，�
 
 | 数据类型 | 可以存储的值 | 操作 |
 | :--: | :--: | :--: |
-| STRING | 字符串、整数或者浮点数 | 对整个字符串或者字符串的其中一部分执行操作</br> 对整数和浮点数执行自增或者自减操作 |
-| LIST | 列表 | 从两端压入或者弹出元素</br> 读取单个或者多个元素</br> 进行修剪，只保留一个范围内的元素 |
-| SET | 无序集合 | 添加、获取、移除单个元素</br> 检查一个元素是否存在于集合中</br> 计算交集、并集、差集</br> 从集合里面随机获取元素 |
-| HASH | 包含键值对的无序散列表 | 添加、获取、移除单个键值对</br> 获取所有键值对</br> 检查某个键是否存在|
-| ZSET | 有序集合 | 添加、获取、删除元素</br> 根据分值范围或者成员来获取元素</br> 计算一个键的排名 |
+| STRING | 字符串、整数或者浮点数 | 对整个字符串或者字符串的其中一部分执行操作<br> 对整数和浮点数执行自增或者自减操作 |
+| LIST | 列表 | 从两端压入或者弹出元素<br> 读取单个或者多个元素<br> 进行修剪，只保留一个范围内的元素 |
+| SET | 无序集合 | 添加、获取、移除单个元素<br> 检查一个元素是否存在于集合中<br> 计算交集、并集、差集</br> 从集合里面随机获取元素 |
+| HASH | 包含键值对的无序散列表 | 添加、获取、移除单个键值对<br> 获取所有键值对<br> 检查某个键是否存在|
+| ZSET | 有序集合 | 添加、获取、删除元素<br> 根据分值范围或者成员来获取元素<br> 计算一个键的排名 |
 
 > [What Redis data structures look like](https://redislabs.com/ebook/part-1-getting-started/chapter-1-getting-to-know-redis/1-2-what-redis-data-structures-look-like/)
 
@@ -168,17 +168,7 @@ OK
 
 ## 字典
 
-以下是 Redis 字典的主要数据结构，从上往下分析，一个 dict 有两个 dictht，一个 dictht 有一个 dictEntry 数组，每个 dictEntry 有 next 指针因此是一个链表结构。从上面的分析可以看出 Redis 的字典是一个基于拉链法解决冲突的哈希表结构。
-
-```c
-typedef struct dict {
-    dictType *type;
-    void *privdata;
-    dictht ht[2];
-    long rehashidx; /* rehashing not in progress if rehashidx == -1 */
-    unsigned long iterators; /* number of iterators currently running */
-} dict;
-```
+dictht 是一个散列表结构，使用拉链法保存哈希冲突的 dictEntry。
 
 ```c
 /* This is our hash table structure. Every dictionary has two of this as we
@@ -204,11 +194,21 @@ typedef struct dictEntry {
 } dictEntry;
 ```
 
-哈希表需要具备扩容能力，在扩容时就需要对每个键值对进行 rehash。dict 有两个 dictht，在 rehash 的时候会将一个 dictht 上的键值对重新插入另一个 dictht 上面，完成之后释放空间并交换两个 dictht 的角色。
+Redis 的字典 dict 中包含两个哈希表 dictht，这是为了方便进行 rehash 操作。在扩容时，将其中一个 dictht 上的键值对 rehash 到另一个 dictht 上面，完成之后释放空间并交换两个 dictht 的角色。
+
+```c
+typedef struct dict {
+    dictType *type;
+    void *privdata;
+    dictht ht[2];
+    long rehashidx; /* rehashing not in progress if rehashidx == -1 */
+    unsigned long iterators; /* number of iterators currently running */
+} dict;
+```
 
 rehash 操作不是一次性完成，而是采用渐进方式，这是为了避免一次性执行过多的 rehash 操作给服务器带来过大的负担。
 
-渐进式 rehash 通过记录 dict 的 rehashidx 完成，它从 0 开始然后每执行一次 rehash 都会递增。例如在一次 rehash 中，要把 dict[0] rehash 到 dict[1]，这一次会把 dict[0] 上 table[rehashidx] 的键值对 rehash 到 dict[1] 上，dict[0] 的 table[rehashidx] 指向 null，并令 rehashidx++。
+渐进式 rehash 通过记录 dict 的 rehashidx 完成，它从 0 开始，然后每执行一次 rehash 都会递增。例如在一次 rehash 中，要把 dict[0] rehash 到 dict[1]，这一次会把 dict[0] 上 table[rehashidx] 的键值对 rehash 到 dict[1] 上，dict[0] 的 table[rehashidx] 指向 null，并令 rehashidx++。
 
 在 rehash 期间，每次对字典执行添加、删除、查找或者更新操作时，都会执行一次渐进式 rehash。
 
@@ -278,13 +278,13 @@ int dictRehash(dict *d, int n) {
 
 <div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/beba612e-dc5b-4fc2-869d-0b23408ac90a.png"/> </div><br>
 
-在查找时，从上层指针开始查找，找到对应的区间之后再到下一层去查找。例如下图演示了查找 22 的过程。
+在查找时，从上层指针开始查找，找到对应的区间之后再到下一层去查找。下图演示了查找 22 的过程。
 
 <div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/0ea37ee2-c224-4c79-b895-e131c6805c40.png"/> </div><br>
 
 与红黑树等平衡树相比，跳跃表具有以下优点：
 
-- 插入速度非常快速，因为不需要平衡树的旋转操作；
+- 插入速度非常快速，因为不需要进行旋转等操作来维护平衡性；
 - 更容易实现；
 - 支持无锁操作。
 
@@ -294,7 +294,7 @@ int dictRehash(dict *d, int n) {
 
 可以对 String 进行自增自减运算，从而实现计数器功能。
 
-例如对于网站访问量，如果使用 MySQL 数据库进行存储，那么每访问一次网站就要对磁盘进行读写操作。而对 Redis 这种内存型数据库的读写性能非常高，很适合存储这种频繁读写的计数量。
+Redis 这种内存型数据库的读写性能非常高，很适合存储频繁读写的计数量。
 
 ## 缓存
 
@@ -304,7 +304,7 @@ int dictRehash(dict *d, int n) {
 
 例如 DNS 记录就很适合使用 Redis 进行存储。
 
-查找表和缓存类似，也是利用了 Redis 快速的查找特性。但是查找表的内容不能失效，而缓存的内容可以失效。
+查找表和缓存类似，也是利用了 Redis 快速的查找特性。但是查找表的内容不能失效，而缓存的内容可以失效，因为缓存不作为可靠的数据来源。
 
 ## 消息队列
 
@@ -314,27 +314,29 @@ List 是一个双向链表，可以通过 lpop 和 lpush 写入和读取消息�
 
 ## 会话缓存
 
-在分布式场景下具有多个应用服务器，可以使用 Redis 来统一存储这些应用服务器的会话信息，使得某个应用服务器宕机时不会丢失会话信息，从而保证高可用。
+在分布式场景下具有多个应用服务器，可以使用 Redis 来统一存储这些应用服务器的会话信息。
+
+当应用服务器不再存储用户的会话信息，也就不再具有状态，一个用户可以请求任意一个应用服务器。
 
 ## 分布式锁实现
 
-在分布式场景下，无法使用单机环境下的锁实现。当多个节点上的进程都需要获取同一个锁时，就需要使用分布式锁来进行同步。
+在分布式场景下，无法使用单机环境下的锁来对多个节点上的进程进行同步。
 
-除了可以使用 Redis 自带的 SETNX 命令实现分布式锁之外，还可以使用官方提供的 RedLock 分布式锁实现。
+可以使用 Reids 自带的 SETNX 命令实现分布式锁，除此之外，还可以使用官方提供的 RedLock 分布式锁实现。
 
 ## 其它
 
-Set 可以实现交集、并集等操作，例如共同好友功能。
+Set 可以实现交集、并集等操作，从而实现共同好友等功能。
 
-ZSet 可以实现有序性操作，例如排行榜功能。
+ZSet 可以实现有序性操作，从而实现排行榜等功能。
 
 # 五、Redis 与 Memcached
 
-两者都是非关系型内存键值数据库。有以下主要不同：
+两者都是非关系型内存键值数据库，主要有以下不同：
 
 ## 数据类型
 
-Memcached 仅支持字符串类型，而 Redis 支持五种不同种类的数据类型，使得它可以更灵活地解决问题。
+Memcached 仅支持字符串类型，而 Redis 支持五种不同的数据类型，可以更灵活地解决问题。
 
 ## 数据持久化
 
@@ -342,15 +344,15 @@ Redis 支持两种持久化策略：RDB 快照和 AOF 日志，而 Memcached 不
 
 ## 分布式
 
-Memcached 不支持分布式，只能通过在客户端使用一致性哈希这样的分布式算法来实现分布式存储，这种方式在存储和查询时都需要先在客户端计算一次数据所在的节点。
+Memcached 不支持分布式，只能通过在客户端使用一致性哈希来实现分布式存储，这种方式在存储和查询时都需要先在客户端计算一次数据所在的节点。
 
 Redis Cluster 实现了分布式的支持。
 
 ## 内存管理机制
 
-在 Redis 中，并不是所有数据都一直存储在内存中，可以将一些很久没用的 value 交换到磁盘。而 Memcached 的数据则会一直在内存中。
+- 在 Redis 中，并不是所有数据都一直存储在内存中，可以将一些很久没用的 value 交换到磁盘，而 Memcached 的数据则会一直在内存中。
 
-Memcached 将内存分割成特定长度的块来存储数据，以完全解决内存碎片的问题，但是这种方式会使得内存的利用率不高，例如块的大小为 128 bytes，只存储 100 bytes 的数据，那么剩下的 28 bytes 就浪费掉了。
+- Memcached 将内存分割成特定长度的块来存储数据，以完全解决内存碎片的问题，但是这种方式会使得内存的利用率不高，例如块的大小为 128 bytes，只存储 100 bytes 的数据，那么剩下的 28 bytes 就浪费掉了。
 
 # 六、键的过期时间
 
@@ -360,7 +362,9 @@ Redis 可以为每个键设置过期时间，当键过期时，会自动删除�
 
 # 七、数据淘汰策略
 
-可以设置内存最大使用量，当内存使用量超过时施行淘汰策略，具体有 6 种淘汰策略。
+可以设置内存最大使用量，当内存使用量超出时，会施行数据淘汰策略。
+
+Reids 具体有 6 种淘汰策略：
 
 | 策略 | 描述 |
 | :--: | :--: |
@@ -371,15 +375,17 @@ Redis 可以为每个键设置过期时间，当键过期时，会自动删除�
 | allkeys-random | 从所有数据集中任意选择数据进行淘汰 |
 | noeviction | 禁止驱逐数据 |
 
-如果使用 Redis 来缓存数据时，要保证所有数据都是热点数据，可以将内存最大使用量设置为热点数据占用的内存量，然后启用 allkeys-lru 淘汰策略，将最近最少使用的数据淘汰。
+作为内存数据库，出于对性能和内存消耗的考虑，Redis 的淘汰算法实际实现上并非针对所有 key，而是抽样一小部分 key 从中选出被淘汰 key。
 
-作为内存数据库，出于对性能和内存消耗的考虑，Redis 的淘汰算法（LRU、TTL）实际实现上并非针对所有 key，而是抽样一小部分 key 从中选出被淘汰 key。
+使用 Redis 缓存数据时，为了提高缓存命中率，需要保证缓存数据都是热点数据。可以将内存最大使用量设置为热点数据占用的内存量，然后启用 allkeys-lru 淘汰策略，将最近最少使用的数据淘汰。
+
+Redis 4.0 引入了 volatile-lfu 和 allkeys-lfu 淘汰策略，LFU 策略通过统计访问频率，将访问频率最少的键值对淘汰。
 
 # 八、持久化
 
 Redis 是内存型数据库，为了保证数据在断电后不会丢失，需要将内存中的数据持久化到硬盘上。
 
-## 快照持久化
+## RDB 持久化
 
 将某个时间点的所有数据都存放到硬盘上。
 
@@ -393,9 +399,7 @@ Redis 是内存型数据库，为了保证数据在断电后不会丢失，需�
 
 将写命令添加到 AOF 文件（Append Only File）的末尾。
 
-对硬盘的文件进行写入时，写入的内容首先会被存储到缓冲区，然后由操作系统决定什么时候将该内容同步到硬盘，用户可以调用 file.flush() 方法请求操作系统尽快将缓冲区存储的数据同步到硬盘。可以看出写入文件的数据不会立即同步到硬盘上，在将写命令添加到 AOF 文件时，要根据需求来保证何时同步到硬盘上。
-
-有以下同步选项：
+使用 AOF 持久化需要设置同步选项，从而确保写命令什么时候会同步到磁盘文件上。这是因为对硬盘的文件进行写入并不会马上将内容同步到磁盘文件上，而是先存储到缓冲区，然后由操作系统决定什么时候同步到硬盘。有以下同步选项：
 
 | 选项 | 同步频率 |
 | :--: | :--: |
@@ -409,20 +413,7 @@ Redis 是内存型数据库，为了保证数据在断电后不会丢失，需�
 
 随着服务器写请求的增多，AOF 文件会越来越大。Redis 提供了一种将 AOF 重写的特性，能够去除 AOF 文件中的冗余写命令。
 
-# 九、发布与订阅
-
-订阅者订阅了频道之后，发布者向频道发送字符串消息会被所有订阅者接收到。
-
-某个客户端使用 SUBSCRIBE 订阅一个频道，其它客户端可以使用 PUBLISH 向这个频道发送消息。
-
-发布与订阅模式和观察者模式有以下不同：
-
-- 观察者模式中，观察者和主题都知道对方的存在；而在发布与订阅模式中，发布者与订阅者不知道对方的存在，它们之间通过频道进行通信。
-- 观察者模式是同步的，当事件触发时，主题会去调用观察者的方法，然后等待方法返回；而发布与订阅模式是异步的，发布者向频道发送一个消息之后，就不需要关心订阅者何时去订阅这个消息。
-
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/bee1ff1d-c80f-4b3c-b58c-7073a8896ab2.jpg" /> </div><br>
-
-# 十、事务
+# 九、事务
 
 一个事务包含了多个命令，服务器在执行事务期间，不会改去执行其它客户端的命令请求。
 
@@ -430,7 +421,7 @@ Redis 是内存型数据库，为了保证数据在断电后不会丢失，需�
 
 Redis 最简单的事务实现方式是使用 MULTI 和 EXEC 命令将事务操作包围起来。
 
-# 十一、事件
+# 十、事件
 
 Redis 服务器是一个事件驱动程序。
 
@@ -495,7 +486,7 @@ def main():
 
 <div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/c0a9fa91-da2e-4892-8c9f-80206a6f7047.png" /> </div><br>
 
-# 十二、复制
+# 十一、复制
 
 通过使用 slaveof host port 命令来让一个服务器成为另一个服务器的从服务器。
 
@@ -515,11 +506,11 @@ def main():
 
 <div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/395a9e83-b1a1-4a1d-b170-d081e7bb5bab.png" /> </div><br>
 
-# 十三、Sentinel
+# 十二、Sentinel
 
 Sentinel（哨兵）可以监听主服务器，并在主服务器进入下线状态时，自动从从服务器中选举出新的主服务器。
 
-# 十四、分片
+# 十三、分片
 
 分片是将数据划分为多个部分的方法，可以将数据存储到多台机器里面，也可以从多台机器里面获取数据，这种方法在解决某些问题时可以获得线性级别的性能提升。
 
@@ -531,7 +522,7 @@ Sentinel（哨兵）可以监听主服务器，并在主服务器进入下线状
 - 代理分片：将客户端请求发送到代理上，由代理转发请求到正确的节点上。
 - 服务器分片：Redis Cluster。
 
-# 十五、一个简单的论坛系统分析
+# 十四、一个简单的论坛系统分析
 
 该论坛系统功能如下：
 
@@ -571,6 +562,7 @@ Redis 没有关系型数据库中的表这一概念来将同种类型的数据�
 - [Redis 3.0 中文版- 分片](http://wiki.jikexueyuan.com/project/redis-guide)
 - [Redis 应用场景](http://www.scienjus.com/redis-use-case/)
 - [Observer vs Pub-Sub](http://developers-club.com/posts/270339/)
+- [Using Redis as an LRU cache](https://redis.io/topics/lru-cache)
 
 
 ---

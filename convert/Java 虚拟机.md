@@ -1,6 +1,6 @@
 # Java 虚拟机
 
-原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
+原作者github: https://github.com/CyC2018/Interview-Notebook
 
 PDF制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
 
@@ -157,7 +157,7 @@ obj = null;  // 使对象只被软引用关联
 
 **（三）弱引用** 
 
-被弱引用关联的对象一定会被垃圾收集器回收，也就是说它只能存活到下一次垃圾收集发生之前。
+被弱引用关联的对象一定会被垃圾收集器回收，也就是说它只能存活到下一次垃圾收集。
 
 使用 WeakReference 类来实现弱引用。
 
@@ -165,49 +165,6 @@ obj = null;  // 使对象只被软引用关联
 Object obj = new Object();
 WeakReference<Object> wf = new WeakReference<Object>(obj);
 obj = null;
-```
-
-WeakHashMap 的 Entry 继承自 WeakReference，主要用来实现缓存。
-
-```java
-private static class Entry<K,V> extends WeakReference<Object> implements Map.Entry<K,V>
-```
-
-Tomcat 中的 ConcurrentCache 就使用了 WeakHashMap 来实现缓存功能。ConcurrentCache 采取的是分代缓存，经常使用的对象放入 eden 中，而不常用的对象放入 longterm。eden 使用 ConcurrentHashMap 实现，longterm 使用 WeakHashMap，保证了不常使用的对象容易被回收。
-
-```java
-public final class ConcurrentCache<K, V> {
-
-    private final int size;
-
-    private final Map<K, V> eden;
-
-    private final Map<K, V> longterm;
-
-    public ConcurrentCache(int size) {
-        this.size = size;
-        this.eden = new ConcurrentHashMap<>(size);
-        this.longterm = new WeakHashMap<>(size);
-    }
-
-    public V get(K k) {
-        V v = this.eden.get(k);
-        if (v == null) {
-            v = this.longterm.get(k);
-            if (v != null)
-                this.eden.put(k, v);
-        }
-        return v;
-    }
-
-    public void put(K k, V v) {
-        if (this.eden.size() >= size) {
-            this.longterm.putAll(this.eden);
-            this.eden.clear();
-        }
-        this.eden.put(k, v);
-    }
-}
 ```
 
 **（四）虚引用** 
@@ -371,11 +328,11 @@ CMS（Concurrent Mark Sweep），Mark Sweep 指的是标记 - 清除算法。
 
 G1（Garbage-First），它是一款面向服务端应用的垃圾收集器，在多 CPU 和大内存的场景下有很好的性能。HotSpot 开发团队赋予它的使命是未来可以替换掉 CMS 收集器。
 
-Java 堆被分为新生代、老年代和永久代，其它收集器进行收集的范围都是整个新生代或者老生代，而 G1 可以直接对新生代和永久代一起回收。
+Java 堆被分为新生代、老年代和永久代，其它收集器进行收集的范围都是整个新生代或者老年代，而 G1 可以直接对新生代和老年代一起回收。
 
 <div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/4cf711a8-7ab2-4152-b85c-d5c226733807.png" /> </div><br>
 
-G1 把堆划分成多个大小相等的独立区域（Region），新生代和永久代不再物理隔离。
+G1 把堆划分成多个大小相等的独立区域（Region），新生代和老年代不再物理隔离。
 
 <div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/9bbddeeb-e939-41f0-8e8e-2b1a0aa7e0a7.png" /> </div><br>
 
@@ -440,15 +397,17 @@ G1 把堆划分成多个大小相等的独立区域（Region），新生代和�
 
 （四）动态对象年龄判定
 
-虚拟机并不是永远地要求对象的年龄必须达到 MaxTenuringThreshold 才能晋升老年代，如果在 Survivor 区中相同年龄所有对象大小的总和大于 Survivor 空间的一半，则年龄大于或等于该年龄的对象可以直接进入老年代，无需等到 MaxTenuringThreshold 中要求的年龄。
+虚拟机并不是永远地要求对象的年龄必须达到 MaxTenuringThreshold 才能晋升老年代，如果在 Survivor 中相同年龄所有对象大小的总和大于 Survivor 空间的一半，则年龄大于或等于该年龄的对象可以直接进入老年代，无需等到 MaxTenuringThreshold 中要求的年龄。
 
 （五）空间分配担保
 
-在发生 Minor GC 之前，虚拟机先检查老年代最大可用的连续空间是否大于新生代所有对象总空间，如果条件成立的话，那么 Minor GC 可以确认是安全的；如果不成立的话虚拟机会查看 HandlePromotionFailure 设置值是否允许担保失败，如果允许那么就会继续检查老年代最大可用的连续空间是否大于历次晋升到老年代对象的平均大小，如果大于，将尝试着进行一次 Minor GC，尽管这次 Minor GC 是有风险的；如果小于，或者 HandlePromotionFailure 设置不允许冒险，那这时也要改为进行一次 Full GC。
+在发生 Minor GC 之前，虚拟机先检查老年代最大可用的连续空间是否大于新生代所有对象总空间，如果条件成立的话，那么 Minor GC 可以确认是安全的。
+
+如果不成立的话虚拟机会查看 HandlePromotionFailure 设置值是否允许担保失败，如果允许那么就会继续检查老年代最大可用的连续空间是否大于历次晋升到老年代对象的平均大小，如果大于，将尝试着进行一次 Minor GC；如果小于，或者 HandlePromotionFailure 设置不允许冒险，那么就要进行一次 Full GC。
 
 ### 3. Full GC 的触发条件
 
-对于 Minor GC，其触发条件非常简单，当 Eden 区空间满时，就将触发一次 Minor GC。而 Full GC 则相对复杂，有以下条件：
+对于 Minor GC，其触发条件非常简单，当 Eden 空间满时，就将触发一次 Minor GC。而 Full GC 则相对复杂，有以下条件：
 
 （一）调用 System.gc()
 
@@ -466,11 +425,15 @@ G1 把堆划分成多个大小相等的独立区域（Region），新生代和�
 
 （四）JDK 1.7 及以前的永久代空间不足
 
-在 JDK 1.7 及以前，HotSpot 虚拟机中的方法区是用永久代实现的，永久代中存放的为一些 Class 的信息、常量、静态变量等数据，当系统中要加载的类、反射的类和调用的方法较多时，永久代可能会被占满，在未配置为采用 CMS GC 的情况下也会执行 Full GC。如果经过 Full GC 仍然回收不了，那么虚拟机会抛出 java.lang.OutOfMemoryError。为避免以上原因引起的 Full GC，可采用的方法为增大永久代空间或转为使用 CMS GC。
+在 JDK 1.7 及以前，HotSpot 虚拟机中的方法区是用永久代实现的，永久代中存放的为一些 Class 的信息、常量、静态变量等数据。
+
+当系统中要加载的类、反射的类和调用的方法较多时，永久代可能会被占满，在未配置为采用 CMS GC 的情况下也会执行 Full GC。如果经过 Full GC 仍然回收不了，那么虚拟机会抛出 java.lang.OutOfMemoryError。
+
+为避免以上原因引起的 Full GC，可采用的方法为增大永久代空间或转为使用 CMS GC。
 
 （五）Concurrent Mode Failure
 
-执行 CMS GC 的过程中同时有对象要放入老年代，而此时老年代空间不足（有时候“空间不足”是指 CMS GC 当前的浮动垃圾过多导致暂时性的空间不足），便会报 Concurrent Mode Failure 错误，并触发 Full GC。
+执行 CMS GC 的过程中同时有对象要放入老年代，而此时老年代空间不足（可能是 GC 过程中浮动垃圾过多导致暂时性的空间不足），便会报 Concurrent Mode Failure 错误，并触发 Full GC。
 
 # 三、类加载机制
 

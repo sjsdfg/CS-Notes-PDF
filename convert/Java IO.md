@@ -1,6 +1,6 @@
 # Java IO
 
-原作者github: https://github.com/sjsdfg/Interview-Notebook-PDF
+原作者github: https://github.com/CyC2018/Interview-Notebook
 
 PDF制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
 
