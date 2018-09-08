@@ -1,6 +1,6 @@
-# Interview-Notebook-PDF
+# CS-Notes-PDF
 
-用于提供 https://github.com/CyC2018/Interview-Notebook 项目的离线阅读
+用于提供 https://github.com/CyC2018/CS-Notes 项目的离线阅读
 
 **pdf使用 cmd-markdown 的付费工具手工进行pdf的转换。**
 
