@@ -14,8 +14,7 @@
 - 新增[机器学习小抄](https://pan.baidu.com/s/1XvwRLqgAnUtMqjNsJT-wTQ), 文件较大，已放在百度云盘。不过README一般也没啥人看，就当个小彩蛋？ 
 - 新增[深度学习500问](https://github.com/scutan90/DeepLearning-500-questions)
 - [100-Days-Of-ML-Code中文版](https://github.com/Avik-Jain/100-Days-of-ML-Code-Chinese-Version)
-
-以前的单文件pdf并没有丢失， [直达链接](https://github.com/sjsdfg/Interview-Notebook-PDF/tree/master/%E5%8D%95%E6%96%87%E4%BB%B6pdf)
+- [阿里Java手册 1.4.0版本](https://pan.baidu.com/s/1le0nvGP6GIpnczOZldrBGQ)
 
 ---
 
