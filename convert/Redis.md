@@ -1,14 +1,14 @@
 # Redis
 
-原作者github: https://github.com/CyC2018/Interview-Notebook
+原作者github: https://github.com/CyC2018/CS-Notes
 
-PDF制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
+PDF制作github: https://github.com/sjsdfg/CS-Notes-PDF
 
 # 一、概述
 
 Redis 是速度非常快的非关系型（NoSQL）内存键值数据库，可以存储键和五种不同类型的值之间的映射。
 
-键的类型只能为字符串，值支持的五种类型数据类型为：字符串、列表、集合、有序集合、散列表。
+键的类型只能为字符串，值支持五种数据类型：字符串、列表、集合、散列表、有序集合。
 
 Redis 支持很多特性，例如将内存中的数据持久化到硬盘中，使用复制来扩展读性能，使用分片来扩展写性能。
 
@@ -17,8 +17,8 @@ Redis 支持很多特性，例如将内存中的数据持久化到硬盘中，�
 | 数据类型 | 可以存储的值 | 操作 |
 | :--: | :--: | :--: |
 | STRING | 字符串、整数或者浮点数 | 对整个字符串或者字符串的其中一部分执行操作<br> 对整数和浮点数执行自增或者自减操作 |
-| LIST | 列表 | 从两端压入或者弹出元素<br> 读取单个或者多个元素<br> 进行修剪，只保留一个范围内的元素 |
-| SET | 无序集合 | 添加、获取、移除单个元素<br> 检查一个元素是否存在于集合中<br> 计算交集、并集、差集</br> 从集合里面随机获取元素 |
+| LIST | 列表 | 从两端压入或者弹出元素 <br> 对单个或者多个元素<br> 进行修剪，只保留一个范围内的元素 |
+| SET | 无序集合 | 添加、获取、移除单个元素<br> 检查一个元素是否存在于集合中<br> 计算交集、并集、差集<br> 从集合里面随机获取元素 |
 | HASH | 包含键值对的无序散列表 | 添加、获取、移除单个键值对<br> 获取所有键值对<br> 检查某个键是否存在|
 | ZSET | 有序集合 | 添加、获取、删除元素<br> 根据分值范围或者成员来获取元素<br> 计算一个键的排名 |
 
@@ -26,7 +26,7 @@ Redis 支持很多特性，例如将内存中的数据持久化到硬盘中，�
 
 ## STRING
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/6019b2db-bc3e-4408-b6d8-96025f4481d6.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/6019b2db-bc3e-4408-b6d8-96025f4481d6.png" /> </div>
 
 ```html
 > set hello world
@@ -41,7 +41,7 @@ OK
 
 ## LIST
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/fb327611-7e2b-4f2f-9f5b-38592d408f07.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/fb327611-7e2b-4f2f-9f5b-38592d408f07.png" /> </div>
 
 ```html
 > rpush list-key item
@@ -69,7 +69,7 @@ OK
 
 ## SET
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/cd5fbcff-3f35-43a6-8ffa-082a93ce0f0e.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/cd5fbcff-3f35-43a6-8ffa-082a93ce0f0e.png" /> </div>
 
 ```html
 > sadd set-key item
@@ -103,7 +103,7 @@ OK
 
 ## HASH
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/7bd202a7-93d4-4f3a-a878-af68ae25539a.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/7bd202a7-93d4-4f3a-a878-af68ae25539a.png" /> </div>
 
 ```html
 > hset hash-key sub-key1 value1
@@ -134,7 +134,7 @@ OK
 
 ## ZSET
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/1202b2d6-9469-4251-bd47-ca6034fb6116.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/1202b2d6-9469-4251-bd47-ca6034fb6116.png" /> </div>
 
 ```html
 > zadd zset-key 728 member1
@@ -276,11 +276,11 @@ int dictRehash(dict *d, int n) {
 
 跳跃表是基于多指针有序链表实现的，可以看成多个有序链表。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/beba612e-dc5b-4fc2-869d-0b23408ac90a.png"/> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/beba612e-dc5b-4fc2-869d-0b23408ac90a.png"/> </div>
 
 在查找时，从上层指针开始查找，找到对应的区间之后再到下一层去查找。下图演示了查找 22 的过程。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/0ea37ee2-c224-4c79-b895-e131c6805c40.png"/> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/0ea37ee2-c224-4c79-b895-e131c6805c40.png"/> </div>
 
 与红黑树等平衡树相比，跳跃表具有以下优点：
 
@@ -316,7 +316,7 @@ List 是一个双向链表，可以通过 lpop 和 lpush 写入和读取消息�
 
 在分布式场景下具有多个应用服务器，可以使用 Redis 来统一存储这些应用服务器的会话信息。
 
-当应用服务器不再存储用户的会话信息，也就不再具有状态，一个用户可以请求任意一个应用服务器。
+当应用服务器不再存储用户的会话信息，也就不再具有状态，一个用户可以请求任意一个应用服务器，从而更容易实现高可用性以及可伸缩性。
 
 ## 分布式锁实现
 
@@ -352,7 +352,7 @@ Redis Cluster 实现了分布式的支持。
 
 - 在 Redis 中，并不是所有数据都一直存储在内存中，可以将一些很久没用的 value 交换到磁盘，而 Memcached 的数据则会一直在内存中。
 
-- Memcached 将内存分割成特定长度的块来存储数据，以完全解决内存碎片的问题，但是这种方式会使得内存的利用率不高，例如块的大小为 128 bytes，只存储 100 bytes 的数据，那么剩下的 28 bytes 就浪费掉了。
+- Memcached 将内存分割成特定长度的块来存储数据，以完全解决内存碎片的问题。但是这种方式会使得内存的利用率不高，例如块的大小为 128 bytes，只存储 100 bytes 的数据，那么剩下的 28 bytes 就浪费掉了。
 
 # 六、键的过期时间
 
@@ -375,7 +375,7 @@ Reids 具体有 6 种淘汰策略：
 | allkeys-random | 从所有数据集中任意选择数据进行淘汰 |
 | noeviction | 禁止驱逐数据 |
 
-作为内存数据库，出于对性能和内存消耗的考虑，Redis 的淘汰算法实际实现上并非针对所有 key，而是抽样一小部分 key 从中选出被淘汰 key。
+作为内存数据库，出于对性能和内存消耗的考虑，Redis 的淘汰算法实际实现上并非针对所有 key，而是抽样一小部分并且从中选出被淘汰的 key。
 
 使用 Redis 缓存数据时，为了提高缓存命中率，需要保证缓存数据都是热点数据。可以将内存最大使用量设置为热点数据占用的内存量，然后启用 allkeys-lru 淘汰策略，将最近最少使用的数据淘汰。
 
@@ -399,7 +399,7 @@ Redis 是内存型数据库，为了保证数据在断电后不会丢失，需�
 
 将写命令添加到 AOF 文件（Append Only File）的末尾。
 
-使用 AOF 持久化需要设置同步选项，从而确保写命令什么时候会同步到磁盘文件上。这是因为对硬盘的文件进行写入并不会马上将内容同步到磁盘文件上，而是先存储到缓冲区，然后由操作系统决定什么时候同步到硬盘。有以下同步选项：
+使用 AOF 持久化需要设置同步选项，从而确保写命令什么时候会同步到磁盘文件上。这是因为对文件进行写入并不会马上将内容同步到磁盘上，而是先存储到缓冲区，然后由操作系统决定什么时候同步到磁盘。有以下同步选项：
 
 | 选项 | 同步频率 |
 | :--: | :--: |
@@ -408,8 +408,8 @@ Redis 是内存型数据库，为了保证数据在断电后不会丢失，需�
 | no | 让操作系统来决定何时同步 |
 
 - always 选项会严重减低服务器的性能；
-- everysec 选项比较合适，可以保证系统奔溃时只会丢失一秒左右的数据，并且 Redis 每秒执行一次同步对服务器性能几乎没有任何影响；
-- no 选项并不能给服务器性能带来多大的提升，而且也会增加系统奔溃时数据丢失的数量。
+- everysec 选项比较合适，可以保证系统崩溃时只会丢失一秒左右的数据，并且 Redis 每秒执行一次同步对服务器性能几乎没有任何影响；
+- no 选项并不能给服务器性能带来多大的提升，而且也会增加系统崩溃时数据丢失的数量。
 
 随着服务器写请求的增多，AOF 文件会越来越大。Redis 提供了一种将 AOF 重写的特性，能够去除 AOF 文件中的冗余写命令。
 
@@ -431,7 +431,7 @@ Redis 服务器是一个事件驱动程序。
 
 Redis 基于 Reactor 模式开发了自己的网络事件处理器，使用 I/O 多路复用程序来同时监听多个套接字，并将到达的事件传送给文件事件分派器，分派器会根据套接字产生的事件类型调用相应的事件处理器。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/9ea86eb5-000a-4281-b948-7b567bd6f1d8.png"/> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/9ea86eb5-000a-4281-b948-7b567bd6f1d8.png"/> </div>
 
 ## 时间事件
 
@@ -484,7 +484,7 @@ def main():
 
 从事件处理的角度来看，服务器运行流程如下：
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/c0a9fa91-da2e-4892-8c9f-80206a6f7047.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/c0a9fa91-da2e-4892-8c9f-80206a6f7047.png" /> </div>
 
 # 十一、复制
 
@@ -504,17 +504,20 @@ def main():
 
 随着负载不断上升，主服务器可能无法很快地更新所有从服务器，或者重新连接和重新同步从服务器将导致系统超载。为了解决这个问题，可以创建一个中间层来分担主服务器的复制工作。中间层的服务器是最上层服务器的从服务器，又是最下层服务器的主服务器。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/395a9e83-b1a1-4a1d-b170-d081e7bb5bab.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/395a9e83-b1a1-4a1d-b170-d081e7bb5bab.png" /> </div>
 
 # 十二、Sentinel
 
-Sentinel（哨兵）可以监听主服务器，并在主服务器进入下线状态时，自动从从服务器中选举出新的主服务器。
+Sentinel（哨兵）可以监听集群中的服务器，并在主服务器进入下线状态时，自动从从服务器中选举出新的主服务器。
 
 # 十三、分片
 
-分片是将数据划分为多个部分的方法，可以将数据存储到多台机器里面，也可以从多台机器里面获取数据，这种方法在解决某些问题时可以获得线性级别的性能提升。
+分片是将数据划分为多个部分的方法，可以将数据存储到多台机器里面，这种方法在解决某些问题时可以获得线性级别的性能提升。
 
-假设有 4 个 Reids 实例 R0，R1，R2，R3，还有很多表示用户的键 user:1，user:2，... 等等，有不同的方式来选择一个指定的键存储在哪个实例中。最简单的方式是范围分片，例如用户 id 从 0\~1000 的存储到实例 R0 中，用户 id 从 1001\~2000 的存储到实例 R1 中，等等。但是这样需要维护一张映射范围表，维护操作代价很高。还有一种方式是哈希分片，使用 CRC32 哈希函数将键转换为一个数字，再对实例数量求模就能知道应该存储的实例。
+假设有 4 个 Reids 实例 R0，R1，R2，R3，还有很多表示用户的键 user:1，user:2，... ，有不同的方式来选择一个指定的键存储在哪个实例中。
+
+- 最简单的方式是范围分片，例如用户 id 从 0\~1000 的存储到实例 R0 中，用户 id 从 1001\~2000 的存储到实例 R1 中，等等。但是这样需要维护一张映射范围表，维护操作代价很高。
+- 还有一种方式是哈希分片，使用 CRC32 哈希函数将键转换为一个数字，再对实例数量求模就能知道应该存储的实例。
 
 根据执行分片的位置，可以分为三种分片方式：
 
@@ -536,7 +539,7 @@ Sentinel（哨兵）可以监听主服务器，并在主服务器进入下线状
 
 Redis 没有关系型数据库中的表这一概念来将同种类型的数据存放在一起，而是使用命名空间的方式来实现这一功能。键名的前面部分存储命名空间，后面部分的内容存储 ID，通常使用 : 来进行分隔。例如下面的 HASH 的键名为 article:92617，其中 article 为命名空间，ID 为 92617。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/7c54de21-e2ff-402e-bc42-4037de1c1592.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/7c54de21-e2ff-402e-bc42-4037de1c1592.png" /> </div>
 
 ## 点赞功能
 
@@ -544,13 +547,13 @@ Redis 没有关系型数据库中的表这一概念来将同种类型的数据�
 
 为了节约内存，规定一篇文章发布满一周之后，就不能再对它进行投票，而文章的已投票集合也会被删除，可以为文章的已投票集合设置一个一周的过期时间就能实现这个规定。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/485fdf34-ccf8-4185-97c6-17374ee719a0.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/485fdf34-ccf8-4185-97c6-17374ee719a0.png" /> </div>
 
 ## 对文章进行排序
 
 为了按发布时间和点赞数进行排序，可以建立一个文章发布时间的有序集合和一个文章点赞数的有序集合。（下图中的 score 就是这里所说的点赞数；下面所示的有序集合分值并不直接是时间和点赞数，而是根据时间和点赞数间接计算出来的）
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f7d170a3-e446-4a64-ac2d-cb95028f81a8.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/f7d170a3-e446-4a64-ac2d-cb95028f81a8.png" /> </div>
 
 # 参考资料
 
@@ -561,9 +564,8 @@ Redis 没有关系型数据库中的表这一概念来将同种类型的数据�
 - [论述 Redis 和 Memcached 的差异](http://www.cnblogs.com/loveincode/p/7411911.html)
 - [Redis 3.0 中文版- 分片](http://wiki.jikexueyuan.com/project/redis-guide)
 - [Redis 应用场景](http://www.scienjus.com/redis-use-case/)
-- [Observer vs Pub-Sub](http://developers-club.com/posts/270339/)
 - [Using Redis as an LRU cache](https://redis.io/topics/lru-cache)
 
 
 ---
-github: https://github.com/sjsdfg/Interview-Notebook-PDF
+github: https://github.com/sjsdfg/CS-Notes-PDF

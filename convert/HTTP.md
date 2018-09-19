@@ -1,30 +1,30 @@
 # HTTP
 
-原作者github: https://github.com/CyC2018/Interview-Notebook
+原作者github: https://github.com/CyC2018/CS-Notes
 
-PDF制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
+PDF制作github: https://github.com/sjsdfg/CS-Notes-PDF
 
 # 一 、基础概念
 
 ## URL
 
-- URI（Uniform Resource Identifier，统一资源标识符）
-- URL（Uniform Resource Locator，统一资源定位符）
-- URN（Uniform Resource Name，统一资源名称），例如 urn:isbn:0-486-27557-4。
-
 URI 包含 URL 和 URN，目前 WEB 只有 URL 比较流行，所以见到的基本都是 URL。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f716427a-94f2-4875-9c86-98793cf5dcc3.jpg" /> </div><br>
+- URI（Uniform Resource Identifier，统一资源标识符）
+- URL（Uniform Resource Locator，统一资源定位符）
+- URN（Uniform Resource Name，统一资源名称）
+
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/urlnuri.jpg" /> </div>
 
 ## 请求和响应报文
 
 ### 1. 请求报文
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/HTTP_RequestMessageExample.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/HTTP_RequestMessageExample.png" /> </div>
 
 ### 2. 响应报文
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/HTTP_ResponseMessageExample.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/HTTP_ResponseMessageExample.png" /> </div>
 
 # 二、HTTP 方法
 
@@ -111,7 +111,7 @@ DELETE /file.html HTTP/1.1
 CONNECT www.example.com:443 HTTP/1.1
 ```
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/dc00f70e-c5c8-4d20-baf1-2d70014a97e3.jpg" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/dc00f70e-c5c8-4d20-baf1-2d70014a97e3.jpg" /> </div>
 
 ## TRACE
 
@@ -144,7 +144,7 @@ CONNECT www.example.com:443 HTTP/1.1
 
 -  **204 No Content** ：请求已经成功处理，但是返回的响应报文不包含实体的主体部分。一般在只需要从客户端往服务器发送信息，而不需要返回数据时使用。
 
--  **206 Partial Content** ：表示客户端进行了范围请求。响应报文包含由 Content-Range 指定范围的实体内容。
+-  **206 Partial Content** ：表示客户端进行了范围请求，响应报文包含由 Content-Range 指定范围的实体内容。
 
 ## 3XX 重定向
 
@@ -166,7 +166,7 @@ CONNECT www.example.com:443 HTTP/1.1
 
 -  **401 Unauthorized** ：该状态码表示发送的请求需要有认证信息（BASIC 认证、DIGEST 认证）。如果之前已进行过一次请求，则表示用户认证失败。
 
--  **403 Forbidden** ：请求被拒绝，服务器端没有必要给出拒绝的详细理由。
+-  **403 Forbidden** ：请求被拒绝。
 
 -  **404 Not Found** 
 
@@ -257,7 +257,7 @@ HTTP 协议是无状态的，主要是为了让 HTTP 协议尽可能简单，使
 
 Cookie 是服务器发送到用户浏览器并保存在本地的一小块数据，它会在浏览器之后向同一服务器再次发起请求时被携带上，用于告知服务端两个请求是否来自同一浏览器。由于之后每次请求都会需要携带 Cookie 数据，因此会带来额外的性能开销（尤其是在移动环境下）。
 
-Cookie 曾一度用于客户端数据的存储，因为当时并没有其它合适的存储办法而作为唯一的存储手段，但现在随着现代浏览器开始支持各种各样的存储方式，Cookie 渐渐被淘汰。新的浏览器 API 已经允许开发者直接将数据存储到本地，如使用 Web storage API （本地存储和会话存储）或 IndexedDB。
+Cookie 曾一度用于客户端数据的存储，因为当时并没有其它合适的存储办法而作为唯一的存储手段，但现在随着现代浏览器开始支持各种各样的存储方式，Cookie 渐渐被淘汰。新的浏览器 API 已经允许开发者直接将数据存储到本地，如使用 Web storage API（本地存储和会话存储）或 IndexedDB。
 
 ### 1. 用途
 
@@ -278,7 +278,7 @@ Set-Cookie: tasty_cookie=strawberry
 [page content]
 ```
 
-客户端之后对同一个服务器发送请求时，会从浏览器中读出 Cookie 信息通过 Cookie 请求首部字段发送给服务器。
+客户端之后对同一个服务器发送请求时，会从浏览器中取出 Cookie 信息并通过 Cookie 请求首部字段发送给服务器。
 
 ```html
 GET /sample_page.html HTTP/1.1
@@ -295,27 +295,7 @@ Cookie: yummy_cookie=choco; tasty_cookie=strawberry
 Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT;
 ```
 
-### 4. JavaScript 获取 Cookie
-
-通过 `Document.cookie` 属性可创建新的 Cookie，也可通过该属性访问非 HttpOnly 标记的 Cookie。
-
-```html
-document.cookie = "yummy_cookie=choco";
-document.cookie = "tasty_cookie=strawberry";
-console.log(document.cookie);
-```
-
-### 5. Secure 和 HttpOnly
-
-标记为 Secure 的 Cookie 只能通过被 HTTPS 协议加密过的请求发送给服务端。但即便设置了 Secure 标记，敏感信息也不应该通过 Cookie 传输，因为 Cookie 有其固有的不安全性，Secure 标记也无法提供确实的安全保障。
-
-标记为 HttpOnly 的 Cookie 不能被 JavaScript 脚本调用。跨站脚本攻击 (XSS) 常常使用 JavaScript 的 `Document.cookie` API 窃取用户的 Cookie 信息，因此使用 HttpOnly 标记可以在一定程度上避免 XSS 攻击。
-
-```html
-Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; Secure; HttpOnly
-```
-
-### 6. 作用域
+### 4. 作用域
 
 Domain 标识指定了哪些主机可以接受 Cookie。如果不指定，默认为当前文档的主机（不包含子域名）。如果指定了 Domain，则一般包含子域名。例如，如果设置 Domain=mozilla.org，则 Cookie 也包含在子域名中（如 developer.mozilla.org）。
 
@@ -325,27 +305,48 @@ Path 标识指定了主机下的哪些路径可以接受 Cookie（该 URL 路径
 - /docs/Web/
 - /docs/Web/HTTP
 
-### 7. Session
+### 5. JavaScript
+
+通过 `Document.cookie` 属性可创建新的 Cookie，也可通过该属性访问非 HttpOnly 标记的 Cookie。
+
+```html
+document.cookie = "yummy_cookie=choco";
+document.cookie = "tasty_cookie=strawberry";
+console.log(document.cookie);
+```
+
+### 6. HttpOnly
+
+标记为 HttpOnly 的 Cookie 不能被 JavaScript 脚本调用。跨站脚本攻击 (XSS) 常常使用 JavaScript 的 `Document.cookie` API 窃取用户的 Cookie 信息，因此使用 HttpOnly 标记可以在一定程度上避免 XSS 攻击。
+
+```html
+Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; Secure; HttpOnly
+```
+
+### 7. Secure
+
+标记为 Secure 的 Cookie 只能通过被 HTTPS 协议加密过的请求发送给服务端。但即便设置了 Secure 标记，敏感信息也不应该通过 Cookie 传输，因为 Cookie 有其固有的不安全性，Secure 标记也无法提供确实的安全保障。
+
+### 8. Session
 
 除了可以将用户信息通过 Cookie 存储在用户浏览器中，也可以利用 Session 存储在服务器端，存储在服务器端的信息更加安全。
 
-Session 可以存储在服务器上的文件、数据库或者内存中。也可以将 Session 存储在内存型数据库中，比如 Redis，效率会更高。
+Session 可以存储在服务器上的文件、数据库或者内存中。也可以将 Session 存储在 Redis 这种内存型数据库中，效率会更高。
 
-使用 Session 维护用户登录的过程如下：
+使用 Session 维护用户登录状态的过程如下：
 
 - 用户进行登录时，用户提交包含用户名和密码的表单，放入 HTTP 请求报文中；
-- 服务器验证该用户名和密码；
-- 如果正确则把用户信息存储到 Redis 中，它在 Redis 中的 Key 称为 Session ID；
+- 服务器验证该用户名和密码，如果正确则把用户信息存储到 Redis 中，它在 Redis 中的 Key 称为 Session ID；
 - 服务器返回的响应报文的 Set-Cookie 首部字段包含了这个 Session ID，客户端收到响应报文之后将该 Cookie 值存入浏览器中；
 - 客户端之后对同一个服务器进行请求时会包含该 Cookie 值，服务器收到之后提取出 Session ID，从 Redis 中取出用户信息，继续之前的业务操作。
 
 应该注意 Session ID 的安全性问题，不能让它被恶意攻击者轻易获取，那么就不能产生一个容易被猜到的 Session ID 值。此外，还需要经常重新生成 Session ID。在对安全性要求极高的场景下，例如转账等操作，除了使用 Session 管理用户状态之外，还需要对用户进行重新验证，比如重新输入密码，或者使用短信验证码等方式。
 
-### 8. 浏览器禁用 Cookie
+### 9. 浏览器禁用 Cookie
 
 此时无法使用 Cookie 来保存用户信息，只能使用 Session。除此之外，不能再将 Session ID 存放到 Cookie 中，而是使用 URL 重写技术，将 Session ID 作为 URL 的参数进行传递。
 
-### 9. Cookie 与 Session 选择
+### 10. Cookie 与 Session 选择
 
 - Cookie 只能存储 ASCII 码字符串，而 Session 则可以存取任何类型的数据，因此在考虑数据复杂性时首选 Session；
 - Cookie 存储在浏览器中，容易被恶意查看。如果非要将一些隐私数据存在 Cookie 中，可以将 Cookie 值进行加密，然后在服务器进行解密；
@@ -409,12 +410,12 @@ Cache-Control: max-age=31536000
 
 Expires 首部字段也可以用于告知缓存服务器该资源什么时候会过期。
 
-- 在 HTTP/1.1 中，会优先处理 max-age 指令；
-- 在 HTTP/1.0 中，max-age 指令会被忽略掉。
-
 ```html
 Expires: Wed, 04 Jul 2012 08:26:05 GMT
 ```
+
+- 在 HTTP/1.1 中，会优先处理 max-age 指令；
+- 在 HTTP/1.0 中，max-age 指令会被忽略掉。
 
 ### 4. 缓存验证
 
@@ -442,11 +443,11 @@ If-Modified-Since: Wed, 21 Oct 2015 07:28:00 GMT
 
 ## 连接管理
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/HTTP1_x_Connections.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/HTTP1_x_Connections.png" /> </div>
 
 ### 1. 短连接与长连接
 
-当浏览器访问一个包含多张图片的 HTML 页面时，除了请求访问 HTML 页面资源，还会请求图片资源。如果每进行一次 HTTP 通信就要断开一次 TCP 连接，连接建立和断开的开销会很大。
+当浏览器访问一个包含多张图片的 HTML 页面时，除了请求访问 HTML 页面资源，还会请求图片资源。如果每进行一次 HTTP 通信就要新建一个 TCP 连接，那么开销会很大。
 
 长连接只需要建立一次 TCP 连接就能进行多次 HTTP 通信。
 
@@ -581,11 +582,11 @@ HTTP/1.1 使用虚拟主机技术，使得一台服务器拥有多个域名，�
 
 - 用户察觉得到正向代理的存在。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/a314bb79-5b18-4e63-a976-3448bffa6f1b.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/a314bb79-5b18-4e63-a976-3448bffa6f1b.png" /> </div>
 
 - 而反向代理一般位于内部网络中，用户察觉不到。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/2d09a847-b854-439c-9198-b29c65810944.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/2d09a847-b854-439c-9198-b29c65810944.png" /> </div>
 
 ### 2. 网关
 
@@ -607,7 +608,7 @@ HTTPs 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）�
 
 通过使用 SSL，HTTPs 具有了加密（防窃听）、认证（防伪装）和完整性保护（防篡改）。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/ssl-offloading.jpg" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/ssl-offloading.jpg" /> </div>
 
 ## 加密
 
@@ -618,7 +619,7 @@ HTTPs 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）�
 - 优点：运算速度快；
 - 缺点：无法安全地将密钥传输给通信方。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/7fffa4b8-b36d-471f-ad0c-a88ee763bb76.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/7fffa4b8-b36d-471f-ad0c-a88ee763bb76.png" /> </div>
 
 ### 2.非对称密钥加密
 
@@ -631,13 +632,13 @@ HTTPs 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）�
 - 优点：可以更安全地将公开密钥传输给通信发送方；
 - 缺点：运算速度慢。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/39ccb299-ee99-4dd1-b8b4-2f9ec9495cb4.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/39ccb299-ee99-4dd1-b8b4-2f9ec9495cb4.png" /> </div>
 
 ### 3. HTTPs 采用的加密方式
 
-HTTPs 采用混合的加密机制，使用非对称密钥加密用于传输对称密钥来保证安全性，之后使用对称密钥加密进行通信来保证效率。（下图中的 Session Key 就是对称密钥）
+HTTPs 采用混合的加密机制，使用非对称密钥加密用于传输对称密钥来保证传输过程的安全性，之后使用对称密钥加密进行通信来保证通信过程的效率。（下图中的 Session Key 就是对称密钥）
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/How-HTTPS-Works.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/How-HTTPS-Works.png" /> </div>
 
 ## 认证
 
@@ -651,7 +652,7 @@ HTTPs 采用混合的加密机制，使用非对称密钥加密用于传输对�
 
 通信开始时，客户端需要使用服务器的公开密钥将自己的私有密钥传输给服务器，之后再进行对称密钥加密。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/2017-06-11-ca.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/2017-06-11-ca.png" /> </div>
 
 ## 完整性保护
 
@@ -664,17 +665,12 @@ HTTPs 的报文摘要功能之所以安全，是因为它结合了加密和认�
 ## HTTPs 的缺点
 
 - 因为需要进行加密解密等过程，因此速度会更慢；
-- 需要支付证书授权的高费用。
-
-## 配置 HTTPs
-
-[Nginx 配置 HTTPS 服务器](https://aotu.io/notes/2016/08/16/nginx-https/index.html)
-
+- 需要支付证书授权的高额费用。
 # 七、HTTP/2.0
 
 ## HTTP/1.x 缺陷
 
- HTTP/1.x 实现简单是以牺牲应用性能为代价的：
+HTTP/1.x 实现简单是以牺牲性能为代价的：
 
 - 客户端需要使用多个连接才能实现并发和缩短延迟；
 - 不会压缩请求和响应首部，从而导致不必要的网络流量；
@@ -684,21 +680,21 @@ HTTPs 的报文摘要功能之所以安全，是因为它结合了加密和认�
 
 HTTP/2.0 将报文分成 HEADERS 帧和 DATA 帧，它们都是二进制格式的。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/86e6a91d-a285-447a-9345-c5484b8d0c47.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/86e6a91d-a285-447a-9345-c5484b8d0c47.png" /> </div>
 
 在通信过程中，只会有一个 TCP 连接存在，它承载了任意数量的双向数据流（Stream）。
 
-- 一个数据流都有一个唯一标识符和可选的优先级信息，用于承载双向信息。
-- 消息（Message）是与逻辑请求或响应消息对应的完整的一系列帧。
-- 帧（Fram）是最小的通信单位，来自不同数据流的帧可以交错发送，然后再根据每个帧头的数据流标识符重新组装。
+- 一个数据流（Stream）都有一个唯一标识符和可选的优先级信息，用于承载双向信息。
+- 消息（Message）是与逻辑请求或响应对应的完整的一系列帧。
+- 帧（Frame）是最小的通信单位，来自不同数据流的帧可以交错发送，然后再根据每个帧头的数据流标识符重新组装。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/af198da1-2480-4043-b07f-a3b91a88b815.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/af198da1-2480-4043-b07f-a3b91a88b815.png" /> </div>
 
 ## 服务端推送
 
 HTTP/2.0 在客户端请求一个资源时，会把相关的资源一起发送给客户端，客户端就不需要再次发起请求了。例如客户端请求 page.html 页面，服务端就把 script.js 和 style.css 等与之相关的资源一起发给客户端。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/e3f1657c-80fc-4dfa-9643-bf51abd201c6.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/e3f1657c-80fc-4dfa-9643-bf51abd201c6.png" /> </div>
 
 ## 首部压缩
 
@@ -708,9 +704,9 @@ HTTP/2.0 要求客户端和服务器同时维护和更新一个包含之前见�
 
 不仅如此，HTTP/2.0 也使用 Huffman 编码对首部字段进行压缩。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/_u4E0B_u8F7D.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/_u4E0B_u8F7D.png" /> </div>
 
-# 八、GET 和 POST 的区别
+# 八、GET 和 POST 比较
 
 ## 作用
 
@@ -794,7 +790,7 @@ DELETE /idX/delete HTTP/1.1   -> Returns 404
 
 # 九、HTTP/1.0 与 HTTP/1.1 的区别
 
-> 详细内容请见上文
+详细内容请见上文
 
 - HTTP/1.1 默认是长连接
 
@@ -817,6 +813,7 @@ DELETE /idX/delete HTTP/1.1   -> Returns 404
 - [MDN : HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
 - [HTTP/2 简介](https://developers.google.com/web/fundamentals/performance/http2/?hl=zh-cn)
 - [htmlspecialchars](http://php.net/manual/zh/function.htmlspecialchars.php)
+- [Difference between file URI and URL in java](http://java2db.com/java-io/how-to-get-and-the-difference-between-file-uri-and-url-in-java)
 - [How to Fix SQL Injection Using Java PreparedStatement & CallableStatement](https://software-security.sans.org/developer-how-to/fix-sql-injection-in-java-using-prepared-callable-statement)
 - [浅谈 HTTP 中 Get 与 Post 的区别](https://www.cnblogs.com/hyddd/archive/2009/03/31/1426026.html)
 - [Are http:// and www really necessary?](https://www.webdancers.com/are-http-and-www-necesary/)
@@ -842,4 +839,4 @@ DELETE /idX/delete HTTP/1.1   -> Returns 404
 
 
 ---
-github: https://github.com/sjsdfg/Interview-Notebook-PDF
+github: https://github.com/sjsdfg/CS-Notes-PDF

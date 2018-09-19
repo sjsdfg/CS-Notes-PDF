@@ -1,8 +1,8 @@
 # SQL
 
-原作者github: https://github.com/CyC2018/Interview-Notebook
+原作者github: https://github.com/CyC2018/CS-Notes
 
-PDF制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
+PDF制作github: https://github.com/sjsdfg/CS-Notes-PDF
 
 # 一、基础
 
@@ -531,7 +531,7 @@ WHERE col5 = val;
 
 # 十八、存储过程
 
-存储过程可以看成是对一系列 SQL 操作的批处理；
+存储过程可以看成是对一系列 SQL 操作的批处理。
 
 使用存储过程的好处：
 
@@ -620,11 +620,11 @@ SELECT @result; -- 获取结果
 
 DELETE 触发器包含一个名为 OLD 的虚拟表，并且是只读的。
 
-UPDATE 触发器包含一个名为 NEW 和一个名为 OLD 的虚拟表，其中 NEW 是可以被修改地，而 OLD 是只读的。
+UPDATE 触发器包含一个名为 NEW 和一个名为 OLD 的虚拟表，其中 NEW 是可以被修改的，而 OLD 是只读的。
 
 MySQL 不允许在触发器中使用 CALL 语句，也就是不能调用存储过程。
 
-# 二十一、事务处理
+# 二十一、事务管理
 
 基本术语：
 
@@ -686,11 +686,11 @@ SELECT user FROM user;
 
 **创建账户** 
 
+新创建的账户没有任何权限。
+
 ```sql
 CREATE USER myuser IDENTIFIED BY 'mypassword';
 ```
-
-新创建的账户没有任何权限。
 
 **修改账户名** 
 
@@ -712,17 +712,13 @@ SHOW GRANTS FOR myuser;
 
 **授予权限** 
 
+账户用 username@host 的形式定义，username@% 使用的是默认主机名。
+
 ```sql
 GRANT SELECT, INSERT ON mydatabase.* TO myuser;
 ```
 
-账户用 username@host 的形式定义，username@% 使用的是默认主机名。
-
 **删除权限** 
-
-```sql
-REVOKE SELECT, INSERT ON mydatabase.* FROM myuser;
-```
 
 GRANT 和 REVOKE 可在几个层次上控制访问权限：
 
@@ -731,6 +727,10 @@ GRANT 和 REVOKE 可在几个层次上控制访问权限：
 - 特定的表，使用 ON database.table；
 - 特定的列；
 - 特定的存储过程。
+
+```sql
+REVOKE SELECT, INSERT ON mydatabase.* FROM myuser;
+```
 
 **更改密码** 
 
@@ -746,4 +746,4 @@ SET PASSWROD FOR myuser = Password('new_password');
 
 
 ---
-github: https://github.com/sjsdfg/Interview-Notebook-PDF
+github: https://github.com/sjsdfg/CS-Notes-PDF

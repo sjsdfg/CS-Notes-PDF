@@ -1,8 +1,8 @@
 # Linux
 
-原作者github: https://github.com/CyC2018/Interview-Notebook
+原作者github: https://github.com/CyC2018/CS-Notes
 
-PDF制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
+PDF制作github: https://github.com/sjsdfg/CS-Notes-PDF
 
 # 一、常用操作以及概念
 
@@ -66,15 +66,16 @@ info 与 man 类似，但是 info 将文档分成一个个页面，每个页面�
 /usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/dmtsai/.local/bin:/home/dmtsai/bin
 ```
 
-env 命令可以获取当前终端的环境变量。
-
 ## sudo
 
 sudo 允许一般用户使用 root 可执行的命令，不过只有在 /etc/sudoers 配置文件中添加的用户才能使用该指令。
 
 ## 包管理工具
 
-RPM 和 DPKG 为最常见的两类软件包管理工具。RPM 全称为 Redhat Package Manager，最早由 Red Hat 公司制定实施，随后被 GNU 开源操作系统接受并成为很多 Linux 系统 (RHEL) 的既定软件标准。与 RPM 进行竞争的是基于 Debian 操作系统 (UBUNTU) 的 DEB 软件包管理工具 DPKG，全称为 Debian Package，功能方面与 RPM 相似。
+RPM 和 DPKG 为最常见的两类软件包管理工具：
+
+- RPM 全称为 Redhat Package Manager，最早由 Red Hat 公司制定实施，随后被 GNU 开源操作系统接受并成为很多 Linux 系统 (RHEL) 的既定软件标准。
+- 与 RPM 进行竞争的是基于 Debian 操作系统 (Ubuntu) 的 DEB 软件包管理工具 DPKG，全称为 Debian Package，功能方面与 RPM 相似。
 
 YUM 基于 RPM，具有依赖管理功能，并具有软件升级的功能。
 
@@ -93,7 +94,7 @@ Linux 发行版是 Linux 内核及各种应用软件的集成版本。
 - 编辑模式（Insert mode）：按下 "i" 等按键之后进入，可以对文本进行编辑；
 - 指令列模式（Bottom-line mode）：按下 ":" 按键之后进入，用于保存退出等操作。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/5942debd-fc00-477a-b390-7c5692cc8070.jpg" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/5942debd-fc00-477a-b390-7c5692cc8070.jpg" /> </div>
 
 在指令列模式下，有以下命令用于离开或者保存文件。
 
@@ -127,25 +128,25 @@ GNU 计划，译为革奴计划，它的目标是创建一套完全自由的操�
 
 IDE（ATA）全称 Advanced Technology Attachment，接口速度最大为 133MB/s，因为并口线的抗干扰性太差，且排线占用空间较大，不利电脑内部散热，已逐渐被 SATA 所取代。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/924914c0-660c-4e4a-bbc0-1df1146e7516.jpg" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/924914c0-660c-4e4a-bbc0-1df1146e7516.jpg" /> </div>
 
 ### 2. SATA
 
-SATA 全称 Serial ATA，也就是使用串口的 ATA 接口，因抗干扰性强，且对数据线的长度要求比 ATA 低很多，支持热插拔等功能，SATA-II 的接口速度为 300MiB/s，而新的 SATA-III 标准可达到 600MiB/s 的传输速度。SATA 的数据线也比 ATA 的细得多，有利于机箱内的空气流通，整理线材也比较方便。
+SATA 全称 Serial ATA，也就是使用串口的 ATA 接口，抗干扰性强，且对数据线的长度要求比 ATA 低很多，支持热插拔等功能。SATA-II 的接口速度为 300MiB/s，而新的 SATA-III 标准可达到 600MiB/s 的传输速度。SATA 的数据线也比 ATA 的细得多，有利于机箱内的空气流通，整理线材也比较方便。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f9f2a16b-4843-44d1-9759-c745772e9bcf.jpg" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/f9f2a16b-4843-44d1-9759-c745772e9bcf.jpg" /> </div>
 
 ### 3. SCSI
 
-SCSI 全称是 Small Computer System Interface（小型机系统接口），经历多代的发展，从早期的 SCSI-II，到目前的 Ultra320 SCSI 以及 Fiber-Channel（光纤通道），接口型式也多种多样。SCSI 硬盘广为工作站级个人电脑以及服务器所使用，因此会使用较为先进的技术，如碟片转速 15000rpm 的高转速，且资料传输时 CPU 占用率较低，但是单价也比相同容量的 ATA 及 SATA 硬盘更加昂贵。
+SCSI 全称是 Small Computer System Interface（小型机系统接口），经历多代的发展，从早期的 SCSI-II 到目前的 Ultra320 SCSI 以及 Fiber-Channel（光纤通道），接口型式也多种多样。SCSI 硬盘广为工作站级个人电脑以及服务器所使用，因此会使用较为先进的技术，如碟片转速 15000rpm 的高转速，且传输时 CPU 占用率较低，但是单价也比相同容量的 ATA 及 SATA 硬盘更加昂贵。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f0574025-c514-49f5-a591-6d6a71f271f7.jpg" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/f0574025-c514-49f5-a591-6d6a71f271f7.jpg" /> </div>
 
 ### 4. SAS
 
 SAS（Serial Attached SCSI）是新一代的 SCSI 技术，和 SATA 硬盘相同，都是采取序列式技术以获得更高的传输速度，可达到 6Gb/s。此外也透过缩小连接线改善系统内部空间等。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/6729baa0-57d7-4817-b3aa-518cbccf824c.jpg" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/6729baa0-57d7-4817-b3aa-518cbccf824c.jpg" /> </div>
 
 ## 磁盘的文件名
 
@@ -166,7 +167,7 @@ Linux 中每个硬件都被当做一个文件，包括磁盘。磁盘以磁盘�
 
 MBR 中，第一个扇区最重要，里面有主要开机记录（Master boot record, MBR）及分区表（partition table），其中主要开机记录占 446 bytes，分区表占 64 bytes。
 
-分区表只有 64 bytes，最多只能存储 4 个分区，这 4 个分区为主分区（Primary）和扩展分区（Extended）。其中扩展分区只有一个，它将其它扇区用来记录分区表，因此通过扩展分区可以分出更多分区，这些分区称为逻辑分区。
+分区表只有 64 bytes，最多只能存储 4 个分区，这 4 个分区为主分区（Primary）和扩展分区（Extended）。其中扩展分区只有一个，它使用其它扇区用记录额外的分区表，因此通过扩展分区可以分出更多分区，这些分区称为逻辑分区。
 
 Linux 也把分区当成文件，分区文件的命名方式为：磁盘文件名 + 编号，例如 /dev/sda1。注意，逻辑分区的编号从 5 开始。
 
@@ -180,7 +181,7 @@ GPT 没有扩展分区概念，都是主分区，每个 LAB 可以分 4 个分�
 
 MBR 不支持 2.2 TB 以上的硬盘，GPT 则最多支持到 2<sup>33</sup> TB = 8 ZB。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/GUID_Partition_Table_Scheme.svg.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/GUID_Partition_Table_Scheme.svg.png" /> </div>
 
 ## 开机检测程序
 
@@ -188,15 +189,15 @@ MBR 不支持 2.2 TB 以上的硬盘，GPT 则最多支持到 2<sup>33</sup> TB 
 
 BIOS（Basic Input/Output System，基本输入输出系统），它是一个固件（嵌入在硬件中的软件），BIOS 程序存放在断电后内容不会丢失的只读内存中。
 
-BIOS 是开机的时候计算机执行的第一个程序，这个程序知道可以开机的磁盘，并读取磁盘第一个扇区的主要开机记录（MBR），由主要开机记录（MBR）执行其中的开机管理程序，这个开机管理程序会加载操作系统的核心文件。
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/50831a6f-2777-46ea-a571-29f23c85cc21.jpg"/> </div>
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/50831a6f-2777-46ea-a571-29f23c85cc21.jpg"/> </div><br>
+BIOS 是开机的时候计算机执行的第一个程序，这个程序知道可以开机的磁盘，并读取磁盘第一个扇区的主要开机记录（MBR），由主要开机记录（MBR）执行其中的开机管理程序，这个开机管理程序会加载操作系统的核心文件。
 
 主要开机记录（MBR）中的开机管理程序提供以下功能：选单、载入核心文件以及转交其它开机管理程序。转交这个功能可以用来实现了多重引导，只需要将另一个操作系统的开机管理程序安装在其它分区的启动扇区上，在启动开机管理程序时，就可以通过选单选择启动当前的操作系统或者转交给其它开机管理程序从而启动另一个操作系统。
 
 下图中，第一扇区的主要开机记录（MBR）中的开机管理程序提供了两个选单：M1、M2，M1 指向了 Windows 操作系统，而 M2 指向其它分区的启动扇区，里面包含了另外一个开机管理程序，提供了一个指向 Linux 的选单。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f900f266-a323-42b2-bc43-218fdb8811a8.jpg" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/f900f266-a323-42b2-bc43-218fdb8811a8.jpg" /> </div>
 
 安装多重引导，最好先安装 Windows 再安装 Linux。因为安装 Windows 时会覆盖掉主要开机记录（MBR），而 Linux 可以选择将开机管理程序安装在主要开机记录（MBR）或者其它分区的启动扇区，并且可以设置开机管理程序的选单。
 
@@ -212,8 +213,6 @@ BIOS 不可以读取 GPT 分区表，而 UEFI 可以。
 
 ## 组成
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/BSD_disk.png" /> </div><br>
-
 最主要的几个组成部分如下：
 
 - inode：一个文件占用一个 inode，记录文件的属性，同时记录此文件的内容所在的 block 编号；
@@ -222,17 +221,19 @@ BIOS 不可以读取 GPT 分区表，而 UEFI 可以。
 除此之外还包括：
 
 - superblock：记录文件系统的整体信息，包括 inode 和 block 的总量、使用量、剩余量，以及文件系统的格式与相关信息等；
-- block bitmap：记录 block 是否被使用的位域；
+- block bitmap：记录 block 是否被使用的位域。
+
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/BSD_disk.png" /> </div>
 
 ## 文件读取
 
 对于 Ext2 文件系统，当要读取一个文件的内容时，先在 inode 中去查找文件内容所在的所有 block，然后把所有 block 的内容读出来。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/83185315-793a-453a-a927-5e8d92b5c0ef.jpg"/> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/83185315-793a-453a-a927-5e8d92b5c0ef.jpg"/> </div>
 
 而对于 FAT 文件系统，它没有 inode，每个 block 中存储着下一个 block 的编号。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/075e1977-7846-4928-96c8-bb5b0268693c.jpg"/> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/075e1977-7846-4928-96c8-bb5b0268693c.jpg"/> </div>
 
 ## 磁盘碎片
 
@@ -269,11 +270,13 @@ inode 具有以下特点：
 
 inode 中记录了文件内容所在的 block 编号，但是每个 block 非常小，一个大文件随便都需要几十万的 block。而一个 inode 大小有限，无法直接引用这么多 block 编号。因此引入了间接、双间接、三间接引用。间接引用是指，让 inode 记录的引用 block 块记录引用信息。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/inode_with_signatures.jpg" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/inode_with_signatures.jpg" /> </div>
 
 ## 目录
 
-建立一个目录时，会分配一个 inode 与至少一个 block。block 记录的内容是目录下所有文件的 inode 编号以及文件名。可以看出文件的 inode 本身不记录文件名，文件名记录在目录中，因此新增文件、删除文件、更改文件名这些操作与目录的 w 权限有关。
+建立一个目录时，会分配一个 inode 与至少一个 block。block 记录的内容是目录下所有文件的 inode 编号以及文件名。
+
+可以看出文件的 inode 本身不记录文件名，文件名记录在目录中，因此新增文件、删除文件、更改文件名这些操作与目录的 w 权限有关。
 
 ## 日志
 
@@ -293,7 +296,7 @@ ext3/ext4 文件系统引入了日志功能，可以利用日志来修复文件�
 - /usr (unix software resource)：所有系统默认软件都会安装到这个目录；
 - /var (variable)：存放系统或程序运行过程中的数据文件。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/linux-filesystem.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/linux-filesystem.png" /> </div>
 
 # 五、文件
 
@@ -468,7 +471,7 @@ cp [-adfilprsu] source destination
 -f ：如果目标文件存在时，先删除目标文件
 ```
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/b8081c84-62c4-4019-b3ee-4bd0e443d647.jpg"/> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/b8081c84-62c4-4019-b3ee-4bd0e443d647.jpg"/> </div>
 
 ### 1. 实体链接
 
@@ -578,7 +581,7 @@ locate 使用 /var/lib/mlocate/ 这个数据库来进行搜索，它存储在内
 example: find . -name "shadow*"
 ```
 
-（一）与时间有关的选项
+**① 与时间有关的选项** 
 
 ```html
 -mtime  n ：列出在 n 天前的那一天修改过内容的文件
@@ -589,9 +592,9 @@ example: find . -name "shadow*"
 
 +4、4 和 -4 的指示的时间范围如下：
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/658fc5e7-79c0-4247-9445-d69bf194c539.png" /> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/658fc5e7-79c0-4247-9445-d69bf194c539.png" /> </div>
 
-（二）与文件拥有者和所属群组有关的选项
+**② 与文件拥有者和所属群组有关的选项** 
 
 ```html
 -uid n
@@ -602,7 +605,7 @@ example: find . -name "shadow*"
 -nogroup：搜索所属群组不存在于 /etc/group 的文件
 ```
 
-（三）与文件权限和名称有关的选项
+**③ 与文件权限和名称有关的选项** 
 
 ```html
 -name filename
@@ -757,7 +760,7 @@ $ echo ${array[1]}
 
 - 以绝对或相对路径来执行指令，例如 /bin/ls 或者 ./ls ；
 - 由别名找到该指令来执行；
-- 由 Bash 内建的指令来执行；
+- 由 Bash 内置的指令来执行；
 - 按 \$PATH 变量指定的搜索路径的顺序找到第一个指令来执行。
 
 ## 数据流重定向
@@ -780,11 +783,11 @@ $ echo ${array[1]}
 $ find /home -name .bashrc > list 2>&1
 ```
 
-# 八、管线指令
+# 八、管道指令
 
-管线是将一个命令的标准输出作为另一个命令的标准输入，在数据需要经过多个步骤的处理之后才能得到我们想要的内容时就可以使用管线。
+管道是将一个命令的标准输出作为另一个命令的标准输入，在数据需要经过多个步骤的处理之后才能得到我们想要的内容时就可以使用管道。
 
-在命令之间使用 | 分隔各个管线命令。
+在命令之间使用 | 分隔各个管道命令。
 
 ```bash
 $ ls -al /etc | less
@@ -972,9 +975,7 @@ $ grep -n 'go\{2,5\}g' regular_express.txt
 
 ## printf
 
-用于格式化输出。
-
-它不属于管道命令，在给 printf 传数据时需要使用 $( ) 形式。
+用于格式化输出。它不属于管道命令，在给 printf 传数据时需要使用 $( ) 形式。
 
 ```html
 $ printf '%10s %5i %5i %5i %8.2f \n' $(cat printf.txt)
@@ -989,7 +990,7 @@ $ printf '%10s %5i %5i %5i %8.2f \n' $(cat printf.txt)
 
 awk 每次处理一行，处理的最小单位是字段，每个字段的命名方式为：\$n，n 为字段号，从 1 开始，\$0 表示一整行。
 
-示例：取出登录用户的用户名和 IP
+示例：取出最近五个登录用户的用户名和 IP
 
 ```html
 $ last -n 5
@@ -1064,17 +1065,7 @@ dmtsai lines: 5 columns: 9
 # ps aux | grep threadx
 ```
 
-### 2. top
-
-实时显示进程信息
-
-示例：两秒钟刷新一次
-
-```sh
-# top -d 2
-```
-
-### 3. pstree
+### 2. pstree
 
 查看进程树
 
@@ -1082,6 +1073,16 @@ dmtsai lines: 5 columns: 9
 
 ```sh
 # pstree -A
+```
+
+### 3. top
+
+实时显示进程信息
+
+示例：两秒钟刷新一次
+
+```sh
+# top -d 2
 ```
 
 ### 4. netstat
@@ -1103,8 +1104,8 @@ dmtsai lines: 5 columns: 9
 | S | interruptible sleep (waiting for an event to complete) |
 | Z | zombie (terminated but not reaped by its parent) |
 | T | stopped (either by a job control signal or because it is being traced) |
-
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/76a49594323247f21c9b3a69945445ee.png" /> </div><br>
+<br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/76a49594323247f21c9b3a69945445ee.png" /> </div>
 
 ## SIGCHLD
 
@@ -1113,11 +1114,11 @@ dmtsai lines: 5 columns: 9
 - 得到 SIGCHLD 信号；
 - waitpid() 或者 wait() 调用会返回。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/flow.png" /> </div><br>
-
 其中子进程发送的 SIGCHLD 信号包含了子进程的信息，包含了进程 ID、进程状态、进程使用 CPU 的时间等。
 
 在子进程退出时，它的进程描述符不会立即释放，这是为了让父进程得到子进程信息，父进程通过 wait() 和 waitpid() 来获得一个已经退出的子进程的信息。
+
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/flow.png" /> </div>
 
 ## wait()
 
@@ -1184,4 +1185,4 @@ options 参数主要有 WNOHANG 和 WUNTRACED 两个选项，WNOHANG 可以使 w
 
 
 ---
-github: https://github.com/sjsdfg/Interview-Notebook-PDF
+github: https://github.com/sjsdfg/CS-Notes-PDF

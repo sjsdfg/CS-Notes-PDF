@@ -1,15 +1,8 @@
 # Git
 
-原作者github: https://github.com/CyC2018/Interview-Notebook
+原作者github: https://github.com/CyC2018/CS-Notes
 
-PDF制作github: https://github.com/sjsdfg/Interview-Notebook-PDF
-
-# 学习资料
-
-- [Git - 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
-- [图解 Git](http://marklodato.github.io/visual-git-guide/index-zh-cn.html)
-- [廖雪峰 : Git 教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
-- [Learn Git Branching](https://learngitbranching.js.org/)
+PDF制作github: https://github.com/sjsdfg/CS-Notes-PDF
 
 # 集中式与分布式
 
@@ -23,55 +16,57 @@ Git 属于分布式版本控制系统，而 SVN 属于集中式。
 
 分布式版本控制新建分支、合并分支操作速度非常快，而集中式版本控制新建一个分支相当于复制一份完整代码。
 
-# Git 的中心服务器
+# 中心服务器
 
-Git 的中心服务器用来交换每个用户的修改。没有中心服务器也能工作，但是中心服务器能够 24 小时保持开机状态，这样就能更方便的交换修改。Github 就是一种 Git 中心服务器。
+中心服务器用来交换每个用户的修改，没有中心服务器也能工作，但是中心服务器能够 24 小时保持开机状态，这样就能更方便的交换修改。
 
-# Git 工作流
+Github 就是一个中心服务器。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/a1198642-9159-4d88-8aec-c3b04e7a2563.jpg"/> </div><br>
+# 工作流
+
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/a1198642-9159-4d88-8aec-c3b04e7a2563.jpg"/> </div>
 
 新建一个仓库之后，当前目录就成为了工作区，工作区下有一个隐藏目录 .git，它属于 Git 的版本库。
 
 Git 版本库有一个称为 stage 的暂存区，还有自动创建的 master 分支以及指向分支的 HEAD 指针。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/46f66e88-e65a-4ad0-a060-3c63fe22947c.png"/> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/46f66e88-e65a-4ad0-a060-3c63fe22947c.png"/> </div>
 
 - git add files 把文件的修改添加到暂存区
 - git commit 把暂存区的修改提交到当前分支，提交之后暂存区就被清空了
 - git reset -- files 使用当前分支上的修改覆盖暂缓区，用来撤销最后一次 git add files
 - git checkout -- files 使用暂存区的修改覆盖工作目录，用来撤销本地修改
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/17976404-95f5-480e-9cb4-250e6aa1d55f.png"/> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/17976404-95f5-480e-9cb4-250e6aa1d55f.png"/> </div>
 
-可以跳过暂存区域直接从分支中取出修改或者直接提交修改到分支中
+可以跳过暂存区域直接从分支中取出修改，或者直接提交修改到分支中。
 
 - git commit -a 直接把所有文件的修改添加到暂缓区然后执行提交
 - git checkout HEAD -- files 取出最后一次修改，可以用来进行回滚操作
 
 # 分支实现
 
-Git 把每次提交都连成一条时间线。分支使用指针来实现，例如 master 分支指针指向时间线的最后一个节点，也就是最后一次提交。HEAD 指针指向的是当前分支。
+使用指针将每个提交连接成一条时间线，HEAD 指针指向当前分支指针。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/fb546e12-e1fb-4b72-a1fb-8a7f5000dce6.jpg"/> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/fb546e12-e1fb-4b72-a1fb-8a7f5000dce6.jpg"/> </div>
 
 新建分支是新建一个指针指向时间线的最后一个节点，并让 HEAD 指针指向新分支表示新分支成为当前分支。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/bc775758-89ab-4805-9f9c-78b8739cf780.jpg"/> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/bc775758-89ab-4805-9f9c-78b8739cf780.jpg"/> </div>
 
-每次提交只会让当前分支向前移动，而其它分支不会移动。
+每次提交只会让当前分支指针向前移动，而其它分支指针不会移动。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/5292faa6-0141-4638-bf0f-bb95b081dcba.jpg"/> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/5292faa6-0141-4638-bf0f-bb95b081dcba.jpg"/> </div>
 
 合并分支也只需要改变指针即可。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/1164a71f-413d-494a-9cc8-679fb6a2613d.jpg"/> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/1164a71f-413d-494a-9cc8-679fb6a2613d.jpg"/> </div>
 
 # 冲突
 
 当两个分支都对同一个文件的同一行进行了修改，在分支合并时就会产生冲突。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/58e57a21-6b6b-40b6-af85-956dd4e0f55a.jpg"/> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/58e57a21-6b6b-40b6-af85-956dd4e0f55a.jpg"/> </div>
 
 Git 会使用 <<<<<<< ，======= ，>>>>>>> 标记出不同分支的内容，只需要把不同分支中冲突部分修改成一样就能解决冲突。
 
@@ -93,7 +88,7 @@ Creating a new branch is quick AND simple.
 $ git merge --no-ff -m "merge with no-ff" dev
 ```
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/dd78a1fe-1ff3-4bcf-a56f-8c003995beb6.jpg"/> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/dd78a1fe-1ff3-4bcf-a56f-8c003995beb6.jpg"/> </div>
 
 # 分支管理策略
 
@@ -101,7 +96,7 @@ master 分支应该是非常稳定的，只用来发布新版本；
 
 日常开发在开发分支 dev 上进行。
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/245fd2fb-209c-4ad5-bc5e-eb5664966a0e.jpg"/> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/245fd2fb-209c-4ad5-bc5e-eb5664966a0e.jpg"/> </div>
 
 # 储藏（Stashing）
 
@@ -141,12 +136,17 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 # Git 命令一览
 
-<div align="center"> <img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/7a29acce-f243-4914-9f00-f2988c528412.jpg"/> </div><br>
+<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/7a29acce-f243-4914-9f00-f2988c528412.jpg"/> </div>
 
 比较详细的地址：http://www.cheat-sheets.org/saved-copy/git-cheat-sheet.pdf
 
+# 参考资料
 
+- [Git - 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
+- [图解 Git](http://marklodato.github.io/visual-git-guide/index-zh-cn.html)
+- [廖雪峰 : Git 教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+- [Learn Git Branching](https://learngitbranching.js.org/)
 
 
 ---
-github: https://github.com/sjsdfg/Interview-Notebook-PDF
+github: https://github.com/sjsdfg/CS-Notes-PDF
