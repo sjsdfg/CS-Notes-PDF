@@ -15,6 +15,8 @@
 - 新增[深度学习500问](https://github.com/scutan90/DeepLearning-500-questions)
 - [100-Days-Of-ML-Code中文版](https://github.com/MLEveryday/100-Days-Of-ML-Code)
 - [阿里Java手册 1.4.0版本](https://pan.baidu.com/s/1le0nvGP6GIpnczOZldrBGQ)
+- [计算机网络-自顶向下  第七版英文原版](https://pan.baidu.com/s/1VPzcjXc0TR1SPIkexM1YTw)
+
 
 ---
 
