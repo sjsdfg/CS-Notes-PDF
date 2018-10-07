@@ -173,6 +173,8 @@ Google 开源项目的代码风格规范。
 
 ---
 
+# 额外资料推荐
+
 - 新增[机器学习小抄](https://pan.baidu.com/s/1XvwRLqgAnUtMqjNsJT-wTQ), 文件较大，已放在百度云盘。不过README一般也没啥人看，就当个小彩蛋？ 
 - 新增[深度学习500问](https://github.com/scutan90/DeepLearning-500-questions)
 - [100-Days-Of-ML-Code中文版](https://github.com/MLEveryday/100-Days-Of-ML-Code)
