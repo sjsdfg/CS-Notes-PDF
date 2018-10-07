@@ -18,6 +18,15 @@
 - [计算机网络-自顶向下  第七版英文原版](https://pan.baidu.com/s/1VPzcjXc0TR1SPIkexM1YTw)
 - [深入理解操作系统 第三版英文版原版-CSAPP 3rd](https://pan.baidu.com/s/1yJLb6EHRa0bjka7ryfr6mw)
 
+# 赞助我
+
+<div align="center"> 
+<div style="display:inline;"> <img style="width:400px; height:552px" src="http://static.zybuluo.com/ZzzJoe/ocd9cy7705lq49lfbeddgl18/109389903624384893.jpg" />  </div>
+
+<div style="display:inline;"> <img style="width:400px; height:552px" src="http://static.zybuluo.com/ZzzJoe/b0bzaf8reigm35g9y8g0y8sb/553116372516409343.png" />  </div>
+</div>
+
+
 ---
 
 分割线
