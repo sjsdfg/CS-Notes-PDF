@@ -185,7 +185,7 @@ Google 开源项目的代码风格规范。
 # 赞助我
 
 <figure class="half">
-<img width="300px"  src="http://static.zybuluo.com/ZzzJoe/ocd9cy7705lq49lfbeddgl18/109389903624384893.jpg" />  </div>
+<img width="300px"  src="http://static.zybuluo.com/ZzzJoe/ocd9cy7705lq49lfbeddgl18/109389903624384893.jpg" />
 
 <img width="300px"  src="http://static.zybuluo.com/ZzzJoe/b0bzaf8reigm35g9y8g0y8sb/553116372516409343.png" />
 </figure>
