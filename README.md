@@ -182,7 +182,7 @@ Google 开源项目的代码风格规范。
 - [计算机网络-自顶向下  第七版英文原版](https://pan.baidu.com/s/1VPzcjXc0TR1SPIkexM1YTw)
 - [深入理解操作系统 第三版英文版原版-CSAPP 3rd](https://pan.baidu.com/s/1yJLb6EHRa0bjka7ryfr6mw)
 
-# 赞助我
+# Give Me a Favor
 
 <div align="center">
 <img sytle="display:inline;" width="300px"  src="http://static.zybuluo.com/ZzzJoe/ocd9cy7705lq49lfbeddgl18/109389903624384893.jpg" />
