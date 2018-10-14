@@ -184,11 +184,9 @@ Google 开源项目的代码风格规范。
 
 # Give Me a Favor
 
-<div align="center">
-<img sytle="display:inline;" width="300px"  src="http://static.zybuluo.com/ZzzJoe/ocd9cy7705lq49lfbeddgl18/109389903624384893.jpg" />
-
-<img sytle="display:inline;" width="300px"  src="http://static.zybuluo.com/ZzzJoe/b0bzaf8reigm35g9y8g0y8sb/553116372516409343.png" />
-</div>
+<center>
+<img src="http://static.zybuluo.com/ZzzJoe/yflamvkjh2i7zn5qcp9wpj61/%E5%AF%92%E6%B2%A7.jpg" />
+</center>
 
 
 # 文档转换步骤 
