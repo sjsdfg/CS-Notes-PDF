@@ -2,20 +2,20 @@
 
 用于提供 https://github.com/CyC2018/CS-Notes 项目的离线阅读
 
-**pdf使用 cmd-markdown 的付费工具手工进行pdf的转换。**
+**pdf 使用 cmd-markdown 的付费工具手工进行 pdf 的转换。**
 
-原作者已经制作好gitbook地址：https://legacy.gitbook.com/book/cyc2018/interview-notebook/details
+原作者已经制作好 gitbook 地址：https://legacy.gitbook.com/book/cyc2018/interview-notebook/details
 
 **那么为什么还需要本仓库？**
-我个人认为**cmd-markdown工具所转化的pdf**相比gitbook直接生成的pdf拥有**更好的阅读体验！**
+我个人认为**cmd-markdown 工具所转化的 pdf**相比 gitbook 直接生成的 pdf 拥有**更好的阅读体验！**
 
 # 额外资料推荐
 
-- 新增[机器学习小抄](https://pan.baidu.com/s/1XvwRLqgAnUtMqjNsJT-wTQ), 文件较大，已放在百度云盘。不过README一般也没啥人看，就当个小彩蛋？ 
-- 新增[深度学习500问](https://github.com/scutan90/DeepLearning-500-questions)
-- [100-Days-Of-ML-Code中文版](https://github.com/MLEveryday/100-Days-Of-ML-Code)
-- [阿里Java手册 1.4.0版本](https://pan.baidu.com/s/1le0nvGP6GIpnczOZldrBGQ)
-- [计算机网络-自顶向下  第七版英文原版](https://pan.baidu.com/s/1VPzcjXc0TR1SPIkexM1YTw)
+- 新增[机器学习小抄 ](https://pan.baidu.com/s/1XvwRLqgAnUtMqjNsJT-wTQ), 文件较大，已放在百度云盘。不过 README 一般也没啥人看，就当个小彩蛋？ 
+- 新增[深度学习 500 问 ](https://github.com/scutan90/DeepLearning-500-questions)
+- [100-Days-Of-ML-Code 中文版 ](https://github.com/MLEveryday/100-Days-Of-ML-Code)
+- [阿里 Java 手册 1.4.0 版本 ](https://pan.baidu.com/s/1le0nvGP6GIpnczOZldrBGQ)
+- [计算机网络-自顶向下  第七版英文原版 ](https://pan.baidu.com/s/1VPzcjXc0TR1SPIkexM1YTw)
 - [深入理解操作系统 第三版英文版原版-CSAPP 3rd](https://pan.baidu.com/s/1yJLb6EHRa0bjka7ryfr6mw)
 
 
@@ -35,21 +35,21 @@
 
 ## 算法 :pencil2:
 
-> [剑指 Offer 题解](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/剑指%20offer%20题解.md)
+> [剑指 Offer 题解 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/剑指%20offer%20 题解.md)
 
 目录根据原书第二版进行编排，代码和原书有所不同，尽量比原书更简洁。
 
-> [Leetcode 题解](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Leetcode%20题解.md)
+> [Leetcode 题解 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Leetcode%20 题解.md)
 
 对题目做了一个大致分类，并对每种题型的解题思路做了总结。
 
-> [算法](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/算法.md)
+> [算法 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/算法.md)
 
 排序、并查集、栈和队列、红黑树、散列表。
 
 ## 操作系统 :computer:
 
-> [计算机操作系统](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/计算机操作系统.md)
+> [计算机操作系统 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/计算机操作系统.md)
 
 进程管理、内存管理、设备管理、链接。
 
@@ -59,7 +59,7 @@
 
 ## 网络 :cloud:
 
-> [计算机网络](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/计算机网络.md)
+> [计算机网络 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/计算机网络.md)
 
 物理层、链路层、网络层、运输层、应用层。
 
@@ -73,17 +73,17 @@ I/O 模型、I/O 多路复用。
 
 ## 面向对象 :couple:
 
-> [设计模式](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/设计模式.md)
+> [设计模式 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/设计模式.md)
 
 实现了 Gof 的 23 种设计模式。
 
-> [面向对象思想](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/面向对象思想.md)
+> [面向对象思想 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/面向对象思想.md)
 
 三大原则（继承、封装、多态）、类图、设计原则。
 
 ## 数据库 :floppy_disk:
 
-> [数据库系统原理](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/数据库系统原理.md)
+> [数据库系统原理 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/数据库系统原理.md)
 
 事务、锁、隔离级别、MVCC、间隙锁、范式。
 
@@ -91,7 +91,7 @@ I/O 模型、I/O 多路复用。
 
 SQL 基本语法。
 
-> [Leetcode-Database 题解](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Leetcode-Database%20题解.md)
+> [Leetcode-Database 题解 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Leetcode-Database%20 题解.md)
 
 Leetcode 上数据库题目的解题记录。
 
@@ -105,19 +105,19 @@ Leetcode 上数据库题目的解题记录。
 
 ## Java :coffee:
 
-> [Java 基础](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Java%20基础.md)
+> [Java 基础 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Java%20 基础.md)
 
 不会涉及很多基本语法介绍，主要是一些实现原理以及关键特性。
 
-> [Java 容器](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Java%20容器.md)
+> [Java 容器 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Java%20 容器.md)
 
 源码分析：ArrayList、Vector、CopyOnWriteArrayList、LinkedList、HashMap、ConcurrentHashMap、LinkedHashMap、WeekHashMap。
 
-> [Java 并发](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Java%20并发.md)
+> [Java 并发 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Java%20 并发.md)
 
 线程使用方式、两种互斥同步方法、线程协作、JUC、线程安全、内存模型、锁优化。
 
-> [Java 虚拟机](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Java%20虚拟机.md)
+> [Java 虚拟机 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Java%20 虚拟机.md)
 
 运行时数据区域、垃圾收集、类加载。
 
@@ -127,27 +127,27 @@ NIO 的原理以及实例。
 
 ## 系统设计 :bulb:
 
-> [系统设计基础](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/系统设计基础.md)
+> [系统设计基础 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/系统设计基础.md)
 
 性能、伸缩性、扩展性、可用性、安全性
 
-> [分布式](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/分布式.md)
+> [分布式 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/分布式.md)
 
 分布式锁、分布式事务、CAP、BASE、Paxos、Raft
 
-> [集群](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/集群.md)
+> [集群 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/集群.md)
 
 负载均衡、Session 管理
 
-> [攻击技术](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/攻击技术.md)
+> [攻击技术 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/攻击技术.md)
 
 XSS、CSRF、SQL 注入、DDoS
 
-> [缓存](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/缓存.md)
+> [缓存 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/缓存.md)
 
 缓存特征、缓存位置、缓存问题、数据分布、一致性哈希、LRU、CDN
 
-> [消息队列](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/消息队列.md)
+> [消息队列 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/消息队列.md)
 
 消息处理模型、使用场景、可靠性
 
@@ -161,25 +161,25 @@ XSS、CSRF、SQL 注入、DDoS
 
 Docker 基本原理。
 
-> [正则表达式](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/正则表达式.md)
+> [正则表达式 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/正则表达式.md)
 
 正则表达式基本语法。
 
-> [构建工具](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/构建工具.md)
+> [构建工具 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/构建工具.md)
 
 构建工具的基本概念、主流构建工具介绍。
 
 ## 编码实践 :speak_no_evil:
 
-> [重构](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/重构.md)
+> [重构 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/重构.md)
 
 参考 重构 改善既有代码的设计。
 
-> [代码可读性](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/代码可读性.md)
+> [代码可读性 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/代码可读性.md)
 
 参考 编写可读代码的艺术。
 
-> [代码风格规范](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/代码风格规范.md)
+> [代码风格规范 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/代码风格规范.md)
 
 Google 开源项目的代码风格规范。
 
