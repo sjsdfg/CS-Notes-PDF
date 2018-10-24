@@ -35,11 +35,11 @@
 
 ## 算法 :pencil2:
 
-> [剑指 Offer 题解 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/剑指%20offer%20 题解.md)
+> [剑指 Offer 题解 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/剑指%20offer%20题解.md)
 
 目录根据原书第二版进行编排，代码和原书有所不同，尽量比原书更简洁。
 
-> [Leetcode 题解 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Leetcode%20 题解.md)
+> [Leetcode 题解 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Leetcode%20题解.md)
 
 对题目做了一个大致分类，并对每种题型的解题思路做了总结。
 
@@ -105,11 +105,11 @@ Leetcode 上数据库题目的解题记录。
 
 ## Java :coffee:
 
-> [Java 基础 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Java%20 基础.md)
+> [Java 基础 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Java%20基础.md)
 
 不会涉及很多基本语法介绍，主要是一些实现原理以及关键特性。
 
-> [Java 容器 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Java%20 容器.md)
+> [Java 容器 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Java%20容器.md)
 
 源码分析：ArrayList、Vector、CopyOnWriteArrayList、LinkedList、HashMap、ConcurrentHashMap、LinkedHashMap、WeekHashMap。
 
@@ -117,7 +117,7 @@ Leetcode 上数据库题目的解题记录。
 
 线程使用方式、两种互斥同步方法、线程协作、JUC、线程安全、内存模型、锁优化。
 
-> [Java 虚拟机 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Java%20 虚拟机.md)
+> [Java 虚拟机 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Java%20虚拟机.md)
 
 运行时数据区域、垃圾收集、类加载。
 
