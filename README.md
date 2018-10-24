@@ -91,7 +91,7 @@ I/O 模型、I/O 多路复用。
 
 SQL 基本语法。
 
-> [Leetcode-Database 题解 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Leetcode-Database%20 题解.md)
+> [Leetcode-Database 题解 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Leetcode-Database%20题解.md)
 
 Leetcode 上数据库题目的解题记录。
 
@@ -113,7 +113,7 @@ Leetcode 上数据库题目的解题记录。
 
 源码分析：ArrayList、Vector、CopyOnWriteArrayList、LinkedList、HashMap、ConcurrentHashMap、LinkedHashMap、WeekHashMap。
 
-> [Java 并发 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Java%20 并发.md)
+> [Java 并发 ](https://github.com/CyC2018/InnterviewNotes/blob/master/notes/Java%20并发.md)
 
 线程使用方式、两种互斥同步方法、线程协作、JUC、线程安全、内存模型、锁优化。
 
