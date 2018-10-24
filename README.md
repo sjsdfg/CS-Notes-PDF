@@ -9,6 +9,19 @@
 **那么为什么还需要本仓库？**
 我个人认为**cmd-markdown工具所转化的pdf**相比gitbook直接生成的pdf拥有**更好的阅读体验！**
 
+# 额外资料推荐
+
+- 新增[机器学习小抄](https://pan.baidu.com/s/1XvwRLqgAnUtMqjNsJT-wTQ), 文件较大，已放在百度云盘。不过README一般也没啥人看，就当个小彩蛋？ 
+- 新增[深度学习500问](https://github.com/scutan90/DeepLearning-500-questions)
+- [100-Days-Of-ML-Code中文版](https://github.com/MLEveryday/100-Days-Of-ML-Code)
+- [阿里Java手册 1.4.0版本](https://pan.baidu.com/s/1le0nvGP6GIpnczOZldrBGQ)
+- [计算机网络-自顶向下  第七版英文原版](https://pan.baidu.com/s/1VPzcjXc0TR1SPIkexM1YTw)
+- [深入理解操作系统 第三版英文版原版-CSAPP 3rd](https://pan.baidu.com/s/1yJLb6EHRa0bjka7ryfr6mw)
+
+
+<center>
+<img src="http://static.zybuluo.com/ZzzJoe/yflamvkjh2i7zn5qcp9wpj61/%E5%AF%92%E6%B2%A7.jpg" />
+</center>
 
 ---
 
@@ -172,20 +185,6 @@ Google 开源项目的代码风格规范。
 
 
 ---
-
-# 额外资料推荐
-
-- 新增[机器学习小抄](https://pan.baidu.com/s/1XvwRLqgAnUtMqjNsJT-wTQ), 文件较大，已放在百度云盘。不过README一般也没啥人看，就当个小彩蛋？ 
-- 新增[深度学习500问](https://github.com/scutan90/DeepLearning-500-questions)
-- [100-Days-Of-ML-Code中文版](https://github.com/MLEveryday/100-Days-Of-ML-Code)
-- [阿里Java手册 1.4.0版本](https://pan.baidu.com/s/1le0nvGP6GIpnczOZldrBGQ)
-- [计算机网络-自顶向下  第七版英文原版](https://pan.baidu.com/s/1VPzcjXc0TR1SPIkexM1YTw)
-- [深入理解操作系统 第三版英文版原版-CSAPP 3rd](https://pan.baidu.com/s/1yJLb6EHRa0bjka7ryfr6mw)
-
-
-<center>
-<img src="http://static.zybuluo.com/ZzzJoe/yflamvkjh2i7zn5qcp9wpj61/%E5%AF%92%E6%B2%A7.jpg" />
-</center>
 
 
 # 文档转换步骤 
