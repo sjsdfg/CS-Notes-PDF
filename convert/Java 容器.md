@@ -10,7 +10,7 @@ PDF制作github: https://github.com/sjsdfg/CS-Notes-PDF
 
 ## Collection
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/VP6n3i8W48Ptde8NQ9_0eSR5eOD6uqx.png"/> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/VP6n3i8W48Ptde8NQ9_0eSR5eOD6uqx.png"/> </div>
 
 ### 1. Set
 
@@ -36,7 +36,7 @@ PDF制作github: https://github.com/sjsdfg/CS-Notes-PDF
 
 ## Map
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/SoWkIImgAStDuUBAp2j9BKfBJ4vLy4q.png"/> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/SoWkIImgAStDuUBAp2j9BKfBJ4vLy4q.png"/> </div>
 
 - TreeMap：基于红黑树实现。
 
@@ -51,9 +51,9 @@ PDF制作github: https://github.com/sjsdfg/CS-Notes-PDF
 
 ## 迭代器模式
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/SoWkIImgAStDuUBAp2j9BKfBJ4vLy0G.png"/> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/SoWkIImgAStDuUBAp2j9BKfBJ4vLy0G.png"/> </div>
 
-Collection 实现了 Iterable 接口，其中的 iterator() 方法能够产生一个 Iterator 对象，通过这个对象就可以迭代遍历 Collection 中的元素。
+Collection 继承了 Iterable 接口，其中的 iterator() 方法能够产生一个 Iterator 对象，通过这个对象就可以迭代遍历 Collection 中的元素。
 
 从 JDK 1.5 之后可以使用 foreach 方法来遍历实现了 Iterable 接口的聚合对象。
 
@@ -372,7 +372,7 @@ transient Node<E> first;
 transient Node<E> last;
 ```
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/49495c95-52e5-4c9a-b27b-92cf235ff5ec.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/49495c95-52e5-4c9a-b27b-92cf235ff5ec.png" /> </div>
 
 ### 2. 与 ArrayList 的比较
 
@@ -394,7 +394,7 @@ transient Entry[] table;
 
 Entry 存储着键值对。它包含了四个字段，从 next 字段我们可以看出 Entry 是一个链表。即数组中的每个位置被当成一个桶，一个桶存放一个链表。HashMap 使用拉链法来解决冲突，同一个链表中存放哈希值相同的 Entry。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/8fe838e3-ef77-4f63-bf45-417b6bc5c6bb.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/8fe838e3-ef77-4f63-bf45-417b6bc5c6bb.png" /> </div>
 
 ```java
 static class Entry<K,V> implements Map.Entry<K,V> {
@@ -470,7 +470,7 @@ map.put("K3", "V3");
 - 计算键值对所在的桶；
 - 在链表上顺序查找，时间复杂度显然和链表的长度成正比。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/49d6de7b-0d0d-425c-9e49-a1559dc23b10.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/49d6de7b-0d0d-425c-9e49-a1559dc23b10.png" /> </div>
 
 ### 3. put 操作
 
@@ -631,8 +631,8 @@ static int indexFor(int h, int length) {
 | 参数 | 含义 |
 | :--: | :-- |
 | capacity | table 的容量大小，默认为 16。需要注意的是 capacity 必须保证为 2 的 n 次方。|
-| size | table 的实际使用量。 |
-| threshold | size 的临界值，size 必须小于 threshold，如果大于等于，就必须进行扩容操作。 |
+| size | 键值对数量。 |
+| threshold | size 的临界值，当 size 大于等于 threshold 就必须进行扩容操作。 |
 | loadFactor | 装载因子，table 能够使用的比例，threshold = capacity * loadFactor。|
 
 ```java
@@ -712,7 +712,7 @@ new capacity : 00100000
 
 对于一个 Key，
 
-- 它的哈希值如果在第 6 位上为 0，那么取模得到的结果和之前一样；
+- 它的哈希值如果在第 5 位上为 0，那么取模得到的结果和之前一样；
 - 如果为 1，那么得到的结果为原来的结果 +16。
 
 ### 7. 计算数组容量
@@ -806,7 +806,7 @@ final Segment<K,V>[] segments;
 static final int DEFAULT_CONCURRENCY_LEVEL = 16;
 ```
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/3fdfc89d-719e-4d93-b518-29fa612b3b18.png"/> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/3fdfc89d-719e-4d93-b518-29fa612b3b18.png"/> </div>
 
 ### 2. size 操作
 

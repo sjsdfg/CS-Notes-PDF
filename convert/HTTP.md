@@ -6,25 +6,25 @@ PDF制作github: https://github.com/sjsdfg/CS-Notes-PDF
 
 # 一 、基础概念
 
-## URL
+## URI
 
-URI 包含 URL 和 URN，目前 WEB 只有 URL 比较流行，所以见到的基本都是 URL。
+URI 包含 URL 和 URN。
 
 - URI（Uniform Resource Identifier，统一资源标识符）
 - URL（Uniform Resource Locator，统一资源定位符）
 - URN（Uniform Resource Name，统一资源名称）
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/urlnuri.jpg" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/766d401b-3cf6-475c-8ced-ea8c8db8edc5.png" /> </div>
 
 ## 请求和响应报文
 
 ### 1. 请求报文
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/HTTP_RequestMessageExample.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/HTTP_RequestMessageExample.png" /> </div>
 
 ### 2. 响应报文
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/HTTP_ResponseMessageExample.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/HTTP_ResponseMessageExample.png" /> </div>
 
 # 二、HTTP 方法
 
@@ -40,7 +40,7 @@ URI 包含 URL 和 URN，目前 WEB 只有 URL 比较流行，所以见到的基
 
 > 获取报文首部
 
-和 GET 方法一样，但是不返回报文实体主体部分。
+和 GET 方法类似，但是不返回报文实体主体部分。
 
 主要用于确认 URL 的有效性以及资源更新的日期时间等。
 
@@ -99,7 +99,7 @@ DELETE /file.html HTTP/1.1
 
 查询指定的 URL 能够支持的方法。
 
-会返回 Allow: GET, POST, HEAD, OPTIONS 这样的内容。
+会返回 `Allow: GET, POST, HEAD, OPTIONS` 这样的内容。
 
 ## CONNECT
 
@@ -111,7 +111,7 @@ DELETE /file.html HTTP/1.1
 CONNECT www.example.com:443 HTTP/1.1
 ```
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/dc00f70e-c5c8-4d20-baf1-2d70014a97e3.jpg" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/dc00f70e-c5c8-4d20-baf1-2d70014a97e3.jpg" /> </div>
 
 ## TRACE
 
@@ -122,11 +122,12 @@ CONNECT www.example.com:443 HTTP/1.1
 发送请求时，在 Max-Forwards 首部字段中填入数值，每经过一个服务器就会减 1，当数值为 0 时就停止传输。
 
 通常不会使用 TRACE，并且它容易受到 XST 攻击（Cross-Site Tracing，跨站追踪）。
+
 # 三、HTTP 状态码
 
 服务器返回的  **响应报文**  中第一行为状态行，包含了状态码以及原因短语，用来告知客户端请求的结果。
 
-| 状态码 | 类别 | 原因短语 |
+| 状态码 | 类别 | 含义 |
 | :---: | :---: | :---: |
 | 1XX | Informational（信息性状态码） | 接收的请求正在处理 |
 | 2XX | Success（成功状态码） | 请求正常处理完毕 |
@@ -253,7 +254,7 @@ CONNECT www.example.com:443 HTTP/1.1
 
 ## 连接管理
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/HTTP1_x_Connections.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/HTTP1_x_Connections.png" /> </div>
 
 ### 1. 短连接与长连接
 
@@ -582,11 +583,11 @@ HTTP/1.1 使用虚拟主机技术，使得一台服务器拥有多个域名，�
 
 - 用户察觉得到正向代理的存在。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/a314bb79-5b18-4e63-a976-3448bffa6f1b.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/a314bb79-5b18-4e63-a976-3448bffa6f1b.png" /> </div>
 
 - 而反向代理一般位于内部网络中，用户察觉不到。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/2d09a847-b854-439c-9198-b29c65810944.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/2d09a847-b854-439c-9198-b29c65810944.png" /> </div>
 
 ### 2. 网关
 
@@ -608,7 +609,7 @@ HTTPs 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）�
 
 通过使用 SSL，HTTPs 具有了加密（防窃听）、认证（防伪装）和完整性保护（防篡改）。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/ssl-offloading.jpg" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/ssl-offloading.jpg" /> </div>
 
 ## 加密
 
@@ -619,7 +620,7 @@ HTTPs 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）�
 - 优点：运算速度快；
 - 缺点：无法安全地将密钥传输给通信方。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/7fffa4b8-b36d-471f-ad0c-a88ee763bb76.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/7fffa4b8-b36d-471f-ad0c-a88ee763bb76.png" /> </div>
 
 ### 2.非对称密钥加密
 
@@ -632,13 +633,13 @@ HTTPs 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）�
 - 优点：可以更安全地将公开密钥传输给通信发送方；
 - 缺点：运算速度慢。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/39ccb299-ee99-4dd1-b8b4-2f9ec9495cb4.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/39ccb299-ee99-4dd1-b8b4-2f9ec9495cb4.png" /> </div>
 
 ### 3. HTTPs 采用的加密方式
 
 HTTPs 采用混合的加密机制，使用非对称密钥加密用于传输对称密钥来保证传输过程的安全性，之后使用对称密钥加密进行通信来保证通信过程的效率。（下图中的 Session Key 就是对称密钥）
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/How-HTTPS-Works.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/How-HTTPS-Works.png" /> </div>
 
 ## 认证
 
@@ -650,9 +651,7 @@ HTTPs 采用混合的加密机制，使用非对称密钥加密用于传输对�
 
 进行 HTTPs 通信时，服务器会把证书发送给客户端。客户端取得其中的公开密钥之后，先使用数字签名进行验证，如果验证通过，就可以开始通信了。
 
-通信开始时，客户端需要使用服务器的公开密钥将自己的私有密钥传输给服务器，之后再进行对称密钥加密。
-
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/2017-06-11-ca.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/2017-06-11-ca.png" /> </div>
 
 ## 完整性保护
 
@@ -666,6 +665,7 @@ HTTPs 的报文摘要功能之所以安全，是因为它结合了加密和认�
 
 - 因为需要进行加密解密等过程，因此速度会更慢；
 - 需要支付证书授权的高额费用。
+
 # 七、HTTP/2.0
 
 ## HTTP/1.x 缺陷
@@ -680,7 +680,7 @@ HTTP/1.x 实现简单是以牺牲性能为代价的：
 
 HTTP/2.0 将报文分成 HEADERS 帧和 DATA 帧，它们都是二进制格式的。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/86e6a91d-a285-447a-9345-c5484b8d0c47.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/86e6a91d-a285-447a-9345-c5484b8d0c47.png" /> </div>
 
 在通信过程中，只会有一个 TCP 连接存在，它承载了任意数量的双向数据流（Stream）。
 
@@ -688,13 +688,13 @@ HTTP/2.0 将报文分成 HEADERS 帧和 DATA 帧，它们都是二进制格式�
 - 消息（Message）是与逻辑请求或响应对应的完整的一系列帧。
 - 帧（Frame）是最小的通信单位，来自不同数据流的帧可以交错发送，然后再根据每个帧头的数据流标识符重新组装。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/af198da1-2480-4043-b07f-a3b91a88b815.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/af198da1-2480-4043-b07f-a3b91a88b815.png" /> </div>
 
 ## 服务端推送
 
 HTTP/2.0 在客户端请求一个资源时，会把相关的资源一起发送给客户端，客户端就不需要再次发起请求了。例如客户端请求 page.html 页面，服务端就把 script.js 和 style.css 等与之相关的资源一起发给客户端。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/e3f1657c-80fc-4dfa-9643-bf51abd201c6.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/e3f1657c-80fc-4dfa-9643-bf51abd201c6.png" /> </div>
 
 ## 首部压缩
 
@@ -704,24 +704,18 @@ HTTP/2.0 要求客户端和服务器同时维护和更新一个包含之前见�
 
 不仅如此，HTTP/2.0 也使用 Huffman 编码对首部字段进行压缩。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/_u4E0B_u8F7D.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/_u4E0B_u8F7D.png" /> </div>
 
 # 八、HTTP/1.1 新特性
 
 详细内容请见上文
 
 - 默认是长连接
-
 - 支持流水线
-
 - 支持同时打开多个 TCP 连接
-
 - 支持虚拟主机
-
 - 新增状态码 100
-
 - 支持分块传输编码
-
 - 新增缓存处理指令 max-age
 
 # 九、GET 和 POST 比较
@@ -805,8 +799,6 @@ DELETE /idX/delete HTTP/1.1   -> Returns 404
 
 - 在使用 XMLHttpRequest 的 POST 方法时，浏览器会先发送 Header 再发送 Data。但并不是所有浏览器会这么做，例如火狐就不会。
 - 而 GET 方法 Header 和 Data 会一起发送。
-
-
 
 # 参考资料
 

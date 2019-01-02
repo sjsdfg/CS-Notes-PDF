@@ -13,7 +13,7 @@ PDF制作github: https://github.com/sjsdfg/CS-Notes-PDF
 
 # 2. 实现 Singleton
 
-[单例模式](https://github.com/CyC2018/Interview-Notebook/blob/master/notes/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.md)
+[单例模式](设计模式.md)
 
 # 3. 数组中重复的数字
 
@@ -105,7 +105,7 @@ Given target = 20, return false.
 
 当前元素的查找区间为左下角的所有元素，例如元素 12 的查找区间如下：
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/f94389e9-55b1-4f49-9d37-00ed05900ae0.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/f94389e9-55b1-4f49-9d37-00ed05900ae0.png" /> </div>
 
 ```java
 public boolean Find(int target, int[][] matrix) {
@@ -180,7 +180,7 @@ public String replaceSpace(StringBuffer str) {
 
 输入链表的第一个节点，从尾到头反过来打印出每个结点的值。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/d99dc9e2-197c-4085-813d-7195da1c6762.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/d99dc9e2-197c-4085-813d-7195da1c6762.png" /> </div>
 
 ## 解题思路
 
@@ -270,7 +270,7 @@ preorder = [3,9,20,15,7]
 inorder =  [9,3,15,20,7]
 ```
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/8a4c6ad4-a816-47d1-b93f-7ca4f78ab67a.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/8a4c6ad4-a816-47d1-b93f-7ca4f78ab67a.png" /> </div>
 
 ## 解题思路
 
@@ -324,11 +324,11 @@ public class TreeLinkNode {
 
 ① 如果一个节点的右子树不为空，那么该节点的下一个节点是右子树的最左节点；
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/cb0ed469-27ab-471b-a830-648b279103c8.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/cb0ed469-27ab-471b-a830-648b279103c8.png" /> </div>
 
 ② 否则，向上找第一个左链接指向的树包含该节点的祖先节点。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/e143f6da-d114-4ba4-8712-f65299047fa2.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/e143f6da-d114-4ba4-8712-f65299047fa2.png" /> </div>
 
 ```java
 public TreeLinkNode GetNext(TreeLinkNode pNode) {
@@ -361,7 +361,7 @@ public TreeLinkNode GetNext(TreeLinkNode pNode) {
 
 in 栈用来处理入栈（push）操作，out 栈用来处理出栈（pop）操作。一个元素进入 in 栈之后，出栈的顺序被反转。当元素要出栈时，需要先进入 out 栈，此时元素出栈顺序再一次被反转，因此出栈顺序就和最开始入栈顺序是相同的，先进入的元素先退出，这就是队列的顺序。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/5acf7550-86c5-4c5b-b912-8ce70ef9c34e.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/5acf7550-86c5-4c5b-b912-8ce70ef9c34e.png" /> </div>
 
 ```java
 Stack<Integer> in = new Stack<Integer>();
@@ -397,7 +397,7 @@ public int pop() throws Exception {
 
 如果使用递归求解，会重复计算一些子问题。例如，计算 f(10) 需要计算 f(9) 和 f(8)，计算 f(9) 需要计算 f(8) 和 f(7)，可以看到 f(8) 被重复计算了。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/faecea49-9974-40db-9821-c8636137df61.jpg" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/faecea49-9974-40db-9821-c8636137df61.jpg" /> </div>
 
 递归是将一个问题划分成多个子问题求解，动态规划也是如此，但是动态规划会把子问题的解缓存起来，从而避免重复求解子问题。
 
@@ -510,6 +510,8 @@ public int RectCover(int n) {
 
 ## 解题思路
 
+### 动态规划
+
 ```java
 public int JumpFloorII(int target) {
     int[] dp = new int[target];
@@ -518,6 +520,40 @@ public int JumpFloorII(int target) {
         for (int j = 0; j < i; j++)
             dp[i] += dp[j];
     return dp[target - 1];
+}
+```
+
+### 数学推导
+
+跳上 n-1 级台阶，可以从 n-2 级跳 1 级上去，也可以从 n-3 级跳 2 级上去...，那么
+
+```
+f(n-1) = f(n-2) + f(n-3) + ... + f(0)
+```
+
+同样，跳上 n 级台阶，可以从 n-1 级跳 1 级上去，也可以从 n-2 级跳 2 级上去... ，那么
+
+```
+f(n) = f(n-1) + f(n-2) + ... + f(0)
+```
+
+综上可得
+
+```
+f(n) - f(n-1) = f(n-1)
+```
+
+即
+
+```
+f(n) = 2*f(n-1)
+```
+
+所以 f(n) 是一个等比数列
+
+```source-java
+public int JumpFloorII(int target) {
+    return (int) Math.pow(2, target - 1);
 }
 ```
 
@@ -594,7 +630,7 @@ private int minNumber(int[] nums, int l, int h) {
 
 例如下面的矩阵包含了一条 bfce 路径。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/e31abb94-9201-4e06-9902-61101b92f475.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/e31abb94-9201-4e06-9902-61101b92f475.png" /> </div>
 
 ## 解题思路
 
@@ -647,7 +683,7 @@ private char[][] buildMatrix(char[] array) {
 
 地上有一个 m 行和 n 列的方格。一个机器人从坐标 (0, 0) 的格子开始移动，每一次只能向左右上下四个方向移动一格，但是不能进入行坐标和列坐标的数位之和大于 k 的格子。
 
-例如，当 k 为 18 时，机器人能够进入方格 (35,37)，因为 3+5+3+7=18。但是，它不能进入方格 (35,37)，因为 3+5+3+8=19。请问该机器人能够达到多少个格子？
+例如，当 k 为 18 时，机器人能够进入方格 (35,37)，因为 3+5+3+7=18。但是，它不能进入方格 (35,38)，因为 3+5+3+8=19。请问该机器人能够达到多少个格子？
 
 ## 解题思路
 
@@ -718,7 +754,7 @@ return 36 (10 = 3 + 3 + 4)
 
 尽可能多剪长度为 3 的绳子，并且不允许有长度为 1 的绳子出现。如果出现了，就从已经切好长度为 3 的绳子中拿出一段与长度为 1 的绳子重新组合，把它们切成两段长度为 2 的绳子。
 
-证明：当 n >= 5 时，3(n - 3) - 2(n - 2) = n - 5 >= 0。因此把长度大于 5 的绳子切成两段，令其中一段长度为 3 可以使得两段的乘积最大。
+证明：当 n >= 5 时，3(n - 3) - n = 2n - 9 > 0，且 2(n - 2) - n = n - 4 > 0。因此在 n >= 5 的情况下，将绳子剪成一段为 2 或者 3，得到的乘积会更大。又因为 3(n - 3) - 2(n - 2) = n - 5 >= 0，所以剪成一段长度为 3 比长度为 2 得到的乘积更大。
 
 ```java
 public int integerBreak(int n) {
@@ -871,11 +907,11 @@ private void printNumber(char[] number) {
 
 ① 如果该节点不是尾节点，那么可以直接将下一个节点的值赋给该节点，然后令该节点指向下下个节点，再删除下一个节点，时间复杂度为 O(1)。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/27ff9548-edb6-4465-92c8-7e6386e0b185.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/27ff9548-edb6-4465-92c8-7e6386e0b185.png" /> </div>
 
 ② 否则，就需要先遍历链表，找到节点的前一个节点，然后让前一个节点指向 null，时间复杂度为 O(N)。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/280f7728-594f-4811-a03a-fa8d32c013da.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/280f7728-594f-4811-a03a-fa8d32c013da.png" /> </div>
 
 综上，如果进行 N 次操作，那么大约需要操作节点的次数为 N-1+N=2N-1，其中 N-1 表示 N-1 个不是尾节点的每个节点以 O(1) 的时间复杂度操作节点的总次数，N 表示 1 个尾节点以 O(N) 的时间复杂度操作节点的总次数。(2N-1)/N \~ 2，因此该算法的平均时间复杂度为 O(1)。
 
@@ -904,7 +940,7 @@ public ListNode deleteNode(ListNode head, ListNode tobeDelete) {
 
 ## 题目描述
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/8433fbb2-c35c-45ef-831d-e3ca42aebd51.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/8433fbb2-c35c-45ef-831d-e3ca42aebd51.png" /> </div>
 
 ## 解题描述
 
@@ -1049,7 +1085,7 @@ public void reOrderArray(int[] nums) {
 
 设链表的长度为 N。设两个指针 P1 和 P2，先让 P1 移动 K 个节点，则还有 N - K 个节点可以移动。此时让 P1 和 P2 同时移动，可以知道当 P1 移动到链表结尾时，P2 移动到 N - K 个节点处，该位置就是倒数第 K 个节点。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/ea2304ce-268b-4238-9486-4d8f8aea8ca4.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/ea2304ce-268b-4238-9486-4d8f8aea8ca4.png" /> </div>
 
 ```java
 public ListNode FindKthToTail(ListNode head, int k) {
@@ -1083,7 +1119,7 @@ public ListNode FindKthToTail(ListNode head, int k) {
 
 在相遇点，slow 要到环的入口点还需要移动 z 个节点，如果让 fast 重新从头开始移动，并且速度变为每次移动一个节点，那么它到环入口点还需要移动 x 个节点。在上面已经推导出 x=z，因此 fast 和 slow 将在环入口点相遇。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/70fa1f83-dae7-456d-b94b-ce28963b2ba1.png"/> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/70fa1f83-dae7-456d-b94b-ce28963b2ba1.png" /> </div>
 
 ```java
 public ListNode EntryNodeOfLoop(ListNode pHead) {
@@ -1144,7 +1180,7 @@ public ListNode ReverseList(ListNode head) {
 
 ## 题目描述
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/43f2cafa-3568-4a89-a895-4725666b94a6.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/43f2cafa-3568-4a89-a895-4725666b94a6.png" /> </div>
 
 ## 解题思路
 
@@ -1196,7 +1232,7 @@ public ListNode Merge(ListNode list1, ListNode list2) {
 
 ## 题目描述
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/4583e24f-424b-4d50-8a14-2c38a1827d4a.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/4583e24f-424b-4d50-8a14-2c38a1827d4a.png" /> </div>
 
 ## 解题思路
 
@@ -1224,7 +1260,7 @@ private boolean isSubtreeWithRoot(TreeNode root1, TreeNode root2) {
 
 ## 题目描述
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/a2d13178-f1ef-4811-a240-1fe95b55b1eb.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/a2d13178-f1ef-4811-a240-1fe95b55b1eb.png" /> </div>
 
 ## 解题思路
 
@@ -1250,7 +1286,7 @@ private void swap(TreeNode root) {
 
 ## 题目描述
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/f42443e0-208d-41ea-be44-c7fd97d2e3bf.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/f42443e0-208d-41ea-be44-c7fd97d2e3bf.png" /> </div>
 
 ## 解题思路
 
@@ -1280,7 +1316,7 @@ boolean isSymmetrical(TreeNode t1, TreeNode t2) {
 
 下图的矩阵顺时针打印结果为：1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/6539b9a4-2b24-4d10-8c94-2eb5aba1e296.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/6539b9a4-2b24-4d10-8c94-2eb5aba1e296.png" /> </div>
 
 ## 解题思路
 
@@ -1378,7 +1414,7 @@ public boolean IsPopOrder(int[] pushSequence, int[] popSequence) {
 
 例如，以下二叉树层次遍历的结果为：1,2,3,4,5,6,7
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/348bc2db-582e-4aca-9f88-38c40e9a0e69.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/348bc2db-582e-4aca-9f88-38c40e9a0e69.png" /> </div>
 
 ## 解题思路
 
@@ -1486,7 +1522,7 @@ public ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
 
 例如，下图是后序遍历序列 1,3,2 所对应的二叉搜索树。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/836a4eaf-4798-4e48-b52a-a3dab9435ace.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/836a4eaf-4798-4e48-b52a-a3dab9435ace.png" /> </div>
 
 ## 解题思路
 
@@ -1521,7 +1557,7 @@ private boolean verify(int[] sequence, int first, int last) {
 
 下图的二叉树有两条和为 22 的路径：10, 5, 7 和 10, 12
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/f5477abd-c246-4851-89ab-6b1cde2549b1.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/f5477abd-c246-4851-89ab-6b1cde2549b1.png" /> </div>
 
 ## 解题思路
 
@@ -1568,21 +1604,21 @@ public class RandomListNode {
 }
 ```
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/a01d1516-8168-461a-a24b-620b9cfc40f4.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/a01d1516-8168-461a-a24b-620b9cfc40f4.png" /> </div>
 
 ## 解题思路
 
 第一步，在每个节点的后面插入复制的节点。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/2e6c72f5-3b8e-4e32-b87b-9491322628fe.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/2e6c72f5-3b8e-4e32-b87b-9491322628fe.png" /> </div>
 
 第二步，对复制节点的 random 链接进行赋值。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/323ffd6c-8b54-4f3e-b361-555a6c8bf218.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/323ffd6c-8b54-4f3e-b361-555a6c8bf218.png" /> </div>
 
 第三步，拆分。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/8f3b9519-d705-48fe-87ad-2e4052fc81d2.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/8f3b9519-d705-48fe-87ad-2e4052fc81d2.png" /> </div>
 
 ```java
 public RandomListNode Clone(RandomListNode pHead) {
@@ -1624,7 +1660,7 @@ public RandomListNode Clone(RandomListNode pHead) {
 
 输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的双向链表。要求不能创建任何新的结点，只能调整树中结点指针的指向。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/79b12431-6d9d-4a7d-985b-1b79bc5bf5fb.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/79b12431-6d9d-4a7d-985b-1b79bc5bf5fb.png" /> </div>
 
 ## 解题思路
 
@@ -2041,7 +2077,7 @@ public String PrintMinNumber(int[] numbers) {
 
 ## 题目描述
 
-给定一个数字，按照如下规则翻译成字符串：0 翻译成“a”，1 翻译成“b”... 25 翻译成“z”。一个数字有多种翻译可能，例如 12258 一共有 5 种，分别是 bccfi，bwfi，bczi，mcfi，mzi。实现一个函数，用来计算一个数字有多少种不同的翻译方法。
+给定一个数字，按照如下规则翻译成字符串：1 翻译成“a”，2 翻译成“b”... 26 翻译成“z”。一个数字有多种翻译可能，例如 12258 一共有 5 种，分别是 abbeh，lbeh，aveh，abyh，lyh。实现一个函数，用来计算一个数字有多少种不同的翻译方法。
 
 ## 解题思路
 
@@ -2264,7 +2300,7 @@ private void merge(int[] nums, int l, int m, int h) {
 
 ## 题目描述
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/8f6f9dc9-9ecd-47c8-b50e-2814f0219056.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/8f6f9dc9-9ecd-47c8-b50e-2814f0219056.png" /> </div>
 
 ## 解题思路
 
@@ -2356,7 +2392,7 @@ private void inOrder(TreeNode root, int k) {
 
 从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/b29f8971-9cb8-480d-b986-0e60c2ece069.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/b29f8971-9cb8-480d-b986-0e60c2ece069.png" /> </div>
 
 ## 解题思路
 
@@ -2374,7 +2410,7 @@ public int TreeDepth(TreeNode root) {
 
 平衡二叉树左右子树高度差不超过 1。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/e026c24d-00fa-4e7c-97a8-95a98cdc383a.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/e026c24d-00fa-4e7c-97a8-95a98cdc383a.png" /> </div>
 
 ## 解题思路
 
@@ -2886,7 +2922,7 @@ public int StrToInt(String str) {
 
 ### 二叉查找树
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/293d2af9-de1d-403e-bed0-85d029383528.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/293d2af9-de1d-403e-bed0-85d029383528.png" /> </div>
 
 [Leetcode : 235. Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/)
 
@@ -2906,7 +2942,7 @@ public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 
 ### 普通二叉树
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/37a72755-4890-4b42-9eab-b0084e0c54d9.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/37a72755-4890-4b42-9eab-b0084e0c54d9.png" /> </div>
 
 [Leetcode : 236. Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/)
 

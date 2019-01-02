@@ -113,14 +113,30 @@ System.out.println(m == n); // true
 
 String 被声明为 final，因此它不可被继承。
 
-内部使用 char 数组存储数据，该数组被声明为 final，这意味着 value 数组初始化之后就不能再引用其它数组。并且 String 内部没有改变 value 数组的方法，因此可以保证 String 不可变。
+在 Java 8 中，String 内部使用 char 数组存储数据。
 
 ```java
 public final class String
     implements java.io.Serializable, Comparable<String>, CharSequence {
     /** The value is used for character storage. */
     private final char value[];
+}
 ```
+
+在 Java 9 之后，String 类的实现改用 byte 数组存储字符串，同时使用 `coder` 来标识使用了哪种编码。
+
+```java
+public final class String
+    implements java.io.Serializable, Comparable<String>, CharSequence {
+    /** The value is used for character storage. */
+    private final byte[] value;
+
+    /** The identifier of the encoding used to encode the bytes in {@code value}. */
+    private final byte coder;
+}
+```
+
+value 数组被声明为 final，这意味着 value 数组初始化之后就不能再引用其它数组。并且 String 内部没有改变 value 数组的方法，因此可以保证 String 不可变。
 
 ## 不可变的好处
 
@@ -132,7 +148,7 @@ public final class String
 
 如果一个 String 对象已经被创建过了，那么就会从 String Pool 中取得引用。只有 String 是不可变的，才可能使用 String Pool。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/f76067a5-7d5f-4135-9549-8199c77d8f1c.jpg" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/f76067a5-7d5f-4135-9549-8199c77d8f1c.jpg" /> </div>
 
 **3. 安全性** 
 
@@ -1174,19 +1190,21 @@ Class 和 java.lang.reflect 一起对反射提供了支持，java.lang.reflect �
 -  **Method** ：可以使用 invoke() 方法调用与 Method 对象关联的方法；
 -  **Constructor** ：可以用 Constructor 创建新的对象。
 
-**Advantages of Using Reflection:** 
+**反射的优点：** 
 
--  **Extensibility Features**  : An application may make use of external, user-defined classes by creating instances of extensibility objects using their fully-qualified names.
--  **Class Browsers and Visual Development Environments**  :  A class browser needs to be able to enumerate the members of classes. Visual development environments can benefit from making use of type information available in reflection to aid the developer in writing correct code.
--  **Debuggers and Test Tools**  : Debuggers need to be able to examine private members on classes. Test harnesses can make use of reflection to systematically call a discoverable set APIs defined on a class, to insure a high level of code coverage in a test suite.
+*    **可扩展性**  ：应用程序可以利用全限定名创建可扩展对象的实例，来使用来自外部的用户自定义类。
+*    **类浏览器和可视化开发环境**  ：一个类浏览器需要可以枚举类的成员。可视化开发环境（如 IDE）可以从利用反射中可用的类型信息中受益，以帮助程序员编写正确的代码。
+*    **调试器和测试工具**  ： 调试器需要能够检查一个类里的私有成员。测试工具可以利用反射来自动地调用类里定义的可被发现的 API 定义，以确保一组测试中有较高的代码覆盖率。
 
-**Drawbacks of Reflection:** 
+**反射的缺点：** 
 
-Reflection is powerful, but should not be used indiscriminately. If it is possible to perform an operation without using reflection, then it is preferable to avoid using it. The following concerns should be kept in mind when accessing code via reflection.
+尽管反射非常强大，但也不能滥用。如果一个功能可以不用反射完成，那么最好就不用。在我们使用反射技术时，下面几条内容应该牢记于心。
 
--  **Performance Overhead**  : Because reflection involves types that are dynamically resolved, certain Java virtual machine optimizations can not be performed. Consequently, reflective operations have slower performance than their non-reflective counterparts, and should be avoided in sections of code which are called frequently in performance-sensitive applications.
--  **Security Restrictions**  : Reflection requires a runtime permission which may not be present when running under a security manager. This is in an important consideration for code which has to run in a restricted security context, such as in an Applet.
--  **Exposure of Internals**  :Since reflection allows code to perform operations that would be illegal in non-reflective code, such as accessing private fields and methods, the use of reflection can result in unexpected side-effects, which may render code dysfunctional and may destroy portability. Reflective code breaks abstractions and therefore may change behavior with upgrades of the platform.
+*    **性能开销**  ：反射涉及了动态类型的解析，所以 JVM 无法对这些代码进行优化。因此，反射操作的效率要比那些非反射操作低得多。我们应该避免在经常被执行的代码或对性能要求很高的程序中使用反射。
+
+*    **安全限制**  ：使用反射技术要求程序必须在一个没有安全限制的环境中运行。如果一个程序必须在有安全限制的环境中运行，如 Applet，那么这就是个问题了。
+
+*    **内部暴露**  ：由于反射允许代码执行一些在正常情况下不被允许的操作（比如访问私有的属性和方法），所以使用反射可能会导致意料之外的副作用，这可能导致代码功能失调并破坏可移植性。反射代码破坏了抽象性，因此当平台发生改变的时候，代码的行为就有可能也随着变化。
 
 
 - [Trail: The Reflection API](https://docs.oracle.com/javase/tutorial/reflect/index.html)
@@ -1199,7 +1217,7 @@ Throwable 可以用来表示任何可以作为异常抛出的类，分为两种�
 -  **受检异常** ：需要用 try...catch... 语句捕获并进行处理，并且可以从异常中恢复；
 -  **非受检异常** ：是程序运行时错误，例如除 0 会引发 Arithmetic Exception，此时程序崩溃并且无法恢复。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/PPjwP.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/PPjwP.png" /> </div>
 
 - [Java 入门之异常处理](https://www.tianmaying.com/tutorial/Java-Exception)
 - [Java 异常的面试问题及答案 -Part 1](http://www.importnew.com/7383.html)

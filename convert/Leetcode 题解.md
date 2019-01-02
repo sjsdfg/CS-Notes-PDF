@@ -414,7 +414,7 @@ public String frequencySort(String s) {
 
 它其实是三向切分快速排序的一种变种，在三向切分快速排序中，每次切分都将数组分成三个区间：小于切分元素、等于切分元素、大于切分元素，而该算法是将数组分成三个区间：等于红色、等于白色、等于蓝色。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/3b49dd67-2c40-4b81-8ad2-7bbb1fe2fcbd.png"/> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/3b49dd67-2c40-4b81-8ad2-7bbb1fe2fcbd.png"/> </div>
 
 **按颜色进行排序** 
 
@@ -1129,7 +1129,7 @@ public List<Integer> diffWaysToCompute(String input) {
 
 ### BFS
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/4ff355cf-9a7f-4468-af43-e5b02038facc.jpg"/> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/4ff355cf-9a7f-4468-af43-e5b02038facc.jpg"/> </div>
 
 广度优先搜索一层一层地进行遍历，每层遍历都以上一层遍历的结果作为起点，遍历一个距离能访问到的所有节点。需要注意的是，遍历过的节点不能再次被遍历。
 
@@ -1358,7 +1358,7 @@ private int getShortestPath(List<Integer>[] graphic, int start, int end) {
 
 ### DFS
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/f7f7e3e5-7dd4-4173-9999-576b9e2ac0a2.png"/> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/f7f7e3e5-7dd4-4173-9999-576b9e2ac0a2.png"/> </div>
 
 广度优先搜索一层一层遍历，每一层得到的所有新节点，要用队列存储起来以备下一层遍历的时候再遍历。
 
@@ -1669,7 +1669,7 @@ Backtracking（回溯）属于 DFS。
 
 [17. Letter Combinations of a Phone Number (Medium)](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/)
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/a3f34241-bb80-4879-8ec9-dff2d81b514e.jpg"/> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/a3f34241-bb80-4879-8ec9-dff2d81b514e.jpg"/> </div>
 
 ```html
 Input:Digit string "23"
@@ -2246,7 +2246,7 @@ private boolean isPalindrome(String s, int begin, int end) {
 
 [37. Sudoku Solver (Hard)](https://leetcode.com/problems/sudoku-solver/description/)
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/1ca52246-c443-48ae-b1f8-1cafc09ec75c.png"/> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/1ca52246-c443-48ae-b1f8-1cafc09ec75c.png"/> </div>
 
 ```java
 private boolean[][] rowsUsed = new boolean[9][10];
@@ -2266,12 +2266,7 @@ public void solveSudoku(char[][] board) {
             colsUsed[j][num] = true;
             cubesUsed[cubeNum(i, j)][num] = true;
         }
-
-    for (int i = 0; i < 9; i++) {
-        for (int j = 0; j < 9; j++) {
-            backtracking(i, j);
-        }
-    }
+        backtracking(i, 0);
 }
 
 private boolean backtracking(int row, int col) {
@@ -2308,7 +2303,7 @@ private int cubeNum(int i, int j) {
 
 [51. N-Queens (Hard)](https://leetcode.com/problems/n-queens/description/)
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/1f080e53-4758-406c-bb5f-dbedf89b63ce.jpg"/> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/1f080e53-4758-406c-bb5f-dbedf89b63ce.jpg"/> </div>
 
 在 n\*n 的矩阵中摆放 n 个皇后，并且每个皇后不能在同一行，同一列，同一对角线上，求所有的 n 皇后的解。
 
@@ -2316,11 +2311,11 @@ private int cubeNum(int i, int j) {
 
 45 度对角线标记数组的长度为 2 \* n - 1，通过下图可以明确 (r, c) 的位置所在的数组下标为 r + c。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/85583359-1b45-45f2-9811-4f7bb9a64db7.jpg"/> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/85583359-1b45-45f2-9811-4f7bb9a64db7.jpg"/> </div>
 
 135 度对角线标记数组的长度也是 2 \* n - 1，(r, c) 的位置所在的数组下标为 n - 1 - (r - c)。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/9e80f75a-b12b-4344-80c8-1f9ccc2d5246.jpg"/> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/9e80f75a-b12b-4344-80c8-1f9ccc2d5246.jpg"/> </div>
 
 ```java
 private List<List<String>> solutions;
@@ -2502,8 +2497,10 @@ public int minPathSum(int[][] grid) {
     int[] dp = new int[n];
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
-            if (i == 0) {
-                dp[j] = dp[j - 1];
+            if (j == 0) {
+                dp[j] = dp[j];        // 只能从上侧走到该位置
+            } else if (i == 0) {
+                dp[j] = dp[j - 1];    // 只能从左侧走到该位置
             } else {
                 dp[j] = Math.min(dp[j - 1], dp[j]);
             }
@@ -2520,7 +2517,7 @@ public int minPathSum(int[][] grid) {
 
 题目描述：统计从矩阵左上角到右下角的路径总数，每次只能向右或者向下移动。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/7c98e1b6-c446-4cde-8513-5c11b9f52aea.jpg"/> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/7c98e1b6-c446-4cde-8513-5c11b9f52aea.jpg"/> </div>
 
 ```java
 public int uniquePaths(int m, int n) {
@@ -3251,7 +3248,7 @@ public int combinationSum4(int[] nums, int target) {
 
 题目描述：交易之后需要有一天的冷却时间。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/a3da4342-078b-43e2-b748-7e71bec50dc4.png"/> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/a3da4342-078b-43e2-b748-7e71bec50dc4.png"/> </div>
 
 ```java
 public int maxProfit(int[] prices) {
@@ -3292,7 +3289,7 @@ The total profit is ((8 - 1) - 2) + ((9 - 4) - 2) = 8.
 
 题目描述：每交易一次，都要支付一定的费用。
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/61942711-45a0-4e11-bbc9-434e31436f33.png"/> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/61942711-45a0-4e11-bbc9-434e31436f33.png"/> </div>
 
 ```java
 public int maxProfit(int[] prices, int fee) {
@@ -5248,7 +5245,7 @@ private void inOrder(TreeNode node, List<Integer> nums) {
 
 ### Trie
 
-<div align="center"> <img src="https://raw.githubusercontent.com/CyC2018/CS-Notes/master/pics/5c638d59-d4ae-4ba4-ad44-80bdc30f38dd.jpg"/> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/5c638d59-d4ae-4ba4-ad44-80bdc30f38dd.jpg"/> </div>
 
 Trie，又称前缀树或字典树，用于判断字符串是否存在或者是否具有某种字符串前缀。
 
