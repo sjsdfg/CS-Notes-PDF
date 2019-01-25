@@ -19,9 +19,10 @@
 - [深入理解操作系统 第三版英文版原版-CSAPP 3rd](https://pan.baidu.com/s/1yJLb6EHRa0bjka7ryfr6mw)
 - [用动画的形式呈现解LeetCode题目的思路](https://github.com/MisterBooo/LeetCodeAnimation)
 
-# 简历生成
+# 简历
  
  - [冷熊简历](http://cv.ftqq.com/)
+ - [简历模板](https://github.com/geekcompany/ResumeSample)
 
 
 <center>
