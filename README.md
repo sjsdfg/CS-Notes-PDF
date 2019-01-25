@@ -21,7 +21,7 @@
 
 # 简历生成
  
- - (冷熊简历)[http://cv.ftqq.com/]
+ - [冷熊简历](http://cv.ftqq.com/)
 
 
 <center>
