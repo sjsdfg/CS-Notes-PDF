@@ -4,16 +4,7 @@
 
 PDF制作github: https://github.com/sjsdfg/CS-Notes-PDF
 
-# 1. 前言
-
-本文的绘图可通过以下途径免费获得并使用：
-
-- [ProcessOn](https://www.processon.com/view/5a3e4c7be4b0909c1aa18b49)
-- [DrawIO](https://drive.google.com/file/d/1nSSCpPUC05MFoeFuf_aeTtkm7dG5-bJ1/view?usp=sharing)
-
-# 2. 实现 Singleton
-
-[单例模式](设计模式.md)
+部分绘图文件可以在这里免费下载：[剑指 Offer](https://www.processon.com/view/5a3e4c7be4b0909c1aa18b49)，后续会慢慢把所有题目都配上 GIF 演示图。
 
 # 3. 数组中重复的数字
 
@@ -33,24 +24,13 @@ Output:
 
 ## 解题思路
 
-要求复杂度为 O(N) + O(1)，也就是时间复杂度 O(N)，空间复杂度 O(1)。因此不能使用排序的方法，也不能使用额外的标记数组。牛客网讨论区这一题的首票答案使用 nums[i] + length 来将元素标记，这么做会有加法溢出问题。
+要求是时间复杂度 O(N)，空间复杂度 O(1)。因此不能使用排序的方法，也不能使用额外的标记数组。
 
-这种数组元素在 [0, n-1] 范围内的问题，可以将值为 i 的元素调整到第 i 个位置上。
+对于这种数组元素在 [0, n-1] 范围内的问题，可以将值为 i 的元素调整到第 i 个位置上进行求解。
 
-以 (2, 3, 1, 0, 2, 5) 为例：
+以 (2, 3, 1, 0, 2, 5) 为例，遍历到位置 4 时，该位置上的数为 2，但是第 2 个位置上已经有一个 2 的值了，因此可以知道 2 重复：
 
-```text
-position-0 : (2,3,1,0,2,5) // 2 <-> 1
-             (1,3,2,0,2,5) // 1 <-> 3
-             (3,1,2,0,2,5) // 3 <-> 0
-             (0,1,2,3,2,5) // already in position
-position-1 : (0,1,2,3,2,5) // already in position
-position-2 : (0,1,2,3,2,5) // already in position
-position-3 : (0,1,2,3,2,5) // already in position
-position-4 : (0,1,2,3,2,5) // nums[i] == nums[nums[i]], exit
-```
-
-遍历到位置 4 时，该位置上的数为 2，但是第 2 个位置上已经有一个 2 的值了，因此可以知道 2 重复。
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/_u6570_u7EC4_u4E2D_u91CD_u590D_1548260392361.gif" width="250px"> </div>
 
 ```java
 public boolean duplicate(int[] nums, int length, int[] duplication) {
@@ -81,7 +61,7 @@ private void swap(int[] nums, int i, int j) {
 
 ## 题目描述
 
-在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
+给定一个二维数组，其每一行从左到右递增排序，从上到下也是递增排序。给定一个数，判断这个数是否在该二维数组中。
 
 ```html
 Consider the following matrix:
@@ -99,13 +79,11 @@ Given target = 20, return false.
 
 ## 解题思路
 
-从右上角开始查找。矩阵中的一个数，它左边的数都比它小，下边的数都比它大。因此，从右上角开始查找，就可以根据 target 和当前元素的大小关系来缩小查找区间。
+要求时间复杂度 O(M + N)，空间复杂度 O(1)。
 
-复杂度：O(M + N) + O(1)
+该二维数组中的一个数，它左边的数都比它小，下边的数都比它大。因此，从右上角开始查找，就可以根据 target 和当前元素的大小关系来缩小查找区间，当前元素的查找区间为左下角的所有元素。
 
-当前元素的查找区间为左下角的所有元素，例如元素 12 的查找区间如下：
-
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/f94389e9-55b1-4f49-9d37-00ed05900ae0.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/_u4E8C_u7EF4_u6570_u7EC4_u4E2D_.gif"/> </div>
 
 ```java
 public boolean Find(int target, int[][] matrix) {
@@ -136,10 +114,10 @@ public boolean Find(int target, int[][] matrix) {
 
 ```text
 Input:
-"We Are Happy"
+"A B"
 
 Output:
-"We%20Are%20Happy"
+"A%20B"
 ```
 
 ## 解题思路
@@ -149,6 +127,8 @@ Output:
 令 P1 指向字符串原来的末尾位置，P2 指向字符串现在的末尾位置。P1 和 P2 从后向前遍历，当 P1 遍历到一个空格时，就需要令 P2 指向的位置依次填充 02%（注意是逆序的），否则就填充上 P1 指向字符的值。
 
 从后向前遍是为了在改变 P2 所指向的内容时，不会影响到 P1 遍历原来字符串的内容。
+
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/_u66FF_u6362_u7A7A_u683C.gif"/> </div>
 
 ```java
 public String replaceSpace(StringBuffer str) {
@@ -178,29 +158,15 @@ public String replaceSpace(StringBuffer str) {
 
 ## 题目描述
 
-输入链表的第一个节点，从尾到头反过来打印出每个结点的值。
+从尾到头反过来打印出每个结点的值。
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/d99dc9e2-197c-4085-813d-7195da1c6762.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/_u4ECE_u5C3E_u5230_u5934_u6253_1548293972480.gif" width="250px"> </div>
 
 ## 解题思路
 
-### 使用栈
-
-```java
-public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
-    Stack<Integer> stack = new Stack<>();
-    while (listNode != null) {
-        stack.add(listNode.val);
-        listNode = listNode.next;
-    }
-    ArrayList<Integer> ret = new ArrayList<>();
-    while (!stack.isEmpty())
-        ret.add(stack.pop());
-    return ret;
-}
-```
-
 ### 使用递归
+
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/_u4ECE_u5C3E_u5230_u5934_u6253_1548296249372.gif" width="200px"> </div>
 
 ```java
 public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
@@ -221,6 +187,8 @@ public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
 
 - 头结点是在头插法中使用的一个额外节点，这个节点不存储值；
 - 第一个节点就是链表的第一个真正存储值的节点。
+
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/_u4ECE_u5C3E_u5230_u5934_u6253_1548295232667.gif" width="300px"> </div>
 
 ```java
 public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
@@ -243,16 +211,20 @@ public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
 }
 ```
 
-### 使用 Collections.reverse()
+### 使用栈
+
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/_u4ECE_u5C3E_u5230_u5934_u6253_1548503461113.gif" width="500px"> </div>
 
 ```java
 public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
-    ArrayList<Integer> ret = new ArrayList<>();
+    Stack<Integer> stack = new Stack<>();
     while (listNode != null) {
-        ret.add(listNode.val);
+        stack.add(listNode.val);
         listNode = listNode.next;
     }
-    Collections.reverse(ret);
+    ArrayList<Integer> ret = new ArrayList<>();
+    while (!stack.isEmpty())
+        ret.add(stack.pop());
     return ret;
 }
 ```
@@ -270,11 +242,13 @@ preorder = [3,9,20,15,7]
 inorder =  [9,3,15,20,7]
 ```
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/8a4c6ad4-a816-47d1-b93f-7ca4f78ab67a.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/_u91CD_u5EFA_u4E8C_u53C9_u6811-1.gif" /> </div>
 
 ## 解题思路
 
 前序遍历的第一个值为根节点的值，使用这个值将中序遍历结果分成两部分，左部分为树的左子树中序遍历结果，右部分为树的右子树中序遍历的结果。
+
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/_u91CD_u5EFA_u4E8C_u53C9_u6811-21548502782193.gif"/> </div>
 
 ```java
 // 缓存中序遍历数组每个值对应的索引
@@ -324,11 +298,11 @@ public class TreeLinkNode {
 
 ① 如果一个节点的右子树不为空，那么该节点的下一个节点是右子树的最左节点；
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/cb0ed469-27ab-471b-a830-648b279103c8.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/_u4E8C_u53C9_u6811_u7684_u4E0B_.gif" /> </div>
 
 ② 否则，向上找第一个左链接指向的树包含该节点的祖先节点。
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/e143f6da-d114-4ba4-8712-f65299047fa2.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/_u4E8C_u53C9_u6811_u7684_u4E0B_1548504426508.gif" /> </div>
 
 ```java
 public TreeLinkNode GetNext(TreeLinkNode pNode) {
@@ -361,7 +335,8 @@ public TreeLinkNode GetNext(TreeLinkNode pNode) {
 
 in 栈用来处理入栈（push）操作，out 栈用来处理出栈（pop）操作。一个元素进入 in 栈之后，出栈的顺序被反转。当元素要出栈时，需要先进入 out 栈，此时元素出栈顺序再一次被反转，因此出栈顺序就和最开始入栈顺序是相同的，先进入的元素先退出，这就是队列的顺序。
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/5acf7550-86c5-4c5b-b912-8ce70ef9c34e.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/_u7528_u4E24_u4E2A_u6808_u5B9E_.gif" /> </div>
+
 
 ```java
 Stack<Integer> in = new Stack<Integer>();
@@ -391,13 +366,16 @@ public int pop() throws Exception {
 
 求斐波那契数列的第 n 项，n <= 39。
 
-<div align="center">$f(n)=\left\{\begin{array}{rcl}0&&{n=0}\\1&&{n=1}\\f(n-1)+f(n-2)&&{n>1}\end{array}\right.$</div> <br>
+$$
+f(n)=\left\{\begin{array}{rcl}0&&{n=0}\\1&&{n=1}\\f(n-1)+f(n-2)&&{n>1}\end{array}\right.
+$$
 
 ## 解题思路
 
 如果使用递归求解，会重复计算一些子问题。例如，计算 f(10) 需要计算 f(9) 和 f(8)，计算 f(9) 需要计算 f(8) 和 f(7)，可以看到 f(8) 被重复计算了。
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/faecea49-9974-40db-9821-c8636137df61.jpg" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/_u6590_u6CE2_u90A3_u5951_u6570_u5217.gif" /> </div>
+
 
 递归是将一个问题划分成多个子问题求解，动态规划也是如此，但是动态规划会把子问题的解缓存起来，从而避免重复求解子问题。
 
@@ -458,6 +436,8 @@ public class Solution {
 
 一只青蛙一次可以跳上 1 级台阶，也可以跳上 2 级。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。
 
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/1_2001550465428749.png"/> </div>
+
 ## 解题思路
 
 ```java
@@ -483,6 +463,8 @@ public int JumpFloor(int n) {
 
 我们可以用 2\*1 的小矩形横着或者竖着去覆盖更大的矩形。请问用 n 个 2\*1 的小矩形无重叠地覆盖一个 2\*n 的大矩形，总共有多少种方法？
 
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/11550465817827.gif"/> </div>
+
 ## 解题思路
 
 ```java
@@ -507,6 +489,8 @@ public int RectCover(int n) {
 ## 题目描述
 
 一只青蛙一次可以跳上 1 级台阶，也可以跳上 2 级... 它也可以跳上 n 级。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。
+
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/21550465890674.gif"/> </div>
 
 ## 解题思路
 
@@ -630,7 +614,7 @@ private int minNumber(int[] nums, int l, int h) {
 
 例如下面的矩阵包含了一条 bfce 路径。
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/e31abb94-9201-4e06-9902-61101b92f475.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/2_2001550466182933.png"/> </div>
 
 ## 解题思路
 
@@ -838,7 +822,9 @@ public int NumberOf1(int n) {
 
 下面的讨论中 x 代表 base，n 代表 exponent。
 
-<div align="center">$x^n=\left\{\begin{array}{rcl}(x*x)^{n/2}&&{n\%2=0}\\x*(x*x)^{n/2}&&{n\%2=1}\end{array}\right.$</div> <br>
+$$
+x^n=\left\{\begin{array}{rcl}(x*x)^{n/2}&&{n\%2=0}\\x*(x*x)^{n/2}&&{n\%2=1}\end{array}\right.
+$$
 
 因为 (x\*x)<sup>n/2</sup> 可以通过递归求解，并且每次递归 n 都减小一半，因此整个算法的时间复杂度为 O(logN)。
 
@@ -909,6 +895,8 @@ private void printNumber(char[] number) {
 
 <div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/27ff9548-edb6-4465-92c8-7e6386e0b185.png" /> </div>
 
+② 如果链表只有一个节点，那么直接
+
 ② 否则，就需要先遍历链表，找到节点的前一个节点，然后让前一个节点指向 null，时间复杂度为 O(N)。
 
 <div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/280f7728-594f-4811-a03a-fa8d32c013da.png" /> </div>
@@ -925,10 +913,15 @@ public ListNode deleteNode(ListNode head, ListNode tobeDelete) {
         tobeDelete.val = next.val;
         tobeDelete.next = next.next;
     } else {
-        ListNode cur = head;
-        while (cur.next != tobeDelete)
-            cur = cur.next;
-        cur.next = null;
+        if (head == tobeDelete)
+             // 只有一个节点
+            head = null;
+        else {
+            ListNode cur = head;
+            while (cur.next != tobeDelete)
+                cur = cur.next;
+            cur.next = null;
+        }
     }
     return head;
 }
@@ -1057,6 +1050,8 @@ public boolean isNumeric(char[] str) {
 
 需要保证奇数和奇数，偶数和偶数之间的相对位置不变，这和书本不太一样。
 
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/7_2001550475133282.png"/> </div>
+
 ## 解题思路
 
 ```java
@@ -1115,11 +1110,12 @@ public ListNode FindKthToTail(ListNode head, int k) {
 
 ## 解题思路
 
-使用双指针，一个指针 fast 每次移动两个节点，一个指针 slow 每次移动一个节点。因为存在环，所以两个指针必定相遇在环中的某个节点上。假设相遇点在下图的 y6 位置，此时 fast 移动的节点数为 x+2y+z，slow 为 x+y，由于 fast 速度比 slow 快一倍，因此 x+2y+z=2(x+y)，得到 x=z。
+使用双指针，一个指针 fast 每次移动两个节点，一个指针 slow 每次移动一个节点。因为存在环，所以两个指针必定相遇在环中的某个节点上。假设相遇点在下图的 z1 位置，此时 fast 移动的节点数为 x+2y+z，slow 为 x+y，由于 fast 速度比 slow 快一倍，因此 x+2y+z=2(x+y)，得到 x=z。
 
 在相遇点，slow 要到环的入口点还需要移动 z 个节点，如果让 fast 重新从头开始移动，并且速度变为每次移动一个节点，那么它到环入口点还需要移动 x 个节点。在上面已经推导出 x=z，因此 fast 和 slow 将在环入口点相遇。
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/70fa1f83-dae7-456d-b94b-ce28963b2ba1.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/d5d3b7ae-2712-412e-98f1-633ce6ec5955.png" /> </div>
+
 
 ```java
 public ListNode EntryNodeOfLoop(ListNode pHead) {
@@ -1316,7 +1312,7 @@ boolean isSymmetrical(TreeNode t1, TreeNode t2) {
 
 下图的矩阵顺时针打印结果为：1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/6539b9a4-2b24-4d10-8c94-2eb5aba1e296.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/8_2001550475451664.png"/> </div>
 
 ## 解题思路
 
@@ -2666,6 +2662,8 @@ public ArrayList<Integer> maxInWindows(int[] num, int size) {
 
 把 n 个骰子仍在地上，求点数和为 s 的概率。
 
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/6_2001550474388460.png"/> </div>
+
 ## 解题思路
 
 ### 动态规划解法
@@ -2737,6 +2735,8 @@ public List<Map.Entry<Integer, Double>> dicesSum(int n) {
 
 五张牌，其中大小鬼为癞子，牌面大小为 0。判断这五张牌是否能组成顺子。
 
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/5_2001550474110029.png"/> </div>
+
 ## 解题思路
 
 ```java
@@ -2793,6 +2793,8 @@ public int LastRemaining_Solution(int n, int m) {
 ## 题目描述
 
 可以有一次买入和一次卖出，那么买入必须在前。求最大收益。
+
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/4_2001550473915641.png"/> </div>
 
 ## 解题思路
 
@@ -2863,6 +2865,8 @@ public int Add(int a, int b) {
 ## 题目描述
 
 给定一个数组 A[0, 1,..., n-1]，请构建一个数组 B[0, 1,..., n-1]，其中 B 中的元素 B[i]=A[0]\*A[1]\*...\*A[i-1]\*A[i+1]\*...\*A[n-1]。要求不能使用除法。
+
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/3_2001550473624627.png"/> </div>
 
 ## 解题思路
 

@@ -6,7 +6,7 @@ PDF制作github: https://github.com/sjsdfg/CS-Notes-PDF
 
 # 一、线程状态转换
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/ace830df-9919-48ca-91b5-60b193f593d2.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/96706658-b3f8-4f32-8eb3-dcb7fc8d5381.jpg"/> </div>
 
 ## 新建（New）
 
@@ -30,7 +30,7 @@ PDF制作github: https://github.com/sjsdfg/CS-Notes-PDF
 | --- | --- |
 | 没有设置 Timeout 参数的 Object.wait() 方法 | Object.notify() / Object.notifyAll() |
 | 没有设置 Timeout 参数的 Thread.join() 方法 | 被调用的线程执行完毕 |
-| LockSupport.park() 方法 | - |
+| LockSupport.park() 方法 | LockSupport.unpark(Thread) |
 
 ## 限期等待（Timed Waiting）
 
@@ -49,8 +49,8 @@ PDF制作github: https://github.com/sjsdfg/CS-Notes-PDF
 | Thread.sleep() 方法 | 时间结束 |
 | 设置了 Timeout 参数的 Object.wait() 方法 | 时间结束 / Object.notify() / Object.notifyAll()  |
 | 设置了 Timeout 参数的 Thread.join() 方法 | 时间结束 / 被调用的线程执行完毕 |
-| LockSupport.parkNanos() 方法 | - |
-| LockSupport.parkUntil() 方法 | - |
+| LockSupport.parkNanos() 方法 | LockSupport.unpark(Thread) |
+| LockSupport.parkUntil() 方法 | LockSupport.unpark(Thread) |
 
 ## 死亡（Terminated）
 
@@ -675,13 +675,13 @@ after
 
 java.util.concurrent（J.U.C）大大提高了并发性能，AQS 被认为是 J.U.C 的核心。
 
-## CountdownLatch
+## CountDownLatch
 
 用来控制一个线程等待多个线程。
 
 维护了一个计数器 cnt，每次调用 countDown() 方法会让计数器的值减 1，减到 0 的时候，那些因为调用 await() 方法而在等待的线程就会被唤醒。
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/CountdownLatch.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/912a7886-fb1d-4a05-902d-ab17ea17007f.jpg"/> </div>
 
 ```java
 public class CountdownLatchExample {
@@ -730,7 +730,7 @@ public CyclicBarrier(int parties) {
 }
 ```
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/CyclicBarrier.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/f944fac3-482b-4ca3-9447-17aec4a3cca0.png"/> </div>
 
 ```java
 public class CyclicBarrierExample {
@@ -762,8 +762,6 @@ before..before..before..before..before..before..before..before..before..before..
 ## Semaphore
 
 Semaphore 类似于操作系统中的信号量，可以控制对互斥资源的访问线程数。
-
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/Semaphore.png" /> </div>
 
 以下代码模拟了对某个服务的并发请求，每次只能有 3 个客户端同时访问，请求总数为 10。
 
@@ -969,7 +967,7 @@ public class ForkJoinPool extends AbstractExecutorService
 
 ForkJoinPool 实现了工作窃取算法来提高 CPU 的利用率。每个线程都维护了一个双端队列，用来存储需要执行的任务。工作窃取算法允许空闲的线程从其它线程的双端队列中窃取一个任务来执行。窃取的任务必须是最晚的任务，避免和队列所属线程发生竞争。例如下图中，Thread2 从 Thread1 的队列中拿出最晚的 Task1 任务，Thread1 会拿出 Task2 来执行，这样就避免发生竞争。但是如果队列中只有一个任务时还是会发生竞争。
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/15b45dc6-27aa-4519-9194-f4acfa2b077f.jpg" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/e19452dd-220a-4a6b-bcb0-91ad5e5c4706.png"/> </div>
 
 # 九、线程不安全示例
 
@@ -1024,19 +1022,19 @@ Java 内存模型试图屏蔽各种硬件和操作系统的内存访问差异，
 
 加入高速缓存带来了一个新的问题：缓存一致性。如果多个缓存共享同一块主内存区域，那么多个缓存的数据可能会不一致，需要一些协议来解决这个问题。
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/68778c1b-15ab-4826-99c0-3b4fd38cb9e9.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/d2a12961-2b36-4463-b017-ca46a3308b8e.png"/> </div>
 
 所有的变量都存储在主内存中，每个线程还有自己的工作内存，工作内存存储在高速缓存或者寄存器中，保存了该线程使用的变量的主内存副本拷贝。
 
 线程只能直接操作工作内存中的变量，不同线程之间的变量值传递需要通过主内存来完成。
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/47358f87-bc4c-496f-9a90-8d696de94cee.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/8162aebb-8fd2-4620-b771-e65751ba7e41.png"/> </div>
 
 ## 内存间交互操作
 
 Java 内存模型定义了 8 个操作来完成主内存和工作内存的交互操作。
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/536c6dfd-305a-4b95-b12c-28ca5e8aa043.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/b6a7e8af-91bf-44b2-8874-ccc6d9d52afc.jpg"/> </div>
 
 - read：把一个变量的值从主内存传输到工作内存中
 - load：在 read 之后执行，把 read 得到的值放入工作内存的变量副本中
@@ -1059,11 +1057,11 @@ Java 内存模型保证了 read、load、use、assign、store、write、lock 和
 
 下图演示了两个线程同时对 cnt 进行操作，load、assign、store 这一系列操作整体上看不具备原子性，那么在 T1 修改 cnt 并且还没有将修改后的值写入主内存，T2 依然可以读入旧值。可以看出，这两个线程虽然执行了两次自增运算，但是主内存中 cnt 的值最后为 1 而不是 2。因此对 int 类型读写操作满足原子性只是说明 load、assign、store 这些单个操作具备原子性。
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/ef8eab00-1d5e-4d99-a7c2-d6d68ea7fe92.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/847b9ba1-b3cd-4e52-aa72-dee0222ae09f.jpg"/> </div>
 
 AtomicInteger 能保证多个线程修改的原子性。
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/952afa9a-458b-44ce-bba9-463e60162945.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/3144015c-dcfb-47ac-94a5-bab3b78b0f14.jpg"/> </div>
 
 使用 AtomicInteger 重写之前线程不安全的代码之后得到以下线程安全实现：
 
@@ -1171,7 +1169,7 @@ volatile 关键字通过添加内存屏障的方式来禁止指令重排，即�
 
 在一个线程内，在程序前面的操作先行发生于后面的操作。
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/single-thread-rule.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/94414cd3-5db9-4aca-a2af-539140955c62.jpg"/> </div>
 
 ### 2. 管程锁定规则
 
@@ -1179,7 +1177,7 @@ volatile 关键字通过添加内存屏障的方式来禁止指令重排，即�
 
 一个 unlock 操作先行发生于后面对同一个锁的 lock 操作。
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/monitor-lock-rule.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/de9d8133-4c98-4e07-b39c-302e162784ea.jpg"/> </div>
 
 ### 3. volatile 变量规则
 
@@ -1187,7 +1185,7 @@ volatile 关键字通过添加内存屏障的方式来禁止指令重排，即�
 
 对一个 volatile 变量的写操作先行发生于后面对这个变量的读操作。
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/volatile-variable-rule.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/5e6e05d6-1028-4f5c-b9bd-1a40b90d6070.jpg"/> </div>
 
 ### 4. 线程启动规则
 
@@ -1195,7 +1193,7 @@ volatile 关键字通过添加内存屏障的方式来禁止指令重排，即�
 
 Thread 对象的 start() 方法调用先行发生于此线程的每一个动作。
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/thread-start-rule.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/bc5826f5-014d-47b4-9a76-d86b80968643.jpg"/> </div>
 
 ### 5. 线程加入规则
 
@@ -1203,7 +1201,7 @@ Thread 对象的 start() 方法调用先行发生于此线程的每一个动作�
 
 Thread 对象的结束先行发生于 join() 方法返回。
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/thread-join-rule.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/54e6d499-80df-488e-aa7e-081766c41538.jpg"/> </div>
 
 ### 6. 线程中断规则
 
@@ -1421,7 +1419,7 @@ public class ThreadLocalExample1 {
 
 它所对应的底层结构图为：
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/3646544a-cb57-451d-9e03-d3c4f5e4434a.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/066f9c11-0154-42c3-8685-301a70e9bd39.jpg"/> </div>
 
 每个 Thread 都有一个 ThreadLocal.ThreadLocalMap 对象。
 

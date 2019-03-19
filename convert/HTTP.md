@@ -14,7 +14,7 @@ URI 包含 URL 和 URN。
 - URL（Uniform Resource Locator，统一资源定位符）
 - URN（Uniform Resource Name，统一资源名称）
 
-<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/766d401b-3cf6-475c-8ced-ea8c8db8edc5.png" /> </div>
+<div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/1_2001550415765493.png" width="500px"> </div>
 
 ## 请求和响应报文
 
@@ -597,7 +597,7 @@ HTTP/1.1 使用虚拟主机技术，使得一台服务器拥有多个域名，�
 
 使用 SSL 等加密手段，在客户端和服务器之间建立一条安全的通信线路。
 
-# 六、HTTPs
+# 六、HTTPS
 
 HTTP 有以下安全性问题：
 
@@ -605,9 +605,9 @@ HTTP 有以下安全性问题：
 - 不验证通信方的身份，通信方的身份有可能遭遇伪装；
 - 无法证明报文的完整性，报文有可能遭篡改。
 
-HTTPs 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）通信，再由 SSL 和 TCP 通信，也就是说 HTTPs 使用了隧道进行通信。
+HTTPS 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）通信，再由 SSL 和 TCP 通信，也就是说 HTTPS 使用了隧道进行通信。
 
-通过使用 SSL，HTTPs 具有了加密（防窃听）、认证（防伪装）和完整性保护（防篡改）。
+通过使用 SSL，HTTPS 具有了加密（防窃听）、认证（防伪装）和完整性保护（防篡改）。
 
 <div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/ssl-offloading.jpg" /> </div>
 
@@ -635,9 +635,9 @@ HTTPs 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）�
 
 <div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/39ccb299-ee99-4dd1-b8b4-2f9ec9495cb4.png" /> </div>
 
-### 3. HTTPs 采用的加密方式
+### 3. HTTPS 采用的加密方式
 
-HTTPs 采用混合的加密机制，使用非对称密钥加密用于传输对称密钥来保证传输过程的安全性，之后使用对称密钥加密进行通信来保证通信过程的效率。（下图中的 Session Key 就是对称密钥）
+HTTPS 采用混合的加密机制，使用非对称密钥加密用于传输对称密钥来保证传输过程的安全性，之后使用对称密钥加密进行通信来保证通信过程的效率。（下图中的 Session Key 就是对称密钥）
 
 <div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/How-HTTPS-Works.png" /> </div>
 
@@ -649,7 +649,7 @@ HTTPs 采用混合的加密机制，使用非对称密钥加密用于传输对�
 
 服务器的运营人员向 CA 提出公开密钥的申请，CA 在判明提出申请者的身份之后，会对已申请的公开密钥做数字签名，然后分配这个已签名的公开密钥，并将该公开密钥放入公开密钥证书后绑定在一起。
 
-进行 HTTPs 通信时，服务器会把证书发送给客户端。客户端取得其中的公开密钥之后，先使用数字签名进行验证，如果验证通过，就可以开始通信了。
+进行 HTTPS 通信时，服务器会把证书发送给客户端。客户端取得其中的公开密钥之后，先使用数字签名进行验证，如果验证通过，就可以开始通信了。
 
 <div align="center"> <img src="https://github.com/CyC2018/CS-Notes/raw/master/docs/notes/pics/2017-06-11-ca.png" /> </div>
 
@@ -659,9 +659,9 @@ SSL 提供报文摘要功能来进行完整性保护。
 
 HTTP 也提供了 MD5 报文摘要功能，但不是安全的。例如报文内容被篡改之后，同时重新计算 MD5 的值，通信接收方是无法意识到发生了篡改。
 
-HTTPs 的报文摘要功能之所以安全，是因为它结合了加密和认证这两个操作。试想一下，加密之后的报文，遭到篡改之后，也很难重新计算报文摘要，因为无法轻易获取明文。
+HTTPS 的报文摘要功能之所以安全，是因为它结合了加密和认证这两个操作。试想一下，加密之后的报文，遭到篡改之后，也很难重新计算报文摘要，因为无法轻易获取明文。
 
-## HTTPs 的缺点
+## HTTPS 的缺点
 
 - 因为需要进行加密解密等过程，因此速度会更慢；
 - 需要支付证书授权的高额费用。
