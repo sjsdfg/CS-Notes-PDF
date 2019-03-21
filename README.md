@@ -18,6 +18,7 @@
 - [计算机网络-自顶向下  第七版英文原版 ](https://pan.baidu.com/s/1VPzcjXc0TR1SPIkexM1YTw)
 - [深入理解操作系统 第三版英文版原版-CSAPP 3rd](https://pan.baidu.com/s/1yJLb6EHRa0bjka7ryfr6mw)
 - [用动画的形式呈现解LeetCode题目的思路](https://github.com/MisterBooo/LeetCodeAnimation)
+- [effective-java 第三版中文开源翻译](https://github.com/sjsdfg/effective-java-3rd-chinese)
 
 # 简历
  
