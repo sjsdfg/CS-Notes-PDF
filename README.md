@@ -19,6 +19,7 @@
 - [深入理解操作系统 第三版英文版原版-CSAPP 3rd](https://pan.baidu.com/s/1yJLb6EHRa0bjka7ryfr6mw)
 - [用动画的形式呈现解LeetCode题目的思路](https://github.com/MisterBooo/LeetCodeAnimation)
 - [effective-java 第三版中文开源翻译](https://github.com/sjsdfg/effective-java-3rd-chinese)
+- [【精校中英字幕】2015 CMU 15-213 CSAPP 深入理解计算机系统 课程视频](https://www.bilibili.com/video/av31289365)
 
 # 简历
  
