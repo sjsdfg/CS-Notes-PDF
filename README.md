@@ -16,9 +16,9 @@
 - [100-Days-Of-ML-Code 中文版 ](https://github.com/MLEveryday/100-Days-Of-ML-Code)
 - [阿里 Java 手册 1.4.0 版本 ](https://pan.baidu.com/s/1le0nvGP6GIpnczOZldrBGQ)
 - [计算机网络-自顶向下  第七版英文原版 ](https://pan.baidu.com/s/1VPzcjXc0TR1SPIkexM1YTw)
-- [深入理解操作系统 第三版英文版原版-CSAPP 3rd](https://pan.baidu.com/s/1yJLb6EHRa0bjka7ryfr6mw)
 - [用动画的形式呈现解LeetCode题目的思路](https://github.com/MisterBooo/LeetCodeAnimation)
 - [effective-java 第三版中文开源翻译](https://github.com/sjsdfg/effective-java-3rd-chinese)
+- [深入理解操作系统 第三版英文版原版-CSAPP 3rd](https://pan.baidu.com/s/1yJLb6EHRa0bjka7ryfr6mw)
 - [【精校中英字幕】2015 CMU 15-213 CSAPP 深入理解计算机系统 课程视频](https://www.bilibili.com/video/av31289365)
 
 # 简历
