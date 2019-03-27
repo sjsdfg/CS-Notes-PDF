@@ -116,42 +116,39 @@ PS：三大支柱是我之前给 Java 中多线程、网络和安全取的代号
 
 这三样中的东西非常多，基本上就是 Java 的核心所在。
 
-多线程（multi-threading and concurrent）
+**多线程（multi-threading and concurrent）**
 
-1：关键词：volatile, sychronized
-
-2：传统的线程 API：java.lang.Thread, java.lang.Runnable, java.lang.ThreadGroup, Object#wait, Object#notify, Object#notifyAll
-
-3：JDK 5 并发包（java.util.concurrent）API：线程池、任务执行器、计数信号量、倒计数门闩、并发集合（并发 Map、阻塞队列等）、基于 CPU CAS 指令的原子 API（java.util.concurrent.atomic）、锁 API（java.util.concurrent.lock）和条件对象等。
-
-4：作为个人知识提升，还需要理解诸如自旋锁、分离锁、分拆锁、读写锁等的同步锁策略，以及可重入锁、锁的公平性的意义。以及各种并发锁的算法，比如：Peterson锁、Bakery锁 等等，以及现代 CPU 体系结构
+1. 关键词：volatile, sychronized
+2. 传统的线程 API：java.lang.Thread, java.lang.Runnable, java.lang.ThreadGroup, Object#wait, Object#notify, Object#notifyAll
+3. JDK 5 并发包（java.util.concurrent）API：线程池、任务执行器、计数信号量、倒计数门闩、并发集合（并发 Map、阻塞队列等）、基于 CPU CAS 指令的原子 API（java.util.concurrent.atomic）、锁 API（java.util.concurrent.lock）和条件对象等。
+4. 作为个人知识提升，还需要理解诸如自旋锁、分离锁、分拆锁、读写锁等的同步锁策略，以及可重入锁、锁的公平性的意义。以及各种并发锁的算法，比如：Peterson锁、Bakery锁 等等，以及现代 CPU 体系结构
 
 涉及多线程及并发的 API 在 java.lang 中及 java.util.concurrent.* 中。
 
-网络（network communication）
+**网络（network communication）**
 
-1：阻塞 TCP 通信、阻塞 UDP 通信、组播
-2：非阻塞 TCP 通信、非阻塞 UDP 通信
-3：客户端通信 API（java.net.URL, java.net.URLConnection 等类库）
+1. 阻塞 TCP 通信、阻塞 UDP 通信、组播
+2. 非阻塞 TCP 通信、非阻塞 UDP 通信
+3. 客户端通信 API（java.net.URL, java.net.URLConnection 等类库）
 
 涉及网络通信的 API 都在 java.net 和 java.nio.channels 包中。这里的网络已经将 RMI 相关包 java.rmi, javax.rmi 都排除了。
 
-安全（security, cryptography and AAA）
+**安全（security, cryptography and AAA）**
 
-1：Java 加密类库 JCA
-2：Java 加密类库扩展 JCE
-3：涉及密码学知识点的消息摘要、消息认证码、对称加密、非对称加密、数字签名
-4：涉及网络通信证书管理工具（keytool）及 API（PKI、X.509证书）
-5：基于 SSL/TLS 的安全网络通信 API（JSSE），包括：密钥库管理、信任库管理、阻塞 SSL 通信和非阻塞 SSL 通信等等
-6：Java 认证及授权服务（JAAS）API
+1. Java 加密类库 JCA
+2. Java 加密类库扩展 JCE
+3. 涉及密码学知识点的消息摘要、消息认证码、对称加密、非对称加密、数字签名
+4. 涉及网络通信证书管理工具（keytool）及 API（PKI、X.509证书）
+5. 基于 SSL/TLS 的安全网络通信 API（JSSE），包括：密钥库管理、信任库管理、阻塞 SSL 通信和非阻塞 SSL 通信等等
+6. Java 认证及授权服务（JAAS）API
 
 涉及安全的东西都在：
 
-java.security（JCA、JCE、数字证书，以及 JCE 的 SPI）
-javax.net（SSL/TLS）
-javax.security（JAAS）
-javax.crypto（密码学）
-keytool 的 JDK 工具 
+- java.security（JCA、JCE、数字证书，以及 JCE 的 SPI）
+- javax.net（SSL/TLS）
+- javax.security（JAAS）
+- javax.crypto（密码学）
+- keytool 的 JDK 工具 
 
 ---
 
