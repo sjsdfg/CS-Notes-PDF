@@ -20,6 +20,7 @@
 - [effective-java 第三版中文开源翻译](https://github.com/sjsdfg/effective-java-3rd-chinese)
 - [深入理解操作系统 第三版英文版原版-CSAPP 3rd](https://pan.baidu.com/s/1yJLb6EHRa0bjka7ryfr6mw)
 - [【精校中英字幕】2015 CMU 15-213 CSAPP 深入理解计算机系统 课程视频](https://www.bilibili.com/video/av31289365)
+- [《机器学习》（西瓜书）公式推导解析](https://github.com/datawhalechina/pumpkin-book)
 
 # 简历
  
