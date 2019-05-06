@@ -27,7 +27,13 @@
  
  - [冷熊简历](http://cv.ftqq.com/)
  - [简历模板](https://github.com/geekcompany/ResumeSample)
+ 
+# 电子书索引区
 
+- https://github.com/royeo/awesome-programming-books  
+- https://salttiger.com/
+- https://www.foxebook.net/
+- https://www.jiumodiary.com/
 
 <center>
 <img width="600" src="http://static.zybuluo.com/ZzzJoe/yflamvkjh2i7zn5qcp9wpj61/%E5%AF%92%E6%B2%A7.jpg" />
