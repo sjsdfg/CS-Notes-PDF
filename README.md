@@ -6,8 +6,11 @@
 
 原作者已经制作好 gitbook 地址：https://legacy.gitbook.com/book/cyc2018/interview-notebook/details
 
-**那么为什么还需要本仓库？**
-我个人认为**cmd-markdown 工具所转化的 pdf**相比 gitbook 直接生成的 pdf 拥有**更好的阅读体验！**
+~~**那么为什么还需要本仓库？**
+我个人认为**cmd-markdown 工具所转化的 pdf**相比 gitbook 直接生成的 pdf 拥有**更好的阅读体验！**~~
+
+项目不更新了。原有 repo 已经开始提供自制 pdf 功能了。
+而且现在原有 repo 把很多文件都拆开了（也打上了自己公众号的信息），对我更新仓库来说太麻烦了。
 
 # 额外资料推荐
 
