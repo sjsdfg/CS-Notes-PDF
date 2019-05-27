@@ -38,6 +38,7 @@
 - https://www.foxebook.net/
 - https://www.jiumodiary.com/
 - [免费优质电子书下载](https://epubw.com/)
+- http://www.allitebooks.org/
 
 <center>
 <img width="600" src="http://static.zybuluo.com/ZzzJoe/yflamvkjh2i7zn5qcp9wpj61/%E5%AF%92%E6%B2%A7.jpg" />
