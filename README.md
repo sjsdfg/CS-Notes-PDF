@@ -25,6 +25,7 @@
 - [【精校中英字幕】2015 CMU 15-213 CSAPP 深入理解计算机系统 课程视频](https://www.bilibili.com/video/av31289365)
 - [《机器学习》（西瓜书）公式推导解析](https://github.com/datawhalechina/pumpkin-book)
 - [Treen Pool](http://treenpool.com/#/home)：知识体系分享网站（脑图分享）
+- [从程序员到CTO，从专业走向卓越，企业内部分享文档pdf与PPT整理](https://github.com/0voice/from_coder_to_expert)
 
 # 简历
  
@@ -39,6 +40,10 @@
 - https://www.jiumodiary.com/
 - [免费优质电子书下载](https://epubw.com/)
 - http://www.allitebooks.org/
+
+# 绘图工具
+
+ - [cloudcraft](https://cloudcraft.co/)：Visualize your cloud architecture like a pro.
 
 <center>
 <img width="600" src="http://static.zybuluo.com/ZzzJoe/yflamvkjh2i7zn5qcp9wpj61/%E5%AF%92%E6%B2%A7.jpg" />
