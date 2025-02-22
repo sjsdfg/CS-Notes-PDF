@@ -46,10 +46,6 @@
 
  - [cloudcraft](https://cloudcraft.co/)：Visualize your cloud architecture like a pro.
 
-<center>
-<img width="600" src="http://static.zybuluo.com/ZzzJoe/yflamvkjh2i7zn5qcp9wpj61/%E5%AF%92%E6%B2%A7.jpg" />
-</center>
-
 ---
 
 分割线
